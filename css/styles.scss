@@ -1,24 +1,67 @@
+$white: #FFF;
+$gray: #E7E7E7;
+$black: #555;
+
 body {
-	background: #FCFAF2;
-	color: #222;
-	font: 400 16px/24px "PT sans";
+	background: $white;
+	color: $black;
+	font: 300 15px/22px 'PT Sans';
+	padding:0 2em;
 }
 
-h1 {
-	font: 800 52px/52px "Arvo";
-	letter-spacing: -1px;
+
+header, section {
+	border-left:1px $gray solid;
+	border-right:1px $gray solid;
 }
 
-h2 {
-	font: 800 48px/48px "Arvo";
-	letter-spacing: -1px;
-}
-section {
-	padding:1em 4em;
-	&:nth-child(odd) {
-		background-color: #F1F1F1;
+header {
+	padding-bottom:2em;
+
+	h1 {
+		font: 300 40px/54px 'PT Sans';
+		text-transform:uppercase;
+		letter-spacing: -0.07em;
 	}
 }
-section > div.row-fluid {
-	margin:24px 0;
+
+
+aside {
+	h2 {
+		font: 300 14px/16px 'PT Sans';
+		text-transform:uppercase;
+		margin-top:0;
+		border-top:1px lighten($black, 50%) solid;
+		padding-top:12px;
+	}
+
+	p,ul{
+		font: 300 14px/14px 'PT Sans';
+	}
+	ul { list-style-type: circle;}
 }
+
+
+section {
+	padding:0 1em 1em 1em;
+	&> div.row-fluid {
+		padding:.8em 0;
+	}
+	&>.row-fluid:first-of-type > aside > h2 {
+		font-weight:600;
+	}
+}
+
+
+footer {
+	background-color: darken($black, 10%);
+	color:darken($white, 30%);
+	padding: 10px;
+
+	h2 {
+		font: 200 12px/16px 'PT Sans';
+		text-transform:uppercase;
+		margin:.5em;
+	}
+}
+

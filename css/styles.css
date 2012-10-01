@@ -1,20 +1,43 @@
 body {
-  background: #FCFAF2;
-  color: #222;
-  font: 400 16px/24px "PT sans"; }
+  background: white;
+  color: #555555;
+  font: 300 15px/22px "PT Sans";
+  padding: 0 2em; }
 
-h1 {
-  font: 800 52px/52px "Arvo";
-  letter-spacing: -1px; }
+header, section {
+  border-left: 1px #e7e7e7 solid;
+  border-right: 1px #e7e7e7 solid; }
 
-h2 {
-  font: 800 48px/48px "Arvo";
-  letter-spacing: -1px; }
+header {
+  padding-bottom: 2em; }
+  header h1 {
+    font: 300 40px/54px "PT Sans";
+    text-transform: uppercase;
+    letter-spacing: -0.07em; }
+
+aside h2 {
+  font: 300 14px/16px "PT Sans";
+  text-transform: uppercase;
+  margin-top: 0;
+  border-top: 1px #d4d4d4 solid;
+  padding-top: 12px; }
+aside p, aside ul {
+  font: 300 14px/14px "PT Sans"; }
+aside ul {
+  list-style-type: circle; }
 
 section {
-  padding: 1em 4em; }
-  section:nth-child(odd) {
-    background-color: #F1F1F1; }
+  padding: 0 1em 1em 1em; }
+  section > div.row-fluid {
+    padding: .8em 0; }
+  section > .row-fluid:first-of-type > aside > h2 {
+    font-weight: 600; }
 
-section > div.row-fluid {
-  margin: 24px 0; }
+footer {
+  background-color: #3b3b3b;
+  color: #b3b3b3;
+  padding: 10px; }
+  footer h2 {
+    font: 200 12px/16px "PT Sans";
+    text-transform: uppercase;
+    margin: .5em; }

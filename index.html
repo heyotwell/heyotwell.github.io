@@ -6,8 +6,8 @@
 	<title>Andrew Otwell - UX Design Portfolio</title>
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
-	<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>	
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="css/styles.css">
 
@@ -16,7 +16,9 @@
 
 
 	<script type="text/javascript">
-		$('.carousel').carousel();
+		$(document).ready(function(){
+			$('.carousel').carousel();
+		})
 	</script>
 
 	
@@ -24,115 +26,217 @@
 
 <body>
 
-<section>
+<header>
 	<div class="row-fluid">
-		<div class="span12">
+		<div class="span10 offset3">
 			<h1>Andrew Otwell</h1>
 		</div>
 	</div>
+</header>
+
+<section>
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>Amazon.com Checkout &middot; Payment Page</h2>
+  			 <ul>
+  			 	<li>Reduce customer error rate</li>
+  			 	<li>Clarify what information was saved, and when</li>
+  			 	<li>Merchandise certain payment options</li>
+  			 </ul>
+		</aside>
+  		<div class="span9">
+  			<div id="pay-carousel" class="carousel slide">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="active item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+				</div>
+				<!-- Carousel nav -->
+				<a class="carousel-control left" href="#pay-carousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#pay-carousel" data-slide="next">&rsaquo;</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>About</h2>
+		</aside>
+		<div class="span6">
+			<p>I was the Senior UX Designer for Amazon.com's checkout between 2007 and 2011. This page lets customers create, validate, and choose from payment methods. On this project, we got a lot right, including where the careful addition of friction actually increased customer success. But we also learned that listening to customers <em>too</em> closely can lead to wrong decisions. 
+  			 </p>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>Demo</h2>
+		</aside>
+		<div class="span9">
+			<p><a href="#">blah blah</a></p>
+		</div>
+	</div>
+	
 </section>
 
 <section>
 	<div class="row-fluid">
-		<div class="span12">
-			<h2>Some header</h2>
-		</div>
-	</div>
-	<div class="row-fluid">
-  		<div class="span4">
-  			<img src="http://placehold.it/350">
-  		</div>
-  		<div class="span8">
-  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  			  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  			  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  			  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  			  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  			 </p>
+		<aside class="span3">
+			<h2>Amazon.com Checkout &middot; Order Placement Page</h2>
   			 <ul>
-  			 	<li>Lorem ipsum dolor sit amet, consectetur adipisicing ,</li>
-  			 	<li>Lorem ipsum dolor sit amet, consectetur elit,</li>
-  			 	<li>Lorem ipsum dolor sit amet, adipisicing elit,</li>
-  			 	<li>Lorem ipsum dolor, consectetur adipisicing elit,</li>
-  			 	<li>Lorem sit amet, consectetur adipisicing elit,</li>
+  			 	<li>Reorganize the page to clarify key purchase information</li>
+  			 	<li>Massively reduce pageviews per purchase</li>
   			 </ul>
-  		</div>
-	</div>
-
-	<div class="row-fluid">
-		<div class="span8">
-			<div id="myCarousel" class="carousel slide">
-			  <!-- Carousel items -->
-			  <div class="carousel-inner">
-			    <div class="active item">
-			    	<img src="http://placehold.it/600x430">
-			    </div>
-			    <div class="item">
-			    	<img src="http://placehold.it/600x430">
-			    </div>
-			    <div class="item">
-			    	<img src="http://placehold.it/600x430">
-			    </div>
-			  </div>
-			  <!-- Carousel nav -->
-			  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-			  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</aside>
+  		<div class="span9">
+  			<div id="spc-carousel" class="carousel slide">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="active item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+				</div>
+				<!-- Carousel nav -->
+				<a class="carousel-control left" href="#spc-carousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#spc-carousel" data-slide="next">&rsaquo;</a>
 			</div>
 		</div>
 	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>About</h2>
+		</aside>
+		<div class="span6">
+			<p>Every purchase on Amazon.com, except 1-Click orders, happens on this page. It handles a huge number of use cases, including obscure ones we only found during development. This project changed the way I design from mostly Photoshop to almost entirely in HTML and Javascript. I built my own prototyping framework that routed URLs to Javascript templates and loaded data from JSON objects. (These days, I'd use an MVC framework like Backbone.js or AngularJS.)
+  			 </p>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>Demo</h2>
+		</aside>
+		<div class="span9">
+			<p><a href="#">blah blah</a></p>
+		</div>
+	</div>
+	
 </section>
+
 
 <section>
 	<div class="row-fluid">
-		<div class="span12">
-			<h2>Some header</h2>
-		</div>
-	</div>
-	<div class="row-fluid">
-  		<div class="span8">
-  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  			  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  			  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  			  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  			  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  			 </p>
+		<aside class="span3">
+			<h2>Amazon.com Checkout &middot; Shopping Cart</h2>
   			 <ul>
-  			 	<li>Lorem ipsum dolor sit amet, consectetur adipisicing ,</li>
-  			 	<li>Lorem ipsum dolor sit amet, consectetur elit,</li>
-  			 	<li>Lorem ipsum dolor sit amet, adipisicing elit,</li>
-  			 	<li>Lorem ipsum dolor, consectetur adipisicing elit,</li>
-  			 	<li>Lorem sit amet, consectetur adipisicing elit,</li>
+  			 	<li>Make list management easier</li>
+  			 	<li>Bring this page out of the dark ages</li>
   			 </ul>
-  		</div>
-  		<div class="span4">
-  			<img src="http://placehold.it/350">
-  		</div>
-	</div>
-
-	<div class="row-fluid">
-		<div class="span8">
-			<div id="myCarousel" class="carousel slide">
-			  <!-- Carousel items -->
-			  <div class="carousel-inner">
-			    <div class="active item">
-			    	<img src="http://placehold.it/600x430">
-			    </div>
-			    <div class="item">
-			    	<img src="http://placehold.it/600x430">
-			    </div>
-			    <div class="item">
-			    	<img src="http://placehold.it/600x430">
-			    </div>
-			  </div>
-			  <!-- Carousel nav -->
-			  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-			  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</aside>
+  		<div class="span9">
+  			<div id="cart-carousel" class="carousel slide">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="active item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+				</div>
+				<!-- Carousel nav -->
+				<a class="carousel-control left" href="#cart-carousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#cart-carousel" data-slide="next">&rsaquo;</a>
 			</div>
 		</div>
 	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>About</h2>
+		</aside>
+		<div class="span6">
+			<p>Driven by our design team's secret project, led to a Product Manager jumping out of his chair to exclaim "we <em>have</em> to do this!" Followed by seven rounds of testing.</p>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>Demo</h2>
+		</aside>
+		<div class="span9">
+			<p><a href="#">blah blah</a></p>
+		</div>
+	</div>
+	
 </section>
+
+
+<section>
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>Amazon.com &middot; Design Manager, Core Shopping Customer Experience</h2>
+  			 <ul>
+  			 	<li>Make list management easier</li>
+  			 	<li>Bring this page out of the dark ages</li>
+  			 </ul>
+		</aside>
+  		<div class="span9">
+  			<div id="cart-carousel" class="carousel slide">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="active item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+				</div>
+				<!-- Carousel nav -->
+				<a class="carousel-control left" href="#cart-carousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#cart-carousel" data-slide="next">&rsaquo;</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			
+		</aside>
+		<div class="span6">
+			<p>Provide leadership, mentorship, and design direction for a group of designers responsible for the core retail shopping experience of Amazon.com including the site's homepage, product detail pages, and checkout experience.</p>
+			<p>Provide high-level program guidance, review designs, and participate in strategic and tactical efforts. Recruit, assess, hire, develop, and retain outstanding UX designers.
+Foster the growth and health of the design community across Amazon by establishing regular forums for designers to share and discuss work; hosting a guest speaker series; and organizing the company's first UX conference.
+</p>
+		</div>
+	</div>
+	
+</section>
+
+<footer>
+	<h2>Andrew Otwell</h2>
+</footer>
+
 
 
 </body>
