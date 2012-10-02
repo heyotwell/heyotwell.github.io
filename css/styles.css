@@ -9,11 +9,16 @@ header, section {
   border-right: 1px #e7e7e7 solid; }
 
 header {
-  padding-bottom: 2em; }
+  padding: 2em 0 2em 0;
+  border-top: 6px #3b3b3b solid; }
   header h1 {
-    font: 300 40px/54px "PT Sans";
-    text-transform: uppercase;
-    letter-spacing: -0.07em; }
+    font: 600 40px/54px "PT Sans Narrow";
+    color: #6e6e6e; }
+  header p {
+    font: 300 18px/24px "PT Sans"; }
+    header p em {
+      color: #d4d4d4;
+      padding: 0 8px; }
 
 aside h2 {
   font: 300 14px/16px "PT Sans";
@@ -27,9 +32,9 @@ aside ul {
   list-style-type: circle; }
 
 section {
-  padding: 0 1em 1em 1em; }
+  padding: 0 12px 70px 12px; }
   section > div.row-fluid {
-    padding: .8em 0; }
+    padding: 12px 0; }
   section > .row-fluid:first-of-type > aside > h2 {
     font-weight: 600; }
 

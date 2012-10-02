@@ -16,12 +16,20 @@ header, section {
 }
 
 header {
-	padding-bottom:2em;
+	padding: 2em 0 2em 0;
+	border-top: 6px darken($black, 10%) solid;
 
 	h1 {
-		font: 300 40px/54px 'PT Sans';
-		text-transform:uppercase;
-		letter-spacing: -0.07em;
+		font: 600 40px/54px "PT Sans Narrow";
+		color: lighten($black, 10%)
+	}
+	p {
+		font: 300 18px/24px "PT Sans";
+
+		em {
+			color: lighten($black, 50%);
+			padding: 0 8px;
+		}
 	}
 }
 
@@ -43,9 +51,10 @@ aside {
 
 
 section {
-	padding:0 1em 1em 1em;
+	padding:0 12px 70px 12px;
+	
 	&> div.row-fluid {
-		padding:.8em 0;
+		padding:12px 0;
 	}
 	&>.row-fluid:first-of-type > aside > h2 {
 		font-weight:600;
