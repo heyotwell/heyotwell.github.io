@@ -1,0 +1,176 @@
+	/* major divs using the rounded blue box shape */
+	#wrapper div.corner,
+	#dashboard-wrapper div.corner,
+	#os-wrapper div.corner {
+		background-image:url(../images/assets/sprite-blueBoxOuter.gif);
+		background-repeat:no-repeat;
+		height:5px;
+		width:5px;
+		position:absolute;
+		z-index:1;
+		line-height:5px;
+		font-size:5px;
+	}	
+	
+	#wrapper {
+		background-color:#EAF3FE;
+		border:1px solid #A5CDEC;
+		position:relative;
+	}
+	#wrapper-BR {
+		background-position:bottom right;
+		bottom:-1px;
+		right:-1px;
+	}
+	#wrapper-BL {
+		background-position:bottom left; 
+		bottom:0px;
+		left:0px;
+	}
+	#wrapper-TR {
+		background-position:top right;
+		top:-1px;
+		right:-1px;
+	}
+	#wrapper-TL {
+		background-position:top left;
+		top:-1px;
+		left:-1px;
+	}
+	
+	#os-wrapper {
+		background-color:#EAF3FE;
+		border:1px solid #A5CDEC;
+		float:right;
+		left:1px;
+		position:relative;
+		text-align:center;
+		top:-1px;
+		width:224px;
+		padding-bottom:4px;
+	}
+ 
+	#os-wrapper-TR {
+		background-position:top right;
+		right:-1px;
+		top:-1px;
+	}
+	#os-wrapper-BR {
+		background-position:bottom right;
+		bottom:-1px;
+		right:-1px;
+	}
+	#os-wrapper-BL {
+		background-position:bottom left;
+		bottom:-1px;
+		left:-1px;
+	}
+		
+	#dashboard-wrapper {
+		background-color:#EAF3FE;
+		margin-right:224px;
+		padding:4px 2px 4px 4px;
+		position:relative;
+	}
+	
+	#dashboard-wrapper_TL {
+		background-position:top left;
+		left:-1px;
+		top:-1px;
+	}
+	#dashboard-wrapper_BL {
+		background-position:bottom left;
+		bottom:-1px;
+		left:-1px;
+	}
+	
+	/* major divs using the rounded white box shape */
+	#existing-instruments {
+		background-color:#FFFFFF;
+		min-width:200px;
+		padding:6px;
+		position:relative;
+		z-index:2;
+	}
+	#existing-instruments div.corner {
+		background-image:url(../images/assets/sprite-whiteBox.gif) !important;
+		background-repeat:no-repeat;
+		position:absolute;
+		z-index:1;
+		height:5px;
+		width:5px;
+		line-height:5px;
+		font-size:5px;
+	}
+	#existing-instruments_TR {
+		background-position:top right;
+		right:0px;
+		top:0px;
+	}
+	#existing-instruments_BR {
+		background-position:bottom right;
+		bottom:0px;
+		right:0px;
+	}
+	#existing-instruments_BL {
+		background-position:bottom left;
+		bottom:0px;
+		left:0px;
+	}
+	#existing-instruments_TL {
+		background-position:top left;
+		left:0px;
+		top:0px;
+	}
+	
+	/* special purpose element for flexible boxes */
+	#elbow {
+		background-image:url(../images/assets/sprite-elbow.gif);
+		background-position:0px;
+		background-repeat:no-repeat;
+		width:5px;
+		height:5px;
+		position:absolute;
+		right:0px;
+		bottom:-5px;
+		z-index:1;
+		line-height:5px;
+		font-size:5px;
+	}
+
+	/* Order Summary table. Note this is NOT constructed using pinned-corner method */
+	div#order-summary,
+	div#order-summary div.head,
+	div#order-summary div.head h3,
+	div#order-summary div.body {
+			background-image: url(../images/assets/order-summary-box.gif);
+			background-repeat: no-repeat;
+			border:0;
+	}
+
+	/* position background images to construct Order Summary box */
+		div#order-summary {
+			background-position: bottom right;
+			margin: 4px 4px 0 4px;
+			padding-right: 8px;
+		}
+		
+		/* set the top-right image */ 
+		div#order-summary div.head {
+			background-position:right top;
+			margin-right:-8px;
+			padding:0pt 0px 0pt 0pt;
+		}
+		
+		/* set the top-left image */ 
+		div#order-summary div.head h3 {
+			background-position:left top;
+			margin:0pt 8px 0pt 0pt;
+			padding:7px 0pt 14px 0px;
+		}
+		
+		/* set the lower-left corner image */ 
+		div#order-summary div.body {
+			background-position:left bottom;
+			padding:0pt 0 15px 10px;
+		}

@@ -1,0 +1,40 @@
+div#design-note {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:small;
+	position:absolute; 
+	top:5px; 
+	right:5px; 
+	padding:0 0 2px 0;
+	background:url(note-shadow.gif) no-repeat bottom right;
+	z-index:100;
+	text-align:left;
+	width:200px; 
+}
+body>div#design-note {
+	padding-bottom:18px;
+	background:url(note-shadow.png) no-repeat bottom right;
+	position:fixed;
+	opacity:.85;
+}
+
+div#design-note div {
+	padding:.5em 1em;
+	border:1px #fbe487 solid;
+	background-color:#FFFFCC;
+	min-height:15px;
+}
+
+div#design-note img {position:absolute; top:5px; right:5px; float:right;}
+div#design-note {font-size:10px;}
+div#design-note ul {list-style:none; padding:0; margin:0;}
+div#design-note ul li {margin:.5em 0;}
+div#design-note ul li p {font-weight:bold; color: #717171; border-bottom:1px #717171 solid;}
+
+/* stripe added dynamically when someone's looking at a mockup NOT in firefox */
+#browser-warning {
+	background-color:red;
+	border-bottom:1px solid #EBEBAF;
+	padding:10px; 
+	font-size:85%; 
+	color:white;
+}

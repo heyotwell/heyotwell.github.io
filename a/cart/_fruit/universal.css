@@ -1,0 +1,369 @@
+/* -------------------------------------------------------------- 
+  
+	###############################################################
+	########## RESET.CSS  Resets default browser CSS. ##########
+	###############################################################
+   
+-------------------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td 
+					{ margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+body 				{ line-height: 1.416; margin: 10px;} /* 1.5= 12 over 18 line-height. 1.333 = 12/16. 1.416 = 12/17. */
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table 				{ border-collapse: separate; border-spacing: 0; }
+caption, th, td 	{ text-align: left; font-weight: normal; }
+table, td, th 		{ vertical-align: middle; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after 
+					{ content: ""; }
+blockquote, q 		{ quotes: "" ""; }
+
+/* Remove annoying border on linked images. */
+a img 				{ border: none; }
+
+INPUT, TEXTAREA		{ font-family: verdana, sans-serif; font-size: 12px; }
+
+/* -------------------------------------------------------------- 
+  
+	##############################################################
+	########## GRID.CSS  Resets default browser CSS. ##########
+	##############################################################
+   
+
+/*~ Apply to any container to show the grid
+----------------------------------------------------------------------*/
+.showgrid 			{background:url(_src/grid.png)} /*--- FOR DEBUG ONLY - Should be removed in prod ---*/
+.snapper 			{margin:0px auto 30px; position:relative; text-align:left; background-color:#fff;} /*--- DEFINES SNAPPING CONTAINERS ---*/
+
+/*~ Float left/right
+----------------------------------------------------------------------*/
+.fl 				{float:left;}
+.fr 				{float:right;}
+
+/*~ Fixed width container classes
+----------------------------------------------------------------------*/
+.fl1, .fl2, .fl3, .fl4, .fl5, .fl6, .fl7, .fl8, .fl9, .fl10, .fl11, .fl12, .fl13, .fl14, .fl15, .fl16, .fl17, .fl18, .fl19, .fl20, .fl21, .fl22, .fl23, .fl24, .fl25, .fl26, .fl27, .fl28 { float: left; margin-right:15px;}
+.fr1, .fr2, .fr3, .fr4, .fr5, .fr6, .fr7, .fr8, .fr9, .fr10, .fr11, .fr12, .fr13, .fr14, .fr15, .fr16, .fr17, .fr18, .fr19, .fr20, .fr21, .fr22, .fr23, .fr24, .fr25, .fr26, .fr27, .fr28 { float: right; margin-right:15px;}
+
+.fl1, .fr1 			{ width: 35px;}
+.fl2, .fr2 			{ width: 85px;}
+.fl3, .fr3 			{ width: 135px;}
+.fl4, .fr4 			{ width: 185px;}
+.fl5, .fr5 			{ width: 235px;}
+.fl6, .fr6 			{ width: 285px;}
+.fl7, .fr7 			{ width: 335px;}
+.fl8, .fr8 			{ width: 385px;}
+.fl9, .fr9 			{ width: 435px;}
+.fl10, .fr10 		{ width: 485px;}
+.fl11, .fr11 		{ width: 535px;}
+.fl12, .fr12 		{ width: 585px;}
+.fl13, .fr13 		{ width: 635px;}
+.fl14, .fr14 		{ width: 685px;}
+.fl15, .fr15 		{ width:735px;}
+.fl16, .fr16 		{ width:785px;}
+.fl17, .fr17 		{ width:835px;}
+.fl18, .fr18 		{ width:885px;}
+.fl19, .fr19 		{ width:935px;}
+.fl20, .fr20 		{ width:985px;}
+	.initial .fl20, .initial .fr20, .ten .fl20, .ten .fr20 {margin-right:0;} 
+/*~------- Classes below this line turn off automatically at .ten ---------------*/
+.fl21, .fr21 		{ width:1035px;} 
+.fl22, .fr22 		{ width:1085px;}
+.fl23, .fr23 		{ width:1135px;}
+	.initial .fl21, .initial .fr21, .ten .fl21, .ten .fr21, .initial .fl22, .initial .fr22, .ten .fl22, .ten .fr22, .initial .fl23, .initial .fr23, .ten .fl23, .ten .fr23 {display:none;} 
+	.twelve .fl23, .twelve .fr23 {margin-right:0;}
+/*~------- Classes below this line turn off automatically at .twelve ---------------*/
+.fl24, .fr24 		{ width:1185px;}
+.fl25, .fr25 		{ width:1235px;}
+.fl26, .fr26		{ width:1285px;}
+		.initial .fl24, .initial .fr24, .ten .fl24, .ten .fr24, .twelve .fl24, .twelve .fr24, .initial .fl25, .initial .fr25, .ten .fl25, .ten .fr25, .twelve .fl25, .twelve .fr25, .initial .fl26, .initial .fr26, .ten .fl26, .ten .fr26, .twelve .fl26, .twelve .fr26 {display:none;} 
+		.fourteen .fl26, .fourteen .fr26 {margin-right:0}
+/*~------- Classes below this line turn off automatically at .fourteen ---------------*/
+.fl27, .fr27 		{ width:1335px;}
+.fl28, .fr28 		{ width:1385px;}
+.fl29, .fr29 		{ width:1435px; margin-right:0;}
+	.initial .fl27, .initial .fr27, .ten .fl27, .ten .fr27, .twelve .fl27, .twelve .fr27, .fourteen .fl27, .fourteen .fr27, .initial .fl28, .initial .fr28, .ten .fl28, .ten .fr28, .twelve .fl28, .twelve .fr28, .fourteen .fl28, .fourteen .fr28, .initial .fl29, .initial .fr29, .ten .fl29, .ten .fr29, .twelve .fl29, .twelve .fr29, .fourteen .fl29, .fourteen .fr29  {display:none;}
+
+/*~ Stretching Container Classes
+----------------------------------------------------------------------*/
+.ml1  { margin-left: 50px; }	.mr1  { margin-right: 50px; }
+.ml2  { margin-left: 100px; }	.mr2  { margin-right: 100px; }
+.ml3  { margin-left: 150px; }	.mr3  { margin-right: 150px; }
+.ml4  { margin-left: 200px; }	.mr4  { margin-right: 200px; }
+.ml5  { margin-left: 250px; }	.mr5  { margin-right: 250px; }
+.ml6  { margin-left: 300px; }	.mr6  { margin-right: 300px; }
+.ml7  { margin-left: 350px; }	.mr7  { margin-right: 350px; }
+.ml8  { margin-left: 400px; }	.mr8  { margin-right: 400px; }
+.ml9  { margin-left: 450px; }	.mr9  { margin-right: 450px; }
+.ml10 { margin-left: 500px; }	.mr10 { margin-right: 500px; }
+.ml11 { margin-left: 550px; }	.mr11 { margin-right: 550px; }
+.ml12 { margin-left: 600px; }	.mr12 { margin-right: 600px; }
+.ml13 { margin-left: 650px; }	.mr13 { margin-right: 650px; }
+.ml14 { margin-left: 700px; }	.mr14 { margin-right: 700px; }
+.ml15 { margin-left: 750px; }	.mr15 { margin-right: 750px; }
+.ml16 { margin-left: 800px; }	.mr16 { margin-right: 800px; }
+.ml17 { margin-left: 850px; }	.mr17 { margin-right: 850px; }
+.ml18 { margin-left: 900px; }	.mr18 { margin-right: 900px; }
+.ml19 { margin-left: 950px; }	.mr19 { margin-right: 950px; }
+/*~------- Classes below this line turn off automatically at .ten ---------------*/
+.ml20 { margin-left: 1000px; }	.mr20 { margin-right: 1000px; }
+.ml21 { margin-left: 1050px; }	.mr21 { margin-right: 1050px; }
+.ml22 { margin-left: 1100px; }	.mr22 { margin-right: 1100px; }
+	.initial .ml20, .initial .mr20, .ten .ml20, .ten .mr20, .initial .ml21, .initial .mr21, .ten .ml21, .ten .mr21, .initial .ml22, .initial .mr22, .ten .ml22, .ten .mr22 {display:none;} 
+/*~------- Classes below this line turn off automatically at .twelve ---------------*/
+.ml23 { margin-left: 1150px; }	.mr23 { margin-right: 1150px; }
+.ml24 { margin-left: 1200px; }	.mr24 { margin-right: 1200px; }
+.ml25 { margin-left: 1250px; }	.mr25 { margin-right: 1250px; }
+		.initial .ml23, .initial .mr23, .ten .ml23, .ten .mr23, .twelve .ml23, .twelve .mr23, .initial .ml24, .initial .mr24, .ten .ml24, .ten .mr24, .twelve .ml24, .twelve .mr24, .initial .ml25, .initial .mr25, .ten .ml25, .ten .mr25, .twelve .ml25, .twelve .mr25 {display:none;} 
+/*~------- Classes below this line turn off automatically at .fourteen ---------------*/
+.ml26 { margin-left: 1300px; }	.mr26 { margin-right: 1300px; }
+.ml27 { margin-left: 1350px; }	.mr27 { margin-right: 1350px; }
+.ml28 { margin-left: 1400px; }	.mr28 { margin-right: 1400px; }
+		.initial .ml26, .initial .mr26, .ten .ml26, .ten .mr26, .twelve .ml26, .twelve .mr26, .fourteen .ml26, .fourteen .mr26, .initial .ml27, .initial .mr27, .ten .ml27, .ten .mr27, .twelve .ml27, .twelve .mr27, .fourteen .ml27, .fourteen .mr27, .initial .ml28, .initial .mr28, .ten .ml28, .ten .mr28, .twelve .ml28, .twelve .mr28, .fourteen .ml28, .fourteen .mr28 {display:none;} 
+
+/* Gutters & Padding
+-------------------------------------------------------------- */
+	/*~------- Margins -------------*/
+.gl					{ margin-left:15px; }		/*--gutter left--*/
+.gr					{ margin-right:15px; } 		/*--gutter right--*/
+.mt					{ margin-top:15px; } 		/*--margin top--*/
+.mb					{ margin-bottom:15px; } 	/*--margin bottom--*/
+	/*~------- Padding -------------*/
+.pt					{ padding-top:15px; }		/*--padding top--*/
+.pb					{ padding-bottom:15px; }	/*--padding bottom--*/
+.pr					{ padding-right:15px; }		/*--padding right--*/
+.pl					{ padding-left:15px; }		/*--padding left--*/
+
+.last 				{ margin-right:0; }   /*-- apply to divs on the far right of the page --*/
+.ten .lastif10, .twelve .lastif12, .fourteen .lastif14,.sixteen .lastif16
+					{ margin-right:0; }
+
+/*~---------------------- GRID RESIZING CLASSES ---------------------------*/
+/*~ Background and Container Variables
+----------------------------------------------------------------------*/
+.ten 				{}
+.ten .snapper 	{width:985px;}
+
+.twelve 			{}
+.twelve .snapper	{width:1135px;}
+
+.fourteen 			{}
+.fourteen .snapper	{width:1285px;}
+
+.sixteen 			{}
+.sixteen .snapper {width:1435px;}
+
+/*~  Body class: ten
+----------------------------------------------------------------------*/
+.on10 		{ display: inherit; }
+
+.ten .on12,
+.ten .on14,
+.ten .on16 			{ display: none !important; }
+
+/*~  Body class: twelve
+----------------------------------------------------------------------*/
+.twelve .on10,
+.twelve .on12 		{display: inherit; }
+ 
+.twelve .on14,
+.twelve .on16 		{ display: none !important; }
+
+/*~  Body class: fourteen
+----------------------------------------------------------------------*/
+.fourteen .on10,
+.fourteen .on12,
+.fourteen .on14 	{ display: inherit; }
+
+.fourteen .on16 	{ display: none !important; }
+
+/*~  Body class: sixteen
+----------------------------------------------------------------------*/
+.sixteen .on10,
+.sixteen .on12,
+.sixteen .on14,
+.sixteen .on16 		{ display: inherit;}
+
+
+/*~  Hiding classes: ten 
+----------------------------------------------------------------------*/
+.ten .onlyon10		{ display:inherit; }
+
+.ten .onlyon12,
+.ten .onlyon14,
+.ten .onlyon16 		{ display:none !important;}
+
+/*~  Hiding classes: twelve
+----------------------------------------------------------------------*/
+.twelve .onlyon12 	{ display:inherit; }
+
+.twelve .onlyon10,
+.twelve .onlyon14,
+.twelve .onlyon16 	{ display:none !important;}
+
+/*~  Hiding classes: fourteen 
+----------------------------------------------------------------------*/
+.fourteen .onlyon14	{ display: inherit; }
+
+.fourteen .onlyon10,
+.fourteen .onlyon12,
+.fourteen .onlyon16	{ display:none !important;}
+
+/*~  Hiding classes: sixteen 	
+----------------------------------------------------------------------*/
+.sixteen .onlyon16	{ display: inherit; }
+
+.sixteen .onlyon10,
+.sixteen .onlyon12,
+.sixteen .onlyon14	{ display:none !important;}
+
+
+
+/* -------------------------------------------------------------- 
+   
+	##################################################################################
+	########## TYPOGRAPHY.CSS  Sets up some sensible default typography. ##########
+	##################################################################################*/
+	
+/* Default font settings - The font-size percentage is of 16px. (0.75 * 16px = 12px)
+-------------------------------------------------------------- */
+body 				{ font-size: 12px; color: #000; background: #fff; font-family: Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+/*--- Prototype Classes - S/B Removed in prod ---- */
+.bg-grn				{ background-color:#c6fecb; }
+.bg-blu				{ background-color:#c6dffe; }
+.bg-wht				{ background-color:#fff; }
+.bg-tan				{ background-color:#fcfcf2; }
+
+/* Headings
+-------------------------------------------------------------- */
+h1,h2,h3,h4			{ font-family: Arial, Verdana, Helvetica, sans-serif; font-weight: bold; color: #E47911; }
+h1 					{ font-size: 36px; line-height: 40px; }
+h2 					{ font-size: 21px; line-height:23px; }
+h3 					{ font-size: 16px; line-height:20px; }
+h4 					{ font-size: 14px; line-height: 16px; }
+h5 					{ font-weight: bold; color:#000; }
+h6 					{ font-weight: bold; color:#666; }
+
+h1.txtsmallest,h2.txtsmallest,h3.txtsmallest,h4.txtsmallest,h5.txtsmallest,h6.txtsmallest,h1.txtsmaller,h2.txtsmaller,h3.txtsmaller,h4.txtsmaller,h5.txtsmaller,h6.txtsmaller,h1.txtsmall,h2.txtsmall,h3.txtsmall,h4.txtsmall,h5.txtsmall,h6.txtsmall,h1.txtnormal,h2.txtnormal,h3.txtnormal,h4.txtnormal,h5.txtnormal,h6.txtnormal
+					{ font-family:Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif; margin: 0px 0px; line-height:1.416em; }
+h1.txtlarge, h2.txtlarge, h3.txtlarge, h4.txtlarge, h5.txtlarge, h6.txtlarge, h1.txtlarger, h2.txtlarger, h3.txtlarger, h4.txtlarger, h5.txtlarger, h6.txtlarger
+					{ margin: 0;}
+
+
+/* Text Elements & Styles
+-------------------------------------------------------------- */
+p					{ margin-bottom: 15px; }
+p img.left			{ float: left; margin: 4px 15px 12px 0; padding: 0; }
+p img.right			{ float: right; margin: 4px 0 12px 15px; }
+
+a.dynamic:link, a.dynamic:visited { color: #004B91; text-decoration: none; border-bottom: 1px dashed; }
+a.noclick:link, a.noclick:visited { color: #000000; text-decoration: none; border-bottom: 1px dashed; }
+a.dynamic:hover, a.noclick:hover {color: #E47911;}
+
+.noLinkDecoration a:link, .noLinkDecoration a:visited { text-decoration: none; border-bottom: none; }
+.noLinkDecoration a:hover { text-decoration: underline; }
+.noLinkDecoration a.dynamic:hover { text-decoration: none; border-bottom: 1px dashed;  }
+.noLinkDecoration a.noclick:hover { color: #000000; text-decoration: none; border-bottom: 1px dashed; }
+
+a:link				{ color: #004B91; text-decoration: underline; }
+a:visited			{ color: #996633; }
+a:focus, 
+a:hover				{ color: #E47911; }
+
+	/*~------- Font Sizes -------------*/
+.txtsmallest			{ font-size:9px; line-height:14px;}	
+.txtsmaller				{ font-size:10px; line-height:15px;}	
+.txtsmall				{ font-size:11px; line-height:16px;}	
+.txtnormal				{ font-size:12px; line-height:17px;}
+.txtlarge				{ font-size:14px; font-family: Arial, Verdana, Helvetica, sans-serif;  line-height:19px; }
+.txtlarger				{ font-size:16px; font-family: Arial,Verdana,Helvetica,sans-serif;  line-height:21px; }
+
+	/*~------- Text Alignment -------------*/
+.txtctr				{ text-align:center; }
+.txtleft			{ text-align:left; }
+.txtright			{ text-align:right; }
+
+	/*~------- Colors - text styles -------------*/
+.orange 			{ color:#E47911; }
+.red 				{ color:#990000; }
+.green				{ color:#009900; }
+.black				{ color:#000; }
+.drkgry				{ color:#333; } 
+.gry				{ color:#666; }
+.ltgry				{ color:#999; }
+.listprice			{ text-decoration:line-through; }
+.ourprice			{ font-weight:bold; color:#990000; }
+.price				{  }
+.savings			{ color:#990000; }
+
+	/*~------- Text Variants -------------*/	
+blockquote			{ margin: 15px; }
+strong				{ font-weight: bold; }
+em,dfn				{ font-style: italic; }
+dfn					{ font-weight: bold; }
+sup, sub			{ line-height: 0; }
+sup					{ position:relative;top:2px; }
+sub					{ position:relative;bottom:2px; }
+
+
+abbr, 
+acronym				{ border-bottom: 1px dotted #666; }
+address				{ margin: 0 0 15px; font-style: italic; } /* the <address> tag is treated the same way as a paragraph*/
+del					{ color:#666; }
+
+pre,code			{ margin: 15px 0; white-space: pre; }
+pre,code,tt			{ font-family:'andale mono', 'lucida console', monospace; } 
+
+.carat, .caret		{ font-size:1.3em; color:#E47911; line-height:0; margin:0; font-weight:bold; }
+
+
+/* Horizontal Rule
+-------------------------------------------------------------- */
+hr					{border: none 0; border-top: 1px dashed #999; height: 1px; margin: 0 0 15px; } 
+
+/* Lists
+-------------------------------------------------------------- */
+li ul, li ol		{ margin: 0 15px; }
+ul, ol				{ margin: 0 15px 15px }
+li					{ margin:0.625em 0;} /* at 12px there s/b 15px between list items - this scalable measure is calculated by <li> font size. */
+
+ul					{ list-style-type: disc; }
+ol					{ list-style-type: decimal; list-style-position:inside; }
+
+dl					{ margin: 0 0 15px 0; }
+dl dt				{ font-weight: bold; }
+dd					{ margin-left: 15px; }
+
+.bullets			{ list-style-type: disc; }
+.no-bullets			{ list-style-type: none; }
+
+/* =Clear Floated Elements
+--------------------------------------------------------------------------------*/
+.clearboth			{ clear:both; }
+.clearleft			{ clear:left; }
+.clearright			{ clear:right; }
+
+/* http://sonspring.com/journal/clearing-floats */
+html body * span.clear,
+html body * div.clear,
+html body * li.clear,
+html body * dd.clear
+					{ background: none;border: 0;clear: both; display: block; float: none; font-size: 0; list-style: none; margin: 0; padding: 0; overflow: hidden; visibility: hidden;	width: 0; height: 0; }
+
+/* http://www.positioniseverything.net/easyclearing.html */
+.clearfix:after 	{ clear: both; content: '.'; display: block; visibility: hidden; height: 0; }
+.clearfix 			{ display: inline-block; }
+* html .clearfix	{ height: 1%; }
+.clearfix			{ display: block; }
+
+	/*-------- Lazy Load Images ---------*/
+.widget img.loading
+					{ background: url(_src/graysnake.gif) no-repeat center center;}

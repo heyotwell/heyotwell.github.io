@@ -1,0 +1,5 @@
+blockquote			{ width:90%; }
+.cBoxTL 			{ top:0; left:-1px; }
+.cBoxTR 			{ top:0; right:-1px; }
+.cBoxBL 			{ bottom:14px; left:-1px; padding:0; margin:0; }
+.cBoxBR 			{ bottom:14px; right:-1px; padding:0; margin:0; }

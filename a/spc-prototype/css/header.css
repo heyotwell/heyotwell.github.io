@@ -1,0 +1,82 @@
+/* need to point directly to this image in the page itself...for some reason? */
+.navSprite {
+  background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/gno/images/orangeBlue/navPackedSprites_v12._V222883957_.png);
+
+}	
+
+
+/* formatting for final header with clickable links */
+
+.navigation ul {
+	padding: 0;
+	margin: 0 0 10px 0;
+	list-style-type: none;
+	float: left;
+	width: 100%;
+	min-width:795px;
+	}
+
+.navigation ul li { display: inline; }
+
+.navigation ul li a {
+	float: left;
+	height:29px;
+	text-indent:-9999px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	outline:0;
+}
+.navigation ul li a#navLogo {
+	width: 175px;
+	height:48px;
+}
+.navigation ul li a#cart {
+	width: 69px;
+	background-image:url(../images/cart.gif);
+	margin-left:6.5em;
+}
+
+.navigation ul li a#signin {
+	width: 61px;
+	background-image:url(../images/sign-in.gif);
+}
+.navigation ul li a#create-account {
+	width: 89px;
+	background-image:url(../images/create-account.gif);
+}
+.navigation ul li a#shipping-address {
+	width: 133px;
+	background-image:url(../images/shipping-address.gif);
+}
+.navigation ul li a#shipping-options {
+	width: 130px;
+	background-image:url(../images/shipping-options.gif);
+}
+.navigation ul li a#payment {
+	width: 78px;
+	background-image:url(../images/payment.gif);
+}
+.navigation ul li a#gift-wrap {
+	width: 97px;
+	background-image:url(../images/gift-wrap.gif);
+}
+.navigation ul li a#place-order {
+	width: 94px;
+	background-image:url(../images/place-order.gif);
+}
+
+.navigation ul li.visited a{
+	background-position:left 0px;
+}
+.navigation ul li.visited a:hover {
+	background-position:left -105px;
+}
+
+.navigation ul li.current a{
+	cursor: default;
+	background-position:left -70px;
+}
+.navigation ul li.inactive a{
+	cursor: default;
+	background-position:left -35px;
+}

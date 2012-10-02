@@ -1,0 +1,313 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333;
+}
+
+#doc { width: 90%; min-width: 880px; max-width:910px; padding-bottom:15px;} 
+	 
+#hd {margin-bottom:10px;}
+#progressbar {margin:10px auto 20px auto; text-align:center;}
+
+a {color: #004b91;}
+
+
+h1 {
+	color:#e47911; /*orange*/
+	font-size: 123.1%;
+	font-weight:bold;
+	margin:10px 0;
+}
+
+sup {font-size:8px;}
+
+p { margin-bottom: .5em; font-size:93%; }
+
+strong {font-weight:bold;}
+
+span.tiny {font-size:10px !important;}
+
+input[type=text] { 
+	padding: 2px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	border: 1px solid #CCC;
+	-webkit-border-radius: 3px;
+	height: 16px;
+	color: #555;
+}
+
+input, textarea, select {font-family: Arial, Helvetica, sans-serif;}
+
+td {vertical-align:top:}
+
+div.hr {
+	width:30%; 
+	float:right; 
+	margin:5px 0; 
+	height:0;
+	font-size:0px; 
+	line-height:0px;
+	padding:0;
+	border-bottom:1px #BCBCBC solid;
+}
+
+.current {background-color:#eaf3fe;}
+
+#existing-instruments {
+	min-height:60px;
+  height:auto !important;
+  height:60px;
+}
+
+	#existing-instruments #blankslate p{ 
+		text-align:center;
+		background-color:#ffffdd;
+		padding:5px;
+		margin:0;
+	}
+	
+	#existing-instruments #amnesia-message {padding:.5em; background-color:#ffffdd;}
+	#existing-instruments #amnesia-message h3 {font-weight:bold; font-size:100%; margin-bottom:.25em;}
+	#existing-instruments #amnesia-message p {margin:.5em 0}
+	#existing-instruments #amnesia-message ul {margin-left:1em;}
+	#existing-instruments #amnesia-message li {list-style-type:disc; margin:.25em .5em; font-size:93%;}
+
+	#existing-instruments table {
+		margin:10px 0;
+		width:100%;
+	}
+	#existing-instruments table.cc {
+		margin-top:4px;
+	}
+	
+	
+	#existing-instruments table td {
+		padding:8px 5px;
+		vertical-align:middle;
+		text-align:left;
+	}
+	#existing-instruments table:last-child {
+		margin-bottom:0;
+	}
+	
+	#existing-instruments table td.payment-method-selector {width:18px; text-align:center;}
+	#existing-instruments table td.payment-method-logo {width:22px;}
+	#existing-instruments table td.payment-method-name {width:290px; font-size:100%;}
+	#existing-instruments table td.name-on-account {font-size:92%;}
+	
+	#existing-instruments table label img {vertical-align:middle;}
+	#existing-instruments table label span {font-size:85%; color:#666666;}
+	#existing-instruments table td input,
+	#existing-instruments table td select {
+		vertical-align:middle;
+		margin-right:5px;
+	}
+	
+	#existing-instruments table th {
+		font-size:85%;
+		color:#656565;
+		font-weight:bold;
+		border-bottom:1px #BCBCBC solid;
+		padding:0 5px 1px 5px;
+	}
+	
+	#existing-instruments table th em {
+		font-size:108%;
+		color:#e47911;
+		font-weight:bold;
+	}
+	#existing-instruments table .expires {font-size:85%;}
+	
+	
+	#existing-instruments ul.extended {margin:4px 0 0 40px;;}
+	#existing-instruments ul.extended li {
+		font-size:85%;
+		color:#666666;
+		list-style-type:disc;
+	}
+	
+	#existing-instruments span.expired {color:#990000;font-weight:bold;}
+
+#new-methods-list {
+	float:left;
+	width:642px; 
+}
+
+/* payment method blocks */
+div.payment-method img.logo{ float:left; margin-top:4px;}
+
+/* can these be converted into div.paymemnt method div ?? */
+div.payment-method h2,
+div.payment-method .offer,
+div.payment-method .create {
+	margin-left:118px;
+}
+
+div.payment-method {
+	border-bottom: 1px #cee1eb solid;
+	padding:15px 0 5px 0;
+	margin-left: 10px;
+	overflow:auto;
+}
+div.payment-method.last {border:0;}
+
+div.payment-method h2 { /*payment method title */
+ color:#333333;
+ font-size: 108%; 
+ font-weight:bold;
+ margin-bottom:10px;
+} 
+div.payment-method h2 span { /*payment method subtitle */
+ font-size:85%;
+}
+
+div.payment-method h3 { /* state title */
+	font-weight:bold;
+	margin-bottom:.5em;
+} 
+
+div.payment-method p { font-size:85%; line-height:1.3; }
+
+div.payment-method p.spinner {color:#666666;}
+
+div.payment-method p.caption { margin:2px 0 0 0; color:#666;}
+
+div.payment-method p.add {
+	float:right;
+	padding:.5em 1px .5em .5em;
+}
+div.payment-method br {clear:both; line-height:0;}
+
+div.payment-method .terms {
+	height:90px;
+	overflow:auto;
+	border:1px #CCCCCC solid;
+	padding:5px;
+}
+
+/* forms for creating new payment instruments */
+div.create table.new {}
+
+div.create table.new th {
+	font-size:85%;
+	color:#656565;
+	font-weight:bold;
+}
+div.create table.new td{
+	padding:0 6px 10px 0;
+}
+div.create table.new td img {vertical-align:bottom;}
+
+div.create .maestro_fields {display:none;}
+div.create span.maestro_fields {font-size:85%;}
+div.create span.maestro_fields b {color:#656565;}
+
+span.debit_fields {display:none; font-size: 85%;}
+
+		
+/* 	order summary container. 
+	Note that rounded-corners.css handles the correct 
+	formatting of this container as a rounded box. This is internal formatting.
+*/
+
+/* formatting for Order Summary elements */
+#order-summary h3 {
+	font-weight:bold;
+	font-size:123.1%;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	text-align:center;
+}
+
+#order-summary table {width:100%;font-size:85%;text-align:left;}
+#order-summary table td {padding:1px;}
+#order-summary table td.price {text-align:right; }
+#order-summary table #gc_subtotal td {padding-bottom:10px;}
+	
+#order-summary td.total,
+#order-summary #order-grand-total {
+	padding:8px 0 5px 0;
+	border-top:1px #BCBCBC solid;
+	font-weight:bold;
+	font-size:14px;
+}
+
+
+#order-summary p.continue {
+	margin:5px 10px 0 10px;
+	text-align:center;
+	font-size:85%;
+}
+#order-summary p.continue input {display:block; margin:0 auto 4px auto;}
+
+div.continue-blocker {
+	background-color:#FFFFCC ;
+	border:1px solid #992211;
+	font-size:93%;
+	padding:5px;
+	position:absolute;
+	width:190px;
+	z-index:999;
+	color:#992211;
+}
+div.continue-blocker img {position:absolute; right:-5px; top:50%;}
+
+/* .marketing is the slot for co-branded Visa and other true advertisements on the page */
+/* when marketing is in banner slot  */
+div.marketing {
+	font-size:100%;
+	padding:5px 10px 5px 10px;
+	position:relative;
+	background-image:-webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0)), to(rgba(242, 248, 255, 0.9)));
+	border:1px solid #A5CDEC;
+	border-radius: 6px;
+} 
+
+div.marketing img {float:left;margin: 0 10px;}
+
+div.marketing p {
+	font-size:93%;
+	line-height:1.4em;
+	margin:5px 0;
+}
+
+div.marketing p span {color:#990000;font-weight:bold; }
+
+/* "how's my driving" slot below Order SUmmary */
+div.feedback{
+	font-size:100%;
+	padding:10px;
+	position:relative;
+	float:right;
+	clear:right;
+	border:1px solid #A5CDEC;
+	width:204px;
+	margin-top:8px;
+}
+
+
+#ft h4 {
+	font-weight:bold;
+	font-size:93%;
+	width:90%; margin:0 auto;
+	color:#666666;
+}
+#ft p {
+	font-size:85%;
+	margin:0 auto .25em auto; 
+	color:#666666;
+	text-align:center; 
+}
+
+#ft #continue-bar {
+	background: -webkit-linear-gradient(top, #ffffff 0%,#eaf3fe 100%);
+	text-align:right;
+	padding:5px 1em;
+	border-bottom:1px #A5CDEC solid;
+	color:black;
+	margin:5px 0 10px 0;
+	border-radius: 0 0 10px 10px;
+}
+#ft #continue-bar img {margin-right:60px;}
+#ft #continue-bar span {display:block;margin-top:4px;}
+

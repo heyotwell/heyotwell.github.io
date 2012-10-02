@@ -1,0 +1,1356 @@
+#nav .flyout
+{
+    position:absolute;
+    display:none;
+}
+
+#nav [navID=gb_icon]
+{
+    height: 19px;
+    padding-right:3px;
+    vertical-align:bottom;
+}
+
+#nav .inline-block
+{
+    display: inline-block;
+}
+
+#nav a img
+{
+    border:none;
+}
+
+#nav .flyoutMenu .trigger
+{
+
+    cursor: pointer;
+}
+
+#nav .flyoutMenu .trigger a
+{
+    padding: 6px 7px 0px 10px;
+}
+
+#nav a
+{
+    outline: none;
+}
+
+#nav .flyoutMenu
+{
+    position:relative;
+}
+
+#nav *[clickable]
+{
+    cursor:pointer;
+}
+
+#nav .flyoutMenu
+{
+    /* TODO CHECK INTO THIS REMOVAL 
+    display:inline-block;
+    */
+}
+
+
+#nav .separator
+{
+    display:table-cell;
+    height:34px;
+
+    padding: 0 0px;
+}
+
+#nav .separator div
+{
+    width:1px;
+    height:100%;
+    background: #dddddd;
+    /* margin-bottom:11px;*/
+}
+
+#nav .clickable
+{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:100;
+}
+
+#nav .rec,
+#nav .unrec
+{
+    display:none;
+}
+
+#nav[state='unrec'] .unrec,
+#nav[state='rec'] .rec
+{
+    display:block;
+}
+
+
+
+#nav [navID=browse] .flyout,
+#nav [navID=ya] .flyout,
+#nav [navID=cart] .flyout,
+#nav [navID=wishlist] .flyout
+{
+    /*width:221px;
+    height:465px;
+    background:url('../images/browse-flyout.png') no-repeat center center;*/
+    background: #2e3741;
+    -moz-border-radius:0px 0px 4px 4px;
+    -webkit-border-radius:0px 0px 4px 4px;
+
+    padding: 3px 0px 0px 0px;
+    -moz-box-shadow: 0px 5px 35px 10px rgba(0, 0, 0, .15);
+    -webkit-box-shadow: 0px 5px 35px 10px rgba(0, 0, 0, .15);
+    /*width:560px;*/
+}
+
+
+
+
+
+/* BROWSE MENU */
+
+#nav .browse-cell
+{
+    /*padding-left:27px;*/
+    padding-right:0px;
+    padding-left:21px;
+    display:none;
+}
+
+
+
+/*#nav [navID=browse] .trigger,
+#nav [navID=browse] .trigger[active]
+{
+    width:105px;
+    height:34px;
+    padding:0px;
+
+
+}*/
+
+#nav [navID=browse] .trigger
+{
+    font-weight:bold;
+    font-size:14px;
+    color: #000;
+    height:34px;
+    line-height: 32px;
+    text-align:center;
+    margin-top: -5px;
+    padding-bottom: 5px;
+
+
+}
+
+#nav [navID=browse] .trigger a
+{
+    padding: 6px 10px 0px 10px;
+}
+
+
+
+#nav [navID=browse] .trigger canvas
+{
+    padding: 0px 0px 2px 5px;
+}
+
+
+
+#nav .flyoutMenu canvas[color=black],
+#nav .flyoutMenu[active] canvas[color=white],
+#nav .flyoutMenu[timer] canvas[color=white]
+{
+    display:inline-block;
+
+}
+
+#nav .flyoutMenu canvas[color=white],
+#nav .flyoutMenu[active] canvas[color=black],
+#nav .flyoutMenu[timer] canvas[color=black]
+{
+    display:none;
+}
+
+
+
+
+#nav [navID=browse] .flyout .contents
+{
+    padding: 0px;
+}
+
+#nav [navID=browse] .flyout
+{
+    /*white-space:nowrap;*/
+    width: -moz-max-content;
+    width: intrinsic;
+}
+
+#nav [navID=browse] .flyout [navID=browseLeft],
+#nav [navID=browse] .flyout [navID=browseRight]
+{
+    padding:10px 15px;
+    vertical-align:top;
+    position:relative;
+    /*white-space:normal;*/
+
+}
+#nav [navID=browse] .flyout [navID=browseRight]
+{
+    white-space: normal;
+}
+
+#nav [navID=browse] .flyout [navID=browseRight] .title,
+#nav [navID=browse] .flyout [navID=browseRight] li a
+{
+    white-space:nowrap;
+}
+
+
+
+
+#nav [navID=browse] .flyout [navID=browseLeft]
+{
+    display:inline-block;
+    z-index:2;
+    background: #fff;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    width:180px;
+}
+
+#nav [navID=browse] .flyout [navID=browseRight]
+{
+    display:none;
+    -moz-border-radius:0px 0px 4px 0px;
+    -webkit-border-radius:0px 0px 4px 0px;
+
+}
+
+
+
+#nav [navID=browse] .flyout[showRight] [navID=browseRight]
+{
+    display:inline-block;
+    margin-left:-10px;
+    padding-left: 25px;
+}
+
+#nav [navID=browse] .flyout[showRight] [navID=browseLeft]
+{
+    /*width:180px;*/
+    -moz-box-shadow: 3px 0 3px 0 #ccc;
+    
+    -moz-border-radius:0px 0px 0px 4px;
+
+    -webkit-box-shadow: 3px 0 3px 0 #ccc;
+    -webkit-border-radius:0px 0px 0px 4px;
+}
+
+
+#nav [navID=browse] .flyout [navID=browseRight] .title
+{
+    font-size: 18px;
+    color: #e47911;
+    margin-bottom:5px;
+}
+
+/*#nav [navID=browse] .flyout .contents*/
+#nav .flyout .contents
+{
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    padding:15px;
+    background: #fff;
+
+}
+
+/*#nav [navID=cart] .flyout ,
+#nav [navID=wishlist] .flyout 
+{
+     -moz-border-radius: 0px 4px 4px 4px;
+    -webkit-border-radius: 0px 4px 4px 4px;
+}*/
+
+
+#nav [navID=browse] .flyout ul
+{
+
+    margin:0px;
+    list-style-type:none;
+    list-style-position: outside;
+    padding:0px;
+}
+
+#nav [navID=browse] .flyout [navID=browseRight] ul
+{
+    /*width: 240px;*/
+}
+
+
+/* REMOVING COLUMN FUNCTIONALITY */
+/*#nav [navID=browse] .flyout [navID=browseRight] [menuid=ElectronicsComputers] div.column
+{
+    float:left;
+}
+
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=ElectronicsComputers] div.column ul
+{
+    width:auto;
+}
+
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=ElectronicsComputers] div.column:last-of-type
+{
+    margin-left:25px;
+}*/
+
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=ElectronicsComputers] div.column:last-of-type
+{
+    margin-top:12px;
+}
+
+#nav [navID=browse] .flyout ul li
+{
+    padding: 3px 0px 3px 0px;
+    margin:0px;
+}
+
+#nav [navID=browse] .flyout ul li a
+{
+    width: 100%;
+    display: inline-block;
+}
+
+#nav [navID=browse] .flyout ul li a:link,
+#nav [navID=browse] .flyout ul li a:visited
+{
+    font-size:13px;
+    color: #333;
+}
+
+#nav [navID=browse] .flyout [navID=browseLeft] ul li a[href='#']
+{
+    font-weight:bold;
+}
+
+#nav [navID=browse] .flyout ul li.hover
+{
+    cursor:pointer;
+}
+#nav [navID=browse] .flyout ul li.hover a,
+#nav [navID=browse] .flyout ul li.selected a
+{
+    color: #e47911;
+}
+
+
+
+#nav [navID=browse] .flyout ul li a:hover
+{
+    color: #e47911;
+
+}
+
+#nav [navID=browse] .flyout ul li a[href='#']:hover
+{
+    text-decoration:none;
+}
+
+#nav [navID=browse] .flyout ul li.hover a:not([href='#'])
+{
+    text-decoration:underline;
+}
+
+
+
+
+#nav [navID=browse] .flyout ul li .tagline
+{
+    font-size:11px;
+    color:#666;
+    line-height:11px;
+    font-weight:normal;
+}
+
+#nav [navID=browse] .flyout [navID=browseLeft] ul li:nth-child(7),
+#nav [navID=browse] .flyout [navID=browseLeft] ul li:nth-child(16),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=UnlimitedInstantVideos] ul li:nth-child(2),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=Kindle] ul li:nth-child(3),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=Kindle] ul li:nth-child(8),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=MoviesMusicGames] ul li:nth-child(3),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=MoviesMusicGames] ul li:nth-child(6),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=HomeGardenTools] ul li:nth-child(4),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=HomeGardenTools] ul li:nth-child(11)
+{
+    padding: 3px 0px 7px 0px;
+}
+#nav [navID=browse] .flyout [navID=browseLeft] ul li:nth-child(8),
+#nav [navID=browse] .flyout [navID=browseLeft] ul li:nth-child(17),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=UnlimitedInstantVideos] ul li:nth-child(3),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=Kindle] ul li:nth-child(4),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=Kindle] ul li:nth-child(9),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=MoviesMusicGames] ul li:nth-child(4),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=MoviesMusicGames] ul li:nth-child(7),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=HomeGardenTools] ul li:nth-child(5),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=HomeGardenTools] ul li:nth-child(6),
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=HomeGardenTools] ul li:nth-child(12)
+{
+    border-top: 1px solid #eeeeee;
+    padding: 7px 0px 3px 0px;
+}
+
+#nav [navID=browse] .flyout [navID=browseRight] [menuid=HomeGardenTools] ul li:nth-child(5)
+{
+    padding: 7px 0px 7px 0px;
+}
+
+/* 8px 0px 8px #CCCCCC */
+
+
+
+
+/* YOUR ACCOUNT */
+
+
+
+#nav .ya-cell
+{
+    padding-left:27px;
+    padding-right: 2px;
+}
+
+#nav [navID=ya]
+{
+    margin-top:-3px;
+}
+
+#nav [navID=ya] .trigger,
+#nav [navID=ya] .trigger[active]
+{
+    width:115px;
+    height:33px;
+    /*padding:10px 15px;*/
+
+}
+
+
+#nav [navID=ya]  .trigger
+{
+    /*position:absolute;
+    top:6px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    padding-left:7px;
+    padding-right:7px;
+    */
+    line-height:15px;
+    font-size:12px;
+    overflow:hidden;
+
+    cursor: pointer;
+    width: 115px;
+
+}
+
+#nav [navID=ya] .trigger
+{
+    margin-top: -5px;
+    padding-bottom: 5px;
+}
+#nav [navID=ya] .trigger canvas
+{
+    padding: 0px 0px 2px 10px;
+}
+
+
+
+#nav [navID=ya]  .trigger .welcome
+{
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+#nav .flyoutMenu .trigger a
+
+{
+    color: #333;
+    text-decoration:none;
+    display:inline-block;
+}
+
+#nav .flyoutMenu[active] .trigger,
+#nav .flyoutMenu[timer] .trigger
+{
+    background: #2e3741;
+    -moz-border-radius: 4px 4px 0px 0px;
+    -webkit-border-radius: 4px 4px 0px 0px;
+}
+
+
+#nav .flyoutMenu[active] .trigger,
+#nav .flyoutMenu[active] .trigger a,
+#nav .flyoutMenu[timer] .trigger,
+#nav .flyoutMenu[timer] .trigger a
+{
+    color:white;
+}
+
+
+
+#nav[state=rec] [navID=ya] .flyout ul,
+#nav [navID=wishlist] .flyout ul
+{
+    margin:0px;
+    padding:0px;
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+#nav[state=rec] [navID=ya] .flyout .carat,
+#nav [navID=wishlist] .flyout .carat
+{
+    font-size: 1.25em;
+    color: #E47911;
+    line-height: 0;
+    margin: 0 3px 0 0;
+    font-weight:bold; 
+}
+#nav[state=rec] [navID=ya] .flyout ul li,
+#nav [navID=wishlist] .flyout ul li
+{
+    font-size: 12px;
+    line-height: 15px;
+    margin:0px;
+    padding: 4px 0px;
+}
+
+#nav[state=rec] [navID=ya] .flyout ul li:last-child
+{
+    padding-top:8px;
+}
+
+#nav[state=rec] [navID=ya] .flyout .contents,
+#nav [navID=wishlist] .flyout .contents
+{
+    padding: 6px 15px;
+}
+
+
+
+
+
+
+/*#nav[state=unrec] [navID=ya] .flyout
+{
+    width:215px;
+    height:255px;
+    left:0;
+    background:url('../images/ya-flyout-unrec.png') no-repeat top left;
+}*/
+
+/*#nav[state=rec] [navID=ya] .flyout
+{
+    width:218px;
+    height:257px;
+    left:0;
+    background:url('../images/ya-flyout-rec.png') no-repeat top left;
+}*/
+
+
+
+#nav [navID=cart] .trigger canvas
+{
+    padding: 0px 0px 6px 3px;
+}
+
+#nav [navID=wishlist] .trigger canvas
+{
+    padding: 0px 0px 3px 4px;
+}
+
+
+/* CART */
+
+#nav .cart-cell
+{
+    padding-left:2px;
+    padding-right:2px;
+}
+
+#nav [navID=cart]
+{
+    margin-top:-3px;
+}
+
+#nav [navID=cart] .trigger .cartCount
+{
+    position:absolute;
+    font-size:16px;
+    font-weight:bold;
+    top:2px;
+    left:25px;
+    width:20px;
+    text-align:center;
+    color: #e47911;
+}
+
+#nav [navID=cart] .trigger .cartCount[count='0']
+{
+    display:none;
+}
+
+
+#nav [navID=cart] .trigger  img,
+#nav [navID=wishlist] .trigger  img
+{
+    display:none;
+}
+
+#nav [navID=cart][count='0'][active] .trigger img.empty.active,
+#nav [navID=cart][count='0']:not([active]) .trigger img.empty:not(.active),
+#nav [navID=cart]:not([count='0'])[active] .trigger img.active:not(.empty),
+#nav [navID=cart]:not([count='0']):not([active]) .trigger img:not(.active):not(.empty),
+#nav [navID=wishlist][active] .trigger img.active,
+#nav [navID=wishlist]:not([active]) .trigger img:not(.active)
+{
+    display:inline-block;
+}
+
+
+
+
+#nav [navID=cart][active] .trigger  .cartCount,
+#nav [navID=cart][timer] .trigger .cartCount
+{
+    color:white;
+}
+
+/*#nav [navID=cart] .trigger,
+#nav [navID=cart] .trigger[active]
+{
+
+    width:67px;
+    height:39px;
+    padding:0;
+}*/
+
+/*#nav [navID=cart] .trigger
+{
+    background:url('../images/cart-trigger.png') no-repeat top left;
+}*/
+
+/*#nav.hovering [navID=cart] .trigger
+{
+    background:url('../images/cart-trigger-tooltip.png') no-repeat top left;
+}*/
+
+/*#nav [navID=cart][active] .trigger,
+#nav [navID=cart][timer] .trigger
+{
+    background:url('../images/cart-trigger-active.png') no-repeat center top;
+}*/
+
+/*#nav [navID=cart] .flyout
+{
+    width:218px;
+    height:182px;
+    right:0;
+    background:url('../images/cart-flyout.png') no-repeat top left;
+}*/
+#nav [navID=cart] .flyout,
+#nav [navID=wishlist] .flyout
+{
+    right: 0;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+}
+
+
+#nav [navID=cart] img
+{
+    display:none
+}
+
+#nav [navID=cart] .flyout img[count="2"],
+#nav [navID=cart][count="0"] .flyout img[count="0"],
+#nav [navID=cart][count="1"] .flyout img[count="1"]
+{
+    display:block;
+}
+
+#nav [navID=cart][count="0"] .flyout img[count="2"],
+#nav [navID=cart][count="1"] .flyout img[count="2"]
+{
+    display:none;
+}
+
+
+
+
+/* WISH LIST */
+
+
+
+#nav .wishlist-cell
+{
+    padding-left:2px;
+}
+
+#nav [navID=wishlist]
+{
+    margin-top:-7px;
+    margin-right: -6px;
+}
+
+/*#nav [navID=wishlist] .trigger,
+#nav [navID=wishlist] .trigger[active]
+{
+    width:67px;
+    height:39px;
+    padding:0px;
+}*/
+
+/*#nav [navID=wishlist] .trigger
+{
+    background:url('../images/wishlist-trigger.png') no-repeat top left;
+}*/
+
+/*#nav.hovering [navID=wishlist] .trigger
+{
+    background:url('../images/wishlist-trigger-tooltip.png') no-repeat top left;
+}*/
+
+/*#nav [navID=wishlist][active] .trigger,
+#nav [navID=wishlist][timer] .trigger
+{
+    background:url('../images/wishlist-trigger-active.png') no-repeat top left;
+}*/
+
+#nav [navID=wishlist] .trigger a
+{
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+
+#nav [navID=wishlist] .trigger  img
+{
+    margin-top: 3px
+}
+
+#nav [navID=wishlist] .flyout .heading
+{
+    font-size:12px;
+    color: #e47911;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+#nav [navID=wishlist] .flyout ul li.divider
+{
+    border-top: 1px solid #ddd;
+    padding-top:7px;
+    margin-top:6px;
+}
+
+/*#nav[state=unrec] [navID=wishlist] .flyout
+{
+    width:202px;
+    height:218px;
+    right:0;
+    background:url('../images/wishlist-flyout-unrec.png') no-repeat top left;
+}
+
+#nav[state=rec] [navID=wishlist] .flyout
+{
+    width:202px;
+    height:219px;
+    right:0;
+    background:url('../images/wishlist-flyout-rec.png') no-repeat top left;
+}*/
+
+
+
+
+
+
+
+
+
+#nav [navID=logo]
+{
+    left:23px;
+    top:45px;
+    height:45px;
+    width:118px;
+}
+
+#nav .topRow #swm
+{
+
+    text-align: left;
+
+    float:left;
+}
+
+
+#nav .shadow
+{
+    -moz-box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.4);
+-webkit-box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* flyout color #303943 6px padding */
+
+
+#nav
+{
+    padding: 16px 10px 0px 10px;
+
+    position:absolute;
+    /*height:80px;*/
+    left:0px;
+    top:0px;
+    right:0px;
+    padding-bottom: 10px; /* COMPRESS */
+    /*margin: 0px 10px;*/
+    background: url("https://design.amazon.com/mockups/dishlip/gw/proto/current/nav/images/nav-bg.png") repeat-x bottom center;
+}
+
+#nav[subNav]
+{
+    padding-bottom: 5px; /* COMPRESS */
+    background: url("https://design.amazon.com/mockups/dishlip/gw/proto/current/nav/images/nav-bg-subnav.png") repeat-x bottom center;
+}
+
+#nav, #nav *
+{
+    font-family:arial;
+
+}
+
+#nav a:link,
+#nav a:visited
+{
+    text-decoration:none;
+    color: #333;
+}
+
+#nav a:hover
+{
+    color: #e47911;
+    text-decoration:underline;
+}
+
+
+
+#nav .topRow
+{
+    margin-bottom: 10px; /* COMPRESS */
+    line-height:12px;
+    font-size:12px;
+    padding-bottom: 7px;
+    position:relative;
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+#nav .topRow [navID=divider]
+{
+    position:absolute;
+    left:-10px;
+    right:-10px;
+    bottom:0;
+    height: 1px;
+    background: #ddd;
+}
+
+
+
+
+#nav .topRow #links
+{
+
+    text-align: right;
+    float:right;
+}
+
+#nav .topRow #links a
+{
+    margin-right: 9px;
+    padding-right: 9px;
+    border-right: 1px solid #ccc;
+}
+
+#nav .topRow #links a:last-of-type
+{
+    margin-right: 0px;
+    padding-right: 0px;
+    border-right: none;
+}
+
+#nav .topRow a:link,
+#nav .topRow a:visited
+
+
+{
+    color: #004b91;
+}
+
+#nav .topRow a:hover
+{
+    color: #e47911;
+}
+
+
+
+
+
+
+
+#nav  .searchSuggest .inputWrap
+{
+    background-color: #fff;
+    height: 21px;
+    -moz-border-radius: 6px 0px 0px 6px;
+    -webkit-border-radius: 6px 0px 0px 6px;
+    -webkit-border-radius: 6px 0px 0px 6px;
+    padding: 7px 10px 6px 10px;
+    -moz-box-shadow: 0 1px 2px 1px #c6c6c6 inset;
+    -webkit-box-shadow: 0 1px 2px 1px #c6c6c6 inset;
+}
+
+body.quirks #nav  .searchSuggest .inputWrap
+{
+    /*padding: 8px 10px 5px 10px;*/
+}
+
+#nav .logo-cell,
+#nav .browse-cell,
+#nav .search-suggest-cell,
+#nav .search-button-cell,
+#nav .cart-cell,
+#nav .wishlist-cell,
+#nav .ya-cell
+
+{
+    display:table-cell;
+    vertical-align:middle;
+    white-space: nowrap;
+
+}
+
+
+
+#nav .search-suggest-cell
+{
+    width:100%;
+}
+
+
+
+#nav input.searchInput
+{
+    /*font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;*/
+    font-size: 16px;
+    /*font-weight:bold;*/
+    border: none;
+    margin: 0px;
+    color: #000;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    height: 19px;
+
+    padding: 0px;
+    margin-top:1px;
+    /*background:aqua;*/
+}
+
+#nav input.searchInput[typed=""]
+{
+    color:#999;
+}
+
+#nav input.searchInput[typed=""]:focus
+{
+    color:#000;
+}
+
+
+
+
+
+
+
+
+
+#nav .logo-cell
+{
+    padding-left: 15px;
+}
+
+#nav [navID=logo]
+{
+    background: url("https://design.amazon.com/mockups/dishlip/gw/proto/current/nav/images/logo.png") no-repeat top left;
+    width:104px;
+    height:31px;
+    margin-top:4px;
+}
+
+
+#nav [navID=searchButton]
+{
+
+
+    /*-moz-border-radius:0 6px 6px 0;
+    -webkit-border-radius:0 6px 6px 0;
+    -webkit-border-radius:0 6px 6px 0;
+    -webkit-border-radius: 0 6px 6px 0;*/
+
+    width: 37px;
+    height: 34px;
+    -moz-border-radius:0px;
+    -webkit-border-radius:0px;
+    -webkit-border-radius:0px;
+    -wekit-border-radius: 0px;
+    padding:0px;
+    background: url('https://design.amazon.com/mockups/dishlip/gw/proto/current/nav/images/search-button.png') no-repeat center center;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+/*#nav .bottomRow .rightCol
+{
+    float:right;
+    width: 300px;
+}*/
+
+#nav .bottomRow
+{
+    display:table;
+    width:100%;
+    position:relative;
+    z-index: 1000;
+
+}
+
+
+.bar #nav .bottomRow
+{
+    padding-bottom: 5px;
+}
+
+
+
+/* custom search dropdown */
+
+#nav .searchSuggest .inputWrap .menu
+{
+    position: relative;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    /*min-width: 40px;*/
+    float:right;
+    z-index: 1023;
+    background:white;
+    margin-right:-9px;
+}
+
+#nav .searchSuggest .inputWrap .menu-label
+{
+    display:inline-block;
+    vertical-align: middle;
+}
+#nav .searchSuggest .inputWrap .menu,
+#nav .searchSuggest .inputWrap .menu td,
+#nav .searchSuggest .inputWrap .menu th
+{
+    /*font-family: arial;*/
+
+}
+
+#nav .searchSuggest .inputWrap .menu td,
+#nav .searchSuggest .inputWrap .menu th
+{
+    padding: 2px 7px;
+    white-space: nowrap;
+    /*border-bottom: 1px solid #F0F0F0;*/
+}
+#nav .searchSuggest .inputWrap .menu .contents
+{
+    font-size: 12px;
+    border: 1px solid #ddd;
+    background-color: #FFF;
+    color: #333;
+    position: absolute;
+    top: 26px;
+    left: 0px;
+    right: 0px;
+
+    z-index: 100;
+    border-top: none;
+    /*-moz-box-shadow: black 0 5px 20px -2px;
+-webkit-box-shadow: black 0 5px 20px -2px;
+    -webkit-box-shadow: black 0 5px 20px;*/
+    overflow-x:hidden;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+
+
+
+#nav .searchSuggest .inputWrap .menu .summary
+{
+    font-size: 11px;
+
+    text-align:right;
+
+
+    color: #777;
+    cursor: pointer;
+    height: 26px;
+    line-height: 21px;
+
+    margin-top: -3px;
+    padding: 3px 20px 0px 10px;
+    border-left: 1px solid #fff;
+
+    position:relative;
+}
+
+#nav .searchSuggest .inputWrap .menu .summary:hover,
+#nav .searchSuggest .inputWrap .menu .summary.hover,
+#nav .searchSuggest .inputWrap .menu.open .summary
+{
+    background: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE);
+    background: -webkit-gradient(
+                    linear,
+                    left top,
+                    left bottom,
+                    color-stop(0, #fff),
+                    color-stop(1, #eee)
+                    );
+
+    border-left: 1px solid #ccc;
+    color: #333;
+}
+
+
+
+
+#nav .searchSuggest .inputWrap .menu .summary .thumb
+{
+    height:27px;
+    width:23px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: url("https://design.amazon.com/mockups/dishlip/gw/proto/current/images/down-arrow.png") no-repeat center center;
+}
+
+
+
+#nav .searchSuggest .inputWrap .menu .summary .val
+{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    padding-right: 2px;
+}
+#nav .searchSuggest .inputWrap .menu .summary .overlay
+{
+    position: absolute;
+    background: transparent;
+    z-index: 9999;
+    top: 0px;
+    left: 0px;
+    height: 22px;
+    width: 100%;
+}
+#nav .searchSuggest .inputWrap .menu .contents table
+{
+    width: 100%;
+}
+#nav .searchSuggest .inputWrap .menu .contents th
+{
+    font-size: 11px;
+    font-weight: normal;
+    color: #999;
+}
+#nav .searchSuggest .inputWrap .menu .contents td
+{
+    font-size: 11px;
+    line-height: 11px;
+    font-weight: normal;
+    color: #000;
+    cursor: pointer;
+    padding:4px 10px;
+
+}
+#nav .searchSuggest .inputWrap .menu .contents td.divider
+{
+    border-bottom:1px solid #aaa;
+}
+#nav .searchSuggest .inputWrap .menu .contents td div
+{
+    font-size: 11px;
+    color: #666;
+}
+#nav .searchSuggest .inputWrap .menu .contents .active td,
+#nav .searchSuggest .inputWrap .menu .contents .active td div
+{
+    background-color: #b5d6ef;
+}
+#nav .searchSuggest .inputWrap .menu .contents tr:hover td
+{
+    background-color: #eaf3fa;
+    cursor: pointer;
+}
+#nav .searchSuggest .inputWrap .menu .contents tr.active:hover td
+{
+    background-color: #b5d6ef;
+    cursor: pointer;
+}
+
+
+/* searchSuggest */
+#nav .search-suggest-cell
+{
+    /*padding-left:25px;*/
+    padding-left:27px;
+}
+
+#nav .search-suggest-cell,
+#nav .searchSuggest
+{
+    z-index:10;
+    position:relative;
+}
+
+#nav .searchSuggest input
+{
+    z-index:1000;
+    outline: none;
+    position:relative;
+}
+
+#nav .searchSuggest .panel
+{
+    position:absolute;
+    width: 100%;
+    z-index: -1;
+     -moz-box-shadow: 0 2px 5px 0 #AAAAAA;
+    -webkit-box-shadow: 0 2px 5px 0 #AAAAAA;
+    background: white;
+}
+
+#nav .searchSuggest ul.suggestionsList
+{
+    margin: -10px 0px 0px 2px;
+    padding: 15px 0px 0px 0px;
+    border-top: none;
+    background-color: #fff;
+
+   
+    list-style-type:none;
+
+
+}
+#nav .searchSuggest ul li
+{
+    padding: 1px 6px;
+    margin: 0px;
+    line-height: 22px;
+    font-size:14px;
+}
+
+#nav .searchSuggest ul li .storeContextName
+{
+    color: #666;
+    font-size: 13px;
+}
+
+#nav .searchSuggest ul li .label
+{
+    color: #666;
+    font-size: 12px;
+}
+
+
+#nav .searchSuggest ul li.highlight .storeContextName,
+#nav .searchSuggest ul li.highlight .label
+{
+    color:white;
+}
+
+#nav .searchSuggest ul li.highlight
+{
+    background: #146eb4;
+    color: #fff;
+    cursor: pointer;
+}
+
+#nav .hide
+{
+    display:none;
+}
+
+#nav .clearboth
+{
+    clear:both;
+}
+
+
+
+#nav [navID=subNav]
+{
+
+    padding: 10px 0px 0px 15px;  /* COMPRESS */
+}
+
+#nav [navID=subNav] a.cat
+{
+    font-weight:bold;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#nav [navID=subNav] td
+{
+    padding-right: 15px;
+    font-size: 11px;
+    vertical-align: baseline;
+    line-height: 11px; /* COMPRESS */
+}
+
+#nav [navID=subNav] td:last-child
+{
+    padding-right: 0;
+}
+
+#nav canvas {
+	width:9px;
+	height:5px;
+}

@@ -1,0 +1,779 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>FrUIT Cheatsheet</title>
+
+<!-- CSS -->
+<link href="universal.css" rel="stylesheet" type="text/css" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]> <link href="ie6.css" rel="stylesheet" type="text/css" />
+ <![endif]-->
+
+<!-- JS -->
+<script src="jquery.js" type="text/javascript"></script>
+<script src="snapper.js" type="text/javascript"></script>
+
+</head>
+<body class="ten">
+<script type="text/javascript">checkResolution();</script>
+<div class="snapper mt">
+	<div class="fl1 on12"> &nbsp; </div>
+	<div class="fl1 on14"> &nbsp; </div>
+	<div class="fl1 on16"> &nbsp; </div>
+	<div class="fl10 ">
+		<h1>CSS Class Cheatsheet</h1>
+	    <p>This page contains many examples of the FrUIT framework. Below is a list of HTML tags and CSS classes along with examples and descriptions of what they do. Implementation examples are on the right. There is a breakdown of grid based alignment contaiers at the bottom of this page.</p>
+	    <p>This page uses no custom styles. Everything you see here is built using universal.css.
+	    <table class="data mt">
+	    	<tr>
+	        	<th>List of Available CSS Classes</th>
+	            <th>What They Do</th>
+	        </tr>
+	        <tr>
+	        	<td><code>.showgrid</code></td>
+	            <td class="showgrid">You can use .showgrid in firebug to inspect alignment. Apply the .showgrid class to the container that holds the whole page to turn the grid background on.</td>
+	        </tr>
+	        <tr>
+	        	<td><code>.fl1 .fl2 .fl3, etc</code></td>
+	            <td>.fl stands for "float left." The following number specifies how many columns the container should span. So a container with the class .fl18, for instance, would align to the left side of the screen and be 18 colums wide.</td>
+	        </tr>
+	        <tr>
+	        	<td><code>.fr1 .fr2 .fr3, etc</code></td>
+	            <td>.fr stands for "float right." The following number specifies how many columns the container should span. So a container with the class .fr18, for instance, would align to the right side of the screen and be 18 colums wide.</td>
+	        </tr>
+	        <tr>
+	        	<td><code>.mr1 .mr2 .mr3, etc</code></td>
+	            <td>.mr stands for "margin right." The following number specifies how many columns the container's margin should span. So a container with the class .mr5, for instance, would push itself off the right side of the browser by 5 columns and use the rest of the available horizontal space.</td>
+	        </tr>
+	        <tr>
+	        	<td><code>.ml1 .ml2 .ml3, etc</code></td>
+	            <td><p>.ml stands for "margin left." The following number specifies how many columns the container's margin should span. So a container with the class .ml5, for instance, would push itself off the left side of the browser by 5 columns and use the rest of the available horizontal space.</p>
+	            	<p>.mrX and .mlX tags can also be combined. Say you want a page to have a 4 column fixed container on the left and a 6 column container fixed on the right. You could then make a center column that expands by applying class=".ml4 .mr6"</td>
+	        </tr>
+	        <tr>
+	        	<td><code>.last</code></td>
+	            <td>.last should be applied to the rightmost container classed with .fl and .fr. Containers maintain their alignment by using a 15px right margin. The furthest right container doesn't need this margin.</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.fl</code></td>
+	            <td>"Float Left." Containers with this class will float left with no width applied.</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.fr</code></td>
+	            <td>"Float Right." Containers with this class will float right with no width applied.</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.fw</code></td>
+	            <td>"Full Width." Containers with this class with float left and extend to 100% horizontally.</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.clearboth</code></td>
+	            <td>same as style="clear:both" - Forces content to the next empty line</td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h1&#62;</code></td>
+	            <td style="font-size:100%"><h1>H1</h1></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h2&#62;</code></td>
+	            <td style="font-size:100%"><h2>H2</h2></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h3&#62; </code></td>
+	            <td style="font-size:100%"><h3>H3</h3></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h4&#62;</code></td>
+	            <td style="font-size:100%"><h4>H4</h4></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h5&#62;</code></td>
+	            <td style="font-size:100%"><h5>H5</h5></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h6&#62;</code></td>
+	            <td style="font-size:100%"><h6>H6</h6></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h1 class="txtsmallest"&#62; 
+	&#60;h2 class="txtsmallest"&#62;
+	&#60;h3 class="txtsmallest"&#62;
+	&#60;h4 class="txtsmallest"&#62;
+	&#60;h5 class="txtsmallest"&#62;
+	&#60;h5 class="txtsmallest"&#62; </code></td>
+	            <td style="font-size:100%"><h1 class="txtsmallest">H1</h1> <h2 class="txtsmallest">H2</h2> <h3 class="txtsmallest">H3</h3> <h4 class="txtsmallest">H4</h3> <h5 class="txtsmallest">H5</h5> <h6 class="txtsmallest">H6</h6> </td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h1 class="txtsmaller"&#62; 
+	&#60;h2 class="txtsmaller"&#62;
+	&#60;h3 class="txtsmaller"&#62;
+	&#60;h4 class="txtsmaller"&#62;
+	&#60;h5 class="txtsmaller"&#62;
+	&#60;h5 class="txtsmaller"&#62; </code></td>
+	            <td style="font-size:100%"><h1 class="txtsmaller">H1</h1> <h2 class="txtsmaller">H2</h2> <h3 class="txtsmaller">H3</h3> <h4 class="txtsmaller">H4</h3> <h5 class="txtsmaller">H5</h5> <h6 class="txtsmaller">H6</h6> </td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h1 class="txtsmall"&#62; 
+	&#60;h2 class="txtsmall"&#62;
+	&#60;h3 class="txtsmall"&#62;
+	&#60;h4 class="txtsmall"&#62;
+	&#60;h5 class="txtsmall"&#62;
+	&#60;h5 class="txtsmall"&#62; </code></td>
+	            <td style="font-size:100%"><h1 class="txtsmall">H1</h1> <h2 class="txtsmall">H2</h2> <h3 class="txtsmall">H3</h3> <h4 class="txtsmall">H4</h3> <h5 class="txtsmall">H5</h5> <h6 class="txtsmall">H6</h6> </td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h1 class="txtnormal"&#62; 
+	&#60;h2 class="txtnormal"&#62;
+	&#60;h3 class="txtnormal"&#62;
+	&#60;h4 class="txtnormal"&#62;
+	&#60;h5 class="txtnormal"&#62;
+	&#60;h5 class="txtnormal"&#62; </code></td>
+	            <td style="font-size:100%"><h1 class="txtnormal">H1</h1> <h2 class="txtnormal">H2</h2> <h3 class="txtnormal">H3</h3> <h4 class="txtnormal">H4</h3> <h5 class="txtnormal">H5</h5> <h6 class="txtnormal">H6</h6> </td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h1 class="txtlarge"&#62; 
+	&#60;h2 class="txtlarge"&#62;
+	&#60;h3 class="txtlarge"&#62;
+	&#60;h4 class="txtlarge"&#62;
+	&#60;h5 class="txtlarge"&#62;
+	&#60;h5 class="txtlarge"&#62; </code></td>
+	            <td style="font-size:100%"><h1 class="txtlarge">H1</h1> <h2 class="txtlarge">H2</h2> <h3 class="txtlarge">H3</h3> <h4 class="txtlarge">H4</h3> <h5 class="txtlarge">H5</h5> <h6 class="txtlarge">H6</h6> </td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;h1 class="txtlarger"&#62; 
+	&#60;h2 class="txtlarger"&#62;
+	&#60;h3 class="txtlarger"&#62;
+	&#60;h4 class="txtlarger"&#62;
+	&#60;h5 class="txtlarger"&#62;
+	&#60;h5 class="txtlarger"&#62; </code></td>
+	            <td style="font-size:100%"><h1 class="txtlarger">H1</h1> <h2 class="txtlarger">H2</h2> <h3 class="txtlarger">H3</h3> <h4 class="txtlarger">H4</h3> <h5 class="txtlarger">H5</h5> <h6 class="txtlarger">H6</h6> </td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;p&#62;</code></td>
+	            <td style="font-size:100%"><p>Paragraph text looks like this. Here is some paragraph text. Paragraph text looks like this.</p></td>
+	        <tr>
+			<tr>
+		     	<td><code>&#60;p&#62;&#60;img&#62;</code></td>
+		        <td style="font-size:100%"><p><img src="http://farm4.static.flickr.com/3008/3077017496_83cc58b959_s.jpg" />Paragraph text looks like this. Here is some paragraph text. Paragraph text looks like this.</p></td>
+		    <tr>
+	        <tr>
+	        	<td><code>&#60;p&#62;&#60;img class="left"&#62;</code></td>
+	            <td style="font-size:100%"><p><img class="left" src="http://farm4.static.flickr.com/3008/3077017496_83cc58b959_s.jpg" />Paragraph text looks like this. Here is some paragraph text. Paragraph text looks like this.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;p&#62;&#60;img class="right" &#62;</code></td>
+	            <td style="font-size:100%"><p><img class="right" src="http://farm4.static.flickr.com/3008/3077017496_83cc58b959_s.jpg" />Paragraph text looks like this. Here is some paragraph text. Paragraph text looks like this.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;a&#62;</code></td>
+	            <td style="font-size:100%"><p>Here is a <a href="#">standard hyperlink</a>.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;a class="dynamic" &#62;</code></td>
+	            <td style="font-size:100%"><p>Here is a <a href="#" class="dynamic">dynamic hyperlink</a>.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;a class="noclick" &#62;</code></td>
+	            <td style="font-size:100%"><p>Here is a <a href="#" class="noclick">hyperlink with no click action</a>.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;p class="noLinkDecoration"&#62;
+	&#60;a&#62;</code></td>
+	            <td style="font-size:100%"><p class="noLinkDecoration">Here is a paragraph where the <a href="#">standard links</a> have no underline.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;p class="noLinkDecoration"&#62;
+	&#60;a class="dynamic"&#62;</code></td>
+	            <td style="font-size:100%"><p class="noLinkDecoration">Here is a paragraph where the <a class="dynamic" href="#">dynamic links</a> have no underline.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.txtsmallest</code></td>
+	            <td style="font-size:100%"><p class="txtsmallest">Nine point text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.txtsmaller</code></td>
+	            <td style="font-size:100%"><p class="txtsmaller">Ten point text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.txtsmall</code></td>
+	            <td style="font-size:100%"><p class="txtsmall">Eleven point text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code><strike>.txtnormal</strike></code></td>
+	            <td style="font-size:100%"><p>Default font size is twelve point.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.txtlarge</code></td>
+	            <td style="font-size:100%"><p class="txtlarge">Fourteen point text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.txtlarger</code></td>
+	            <td style="font-size:100%"><p class="txtlarger">Sixteen point text.</p></td>
+	        <tr> 
+	        <tr>
+	        	<td><code>.txtleft</code></td>
+	            <td style="font-size:100%"><p class="txtleft">Left aligned text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.txtright</code></td>
+	            <td style="font-size:100%"><p class="txtright">Right aligned text.</p></td>
+	        <tr>  	
+	        <tr>
+	        	<td><code>.txtctr</code></td>
+	            <td style="font-size:100%"><p class="txtctr">Centered text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.red</code></td>
+	            <td style="font-size:100%"><p class="red">Red text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.green</code></td>
+	            <td style="font-size:100%"><p class="green">Green text.</p></td>
+	        <tr>  	
+	        <tr>
+	        	<td><code>.orange</code></td>
+	            <td style="font-size:100%"><p class="orange">Orange text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.black</code></td>
+	            <td style="font-size:100%"><p class="black">Black text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.drkgry</code></td>
+	            <td style="font-size:100%"><p class="drkgry">Dark Gray text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.gry</code></td>
+	            <td style="font-size:100%"><p class="gry">Gray text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.ltgry</code></td>
+	            <td style="font-size:100%"><p class="ltgry">Light Gray text.</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;hr&#62;</code></td>
+	            <td style="font-size:100%"><hr class="mt" /></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.gl</code></td>
+	            <td>"Gutter Left" - Adds 15px left margin</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.gr</code></td>
+	            <td>"Gutter Right" - Adds 15px right margin</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.mt</code></td>
+	            <td>"Top Margin" - Adds 15px top margin</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.mb</code></td>
+	            <td>"Bottom Margin" - Adds 15px bottom margin</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.pt</code></td>
+	            <td>"Padding Top" - Adds 15px of top padding</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.pb</code></td>
+	            <td>"Padding Bottom" - Adds 15px of top padding</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.pl</code></td>
+	            <td>"Padding Left" - Adds 15px of left padding</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.pr</code></td>
+	            <td>"Padding Right" - Adds 15px of right padding</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.listprice</code></td>
+	            <td style="font-size:100%"><p class="listprice">List Price</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.ourprice</code></td>
+	            <td style="font-size:100%"><p class="ourprice">Our Price</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.savings</code></td>
+	            <td style="font-size:100%"><p class="savings">Savings</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.emphasis</code></td>
+	            <td style="font-size:100%"><p class="emphasis">emphasis</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;sup&#62;</code></td>
+	            <td style="font-size:100%"><p>3<sup>rd</sup></p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;sub&#62;</code></td>
+	            <td style="font-size:100%"><p>H<sub>2</sub>O</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;blockquote&#62;</code></td>
+	            <td style="font-size:100%"><blockquote>Everyone needs to believe in something. I believe I'll have another beer.</blockquote></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;strong&#62; &#60;em&#62; &#60;dfn&#62;</code></td>
+	            <td style="font-size:100%"><strong>Strong</strong>, <em>em</em>, <dfn>dfn</dfn></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;pre&#62;</code></td>
+	            <td style="font-size:100%"><pre>Preformatted
+	and another line
+	and stuff</pre></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;code&#62;</code></td>
+	            <td style="font-size:100%"><code>Pretend this is
+	some code
+	and stuff</code></td>
+	        <tr>
+	        <tr>
+	        	<td><code>&#60;tt&#62;</code></td>
+	            <td style="font-size:100%"><tt>here is
+	some code
+	and stuff</tt></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.carat, .caret</code></td>
+	            <td style="font-size:100%"><p><span class="carat">&#8250;</span> put a span with this class around the &#8250; character</p></td>
+	        <tr>
+	        <tr>
+	        	<td><code>.bullets</code></td>
+	            <td style="font-size:100%">adds bullets to lists without bullets</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.no-bullets</code></td>
+	            <td style="font-size:100%">removes bullets from lists with bullets</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.on10</code></td>
+	            <td>Elements with this class are hidden by default and become visible at 1024</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.on12</code></td>
+	            <td>Elements with this class are hidden by default and become visible at 1280</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.on14</code></td>
+	            <td>Elements with this class are hidden by default and become visible at 1440</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.on16</code></td>
+	            <td>Elements with this class are hidden by default and become visible at 1600</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.onlyon10</code></td>
+	            <td>Elements with this class are only visible at 1024</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.onlyon12</code></td>
+	            <td>Elements with this class are only visible at 1280</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.onlyon14</code></td>
+	            <td>Elements with this class are only visible at 1440</td>
+	        <tr>
+	        <tr>
+	        	<td><code>.onlyon16</code></td>
+	            <td>Elements with this class are only visible at 1600</td>
+	        <tr>
+	    </table>
+
+	</div>
+	<div class="fr1 on12 gl last"> &nbsp; </div>
+	<div class="fr1 on14 gl last"> &nbsp; </div>
+	<div class="fr1 on16 gl last"> &nbsp; </div>
+	<div class="fr10 last">
+		<h2>H2 Heading</h2>
+	    	<p><img class="left" src="http://farm4.static.flickr.com/3219/2737120162_05fb0b55eb_t.jpg" />Nunc in mauris eu urna consequat ornare. Sed arcu dolor, porta in, vehicula a, pulvinar vitae, mi. Sed convallis. In diam ante, <a href="#">vehicula vel, pulvinar ut, condimentum</a> non, metus. In aliquet lacinia massa. Fusce tristique. Quisque aliquam tincidunt justo. Maecenas pharetra viverra augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus arcu sem, imperdiet ac, egestas id, vehicula sed, enim. Donec facilisis neque in mauris. Nullam lobortis tortor ac libero. Duis est. </p>
+	    <h2>H2 Heading</h2>
+	    	<p><img class="right" src="http://farm4.static.flickr.com/3219/2737120162_05fb0b55eb_t.jpg" /><a href="http://www.amazon..." class="stars star_3_5"><span>3.5 of 5 stars</span></a> Etiam accumsan mauris <a href="#">cursus lectus</a>. Curabitur vestibulum nibh sit amet nulla. Donec euismod. Pellentesque ante odio, accumsan at, cursus non, consequat ac, velit. Sed semper. Pellentesque mollis, quam at pharetra accumsan, orci dui cursus dui, eget porttitor diam ante quis libero.</p>
+	    	<p><span class="carat">&#8250;</span> <strong>.carat</strong> class applied to a span with the &#8250; character in it styles the carat appropriately</p>
+	    <div class="fl5">
+	    	<h2>H2 Heading</h2>
+	    	<p>Lorem ipsum dolor sit amet,  elit Sed. <span class="red"><strong>&#8658;</strong></span> <a href="#" class="dynamic">a class="dynamic"</a> facilisis. Suspen disse lobortis, arcu non n diam dolor quise uismod, ante ante sollicitudin</p>
+	    </div>
+		<div class="fl5 last">
+	        <h2>H2 Heading on two lines Airplane pylagtaj</h2>
+	    	<p>Lorem ipsum dolor sit amet, elit. Sed facilisis. Suspendisse lobortis, arcu non sollicitudin euismod, ante</p>
+	    </div>
+	    <div class="fl5 clearboth">
+		    <h3>H3 Heading</h3>
+	    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis. Suspendisse lobortis, arcu non <span class="red"><strong>&#8658;</strong></span> <a href="#" class="noclick">a class="noclick"</a>, ante ante sollicitudin est, et commodo diam dolor quis nisi.</p>
+	    </div>
+	    <div class="fl5 last">
+		    <h3>H3 Heading on 2 lines for Airplane Hanger!@%</h3>
+	    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis. Suspendisse lobortis, arcu non et commodo diam dolor quis nisi.</p>
+	    </div>
+	    <div class="fl5 clearboth">
+	    	<h4>H4 Heading</h4>
+	    	<p  class="noLinkDecoration">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed fac sdsdrwcadc ilisis. Suspens disse ssa sds <span class="red"><strong>&#8658;</strong></span> <a href="#">p class="noLinkDecoration"</a> lobortis, arcu non sollicitudin euismod, ante ante sollicitudin est, et commodo diam dolor quis nisi.</p>
+	    </div>
+	    <div class="fl5 last">
+	    	<h4>H4 Heading two lines for UpperCase logiC@yt</h4>
+	    	<p  class="noLinkDecoration">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed facilisis. Suspendisse ante ante sollicitudin est, et commodo diam dolor quis nisi.</p>
+	    </div>
+	    <div class="fl5 clearboth">
+	    	<h5>H5 Heading</h5>
+	    	<p class="noLinkDecoration">Lorem ipsum doloras assds, conse ctetur <span class="red"><strong>&#8658;</strong></span> <a href="#" class="dynamic">p class="noLinkDecoration" a class="dynamic"</a> adipiscing elit. Sed facilisis. Suspendisse lobortis, arcu non sollicitudin euismod, ante ante sollicitudin est, et commodo diam dolor quis nisi.</p>
+	    </div>
+	    <div class="fl5 last">
+	    	<h6>H6 Heading demonstrates 2 lines for both H5 & H6 YyPpGg</h6>
+	    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis. Suspendisse lobortis, arcu non sollicitudin euismod, ante ante sollicitudin est,</p>
+	    </div>
+
+	    <blockquote class="clearboth"><strong>BLOCKQUOTE:</strong> Nunc in mauris eu urna consequat ornare. Sed arcu dolor, porta in, vehicula a, pulvinar vitae, mi. Sed convallis. In diam ante, <a href="#">vehicula vel, pulvinar ut, condimentum</a> non, metus. In aliquet lacinia massa. Fusce tristique.</blockquote>
+
+	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec diam. Curabitur tristique justo quis diam. Praesent elit. Morbi vel orci et est interdum fringilla. Phasellus lobortis lacus sed diam. Vivamus rhoncus. Fusce blandit magna ut sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+	    <hr />
+	    <h3>Available Color classes:</h3>
+	    	<p><span class="red">.red</span>, <span class="orange">.orange</span> and <span class="green">.green</span>. </p>
+	    <h3>Available Font-Size classes:</h3>
+			<blockquote>
+				<p><strong>Rationale</strong><br />
+				Up to this point Amazon has mixed fonts in a very ad-hoc manner. This framework attempts to add some logical sense to this by using <strong>Verdana for all fonts 12px and below</strong> and <strong>Arial for all fonts above 12px</strong>. Verdana works well for body-copy and small fonts because it renders well at small sizes and it's letter-spacing is generally more consistent and comfortable to read. At larger sizes, however, Verdana is horsy and extremely wide. Verdana looks very inelegant when bolded at large sizes as well. For this reason we've opted to use Arial for larger fonts and headers.</p>
+			</blockquote>
+	    <p class="txtsmallest"><strong>.txtsmallest (9px text)</strong> Aenean pretium lectus eget mauris. Integer pharetra, dolor vitae suscipit bibendum, enim augue sollicitudin odio, in scelerisque</p>
+	    <p class="txtsmaller"><strong>.txtsmaller (10px text)</strong> Integer id ante ut erat facilisis aliquam. Praesent pretium ornare augue. Donec vehicula urna ut magna. </p>
+	    <p class="txtsmall"><strong>.txtsmall (11px text)</strong> Aenean pretium lectus eget mauris. Integer pharetra, dolor vitae suscipit bibendum, enim augue sollicitudin odio, in scelerisque</p>
+	    <p><strong>Default (12px)</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis. Suspendisse lobortis, arcu</p>
+	    <p class="txtlarge"><strong>.txtlarge (14px)</strong> Nunc in mauris eu urna consequat ornare. Sed arcu dolor, porta in, vehicula a, pulvinar vitae, mi. Sed convallis. In diam ante,</p>
+	    <p class="txtlarger"><strong>.txtlarger (16px)</strong> Integer id ante ut erat facilisis aliquam. Praesent pretium ornare augue. Donec vehicula urna ut magna.</p>
+	    <ul>
+	      <li>
+	        <h3>H3 Heading/Unordered List</h3>
+	      </li>
+	      <li>
+	        <h3>Non-Bulleted Sub-list</h3>
+	        <ul class="no-bullets">
+	          <li>dapibus</li>
+	          <li>habitasse</li>
+	        </ul>
+	      </li>
+	      <li>
+	        <h3>Bulleted Sub-list</h3>
+	        <ul>
+	          <li>dapibus</li>
+	          <li><strong>Nested No-Bullets</strong>
+	            <ul class="no-bullets">
+	              <li>Multi Line List Item consectetur adipiscing elit. Sed facilisis. Suspendisse lobortis, arcu</li>
+	              <li>Multi Line List Item. Suspendisse lobortis, arcu consectetur adipiscing elit. </li>
+	            </ul>
+	          </li>
+	          <li>Phasellus</li>
+	        </ul>
+	      </li>
+	      <li>
+	        <h3>Nested no-bullets</h3>
+	        <ol class="no-bullets">
+	          <li>Phasellus</li>
+	          <li><strong>Nested with bullets</strong>
+	            <ol >
+	              <li>Multi Line List Item consectetur adipiscing elit. Sed facilisis. Suspendisse lobortis, arcu</li>
+	              <li>Multi Line List Item. Suspendisse lobortis, arcu consectetur adipiscing elit. </li>
+	            </ol>
+	          </li>
+	          <li>habitasse</li>
+	        </ol>
+	      </li>
+	      <li>
+	        <h3>Phasellus rhoncus</h3>
+	      </li>
+	    </ul>
+	    <hr />
+	    <p><strong>&lt;Sub&gt; &amp; &lt;Sup&gt; tags</strong> dolor quii.  sit amet, consectetur adipiscing elit. Sed facilisis. Suspendisse <sub>Sub text</sub> lobortis, <sup>Sup text</sup> arcu non sollicitudin euismod, ante ante sollicitudin est  sit amet, consectetur adipiscing elit. Sed facilisis. Suspendisse </p>
+	    <p>&lt;code&gt; <code> Nunc in mauris eu urna consequat ornare.
+	      urna consequat ornare.
+	      mauris eu urna.</code><br />
+	      &lt;/code&gt;</p>
+	    <p>&lt;tt&gt; <tt> Nunc in mauris eu urna consequat ornare.
+	      urna consequat ornare.
+	      mauris eu urna.</tt> &lt;/tt&gt;</p>
+	    <pre>
+	&lt;pre&gt;
+	Nunc in mauris eu urna consequat ornare.
+	urna consequat ornare.
+	mauris eu urna.
+	&lt;/pre&gt;</pre>
+		<table class="data" cellpadding="0" cellspacing="0">
+	      <tr>
+	        <th>.data table</th>
+	        <th>Table Heading</th>
+	        <th>Another Heading</th>
+	      </tr>
+	      <tr>
+	        <td>row 1, cell 1</td>
+	        <td>row 1, cell 2</td>
+	        <td>row 1, cell 3</td>
+	      </tr>
+	      <tr>
+	        <td>row 2, cell 1</td>
+	        <td>row 2, cell 2</td>
+	        <td>row 2, cell 3</td>
+	      </tr>
+	      <tr>
+	        <td>row 3, cell 1</td>
+	        <td>row 3, cell 2</td>
+	        <td>row 3, cell 3</td>
+	      </tr>
+	    </table>
+
+	    <table class="data hlines" cellpadding="0" cellspacing="0">
+	      <tr>
+	        <th>.data Table</th>
+	        <th>Table Heading</th>
+	        <th>Another Heading</th>
+	      </tr>
+	      <tr>
+	        <td>row 1, cell 1</td>
+	        <td>row 1, cell 2</td>
+	        <td>row 1, cell 3</td>
+	      </tr>
+	      <tr>
+	        <td>row 2, cell 1</td>
+	        <td>row 2, cell 2</td>
+	        <td>row 2, cell 3</td>
+	      </tr>
+	      <tr>
+	        <td>row 3, cell 1</td>
+	        <td>row 3, cell 2</td>
+	        <td>row 3, cell 3</td>
+	      </tr>
+	    </table>
+
+	    <table class="data hlines" cellpadding="0" cellspacing="0">
+	      <tr>
+	        <th>.data Table</th>
+	        <td>row 1, cell 2</td>
+	        <td>row 1, cell 3</td>
+	      </tr>
+	      <tr>
+	        <th>Table Heading</th>
+	        <td>row 2, cell 2</td>
+	        <td>row 2, cell 3</td>
+	      </tr>
+	      <tr>
+	        <th>Table Heading</th>
+	        <td>row 3, cell 2</td>
+	        <td>row 3, cell 3</td>
+	      </tr>
+	    </table>
+		<div class="fl10 last">
+			<div class="cBoxSecEyebrow clearboth">
+		    	<h2>H2 Title goes here</h2>
+		        <div class="cBoxInner">
+		        	<h2>Another H2</h2>
+		            <p>.cBoxSecEyebrow</p>
+		        </div>
+		        <span class="cBoxTL"><!-- &nbsp; --></span>
+		        <span class="cBoxTR"><!-- &nbsp; --></span>
+		        <span class="cBoxBL"><!-- &nbsp; --></span>
+		        <span class="cBoxBR"><!-- &nbsp; --></span>
+			</div>
+		</div>
+		<div class="fl10 last">
+	         <div class="cBoxSecEyebrow">
+	         	<h3>H3 Title goes here</h3>
+	            <div class="cBoxInner">
+	            	<h3>Another H3</h3>
+	                <p>.cBoxSecEyebrow</p>
+	            </div>
+	            <span class="cBoxTL"><!-- &nbsp; --></span>
+	            <span class="cBoxTR"><!-- &nbsp; --></span>
+	            <span class="cBoxBL"><!-- &nbsp; --></span>
+	            <span class="cBoxBR"><!-- &nbsp; --></span>
+	    	</div>
+		</div>
+	    <h2>H2 header</h2>	
+	    <div class="fl10 last">
+	        <div class="cBoxPrimary" >
+	        	<div class="cBoxInner">
+	            	<h2>H2 Header</h2>
+	                <p>.cBoxPrimary</p>
+	                <h3>H3 header</h3>
+	                <p>Primary Box</p>
+	            </div>
+				<span class="cBoxTL"><!-- &nbsp; --></span>
+	            <span class="cBoxTR"><!-- &nbsp; --></span>
+	            <span class="cBoxBL"><!-- &nbsp; --></span>
+	            <span class="cBoxBR"><!-- &nbsp; --></span>
+	        </div>
+		</div>
+		<h3>H3 header</h3>	
+	    <div class="fl10 last">
+	        <div class="cBoxSecondary" >
+	        	<div class="cBoxInner">
+	            	<h2>H2 Header</h2>
+	                <p>.cBoxSecondary</p>
+	                <h3>H3 header</h3>
+	                <p>Secondary Box</p>
+	            </div>
+				<span class="cBoxTL"><!-- &nbsp; --></span>
+	            <span class="cBoxTR"><!-- &nbsp; --></span>
+	            <span class="cBoxBL"><!-- &nbsp; --></span>
+	            <span class="cBoxBR"><!-- &nbsp; --></span>
+	        </div>
+		</div>
+		<div class="fl5">
+	         <div class="cBoxTan">
+	             <div class="cBoxInner">
+	                 <p><strong>.cBoxTan</strong> Fusce vulputate risus iaculis elit. Mauris purus felis, viverra eget, vestibulum vel, sagittis vitae, felis. Sed metus enim, mollis vel, pulvinar ac,</p>
+	             </div>
+	             <span class="cBoxTL"><!-- &nbsp; --></span>
+	             <span class="cBoxTR"><!-- &nbsp; --></span>
+	             <span class="cBoxBL"><!-- &nbsp; --></span>
+	             <span class="cBoxBR"><!-- &nbsp; --></span>
+	         </div>
+	     </div>
+	     <div class="fl5 last">
+	         <div class="cBoxGryBrdr">
+	             <div class="cBoxInner">
+	                 <p><strong>.cBoxGryBrdr</strong> Fusce vulputate risus iaculis elit. Mauris purus felis, viverra eget, vestibulum vel, sagittis vitae, felis. Sed metus enim, mollis vel, </p>
+	             </div>
+	             <span class="cBoxTL"><!-- &nbsp; --></span>
+	             <span class="cBoxTR"><!-- &nbsp; --></span>
+	             <span class="cBoxBL"><!-- &nbsp; --></span>
+	             <span class="cBoxBR"><!-- &nbsp; --></span>
+	         </div>
+	     </div>
+				<hr class="clearboth"/>
+				<h3>CSS Buttons</h3>
+				<p>These buttons utilize a png24 background sprite and will work with any background color or pattern. These work, but the markup could be re-written and the sprites re-created to be more efficient. They need one sprite for their backgrounds and one for the end caps.</p>
+				<div class="fl5">
+					<p class="bg-blu pt pb">blah <a class="PrmryBtnLrg" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p class="bg-tan pt pb">blah <a class="PrmryBtnLrgDdn" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnLrgRarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnLrgLarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnLrgLarw2" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnLrgCrt" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+
+					<p>blah <a class="PrmryBtnMed" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnMedDdn" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnMedRarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnMedLarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnMedLarw2" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnMedCrt" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					
+					<p>blah <a class="PrmryBtnSml" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="PrmryBtnSmlDdn" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+
+				</div>
+				<div class="fl5 last">
+					<p class="bg-grn pt pb">blah <a class="ScndryBtnLrg" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p class="bg-tan pt pb showgrid">blah <a class="ScndryBtnLrgDdn" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnLrgRarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnLrgLarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnLrgLarw2" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+
+					<p>blah <a class="ScndryBtnMed" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnMedDdn" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnMedRarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnMedLarw" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnMedLarw2" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					
+					<p>blah <a class="ScndryBtnSml" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+					<p>blah <a class="ScndryBtnSmlDdn" href="#">Here's a button<span><!-- &nbsp; --></span></a> blah</p>
+				</div>
+	</div>
+
+  <hr class="clearboth mt"  />
+  <div class="showgrid">
+      <h2 class="nb5">All Available container sizes</h2>
+      <p>Fixed-width containers are <span class="bg-blu">blue</span>, expanding containers are <span class="bg-grn">green</span>.</p>
+      
+        <div class="fl1 bg-blu">fl1</div><div class="ml1 bg-grn mt">ml1</div>
+        <div class="fr1 last bg-blu mt">fr1</div><div class="mr1 bg-grn mt">ml1</div>
+        
+        <div class="fl2 bg-blu mt">fl2</div><div class="ml2 bg-grn mt">ml2</div>
+        <div class="fr2 last bg-blu mt">fr2</div><div class="mr2 bg-grn mt">mr2</div>
+        
+        <div class="fl3 bg-blu mt">fl3</div><div class="ml3 bg-grn mt">ml3</div>
+        <div class="fr3 last bg-blu mt">fr3</div><div class="mr3 bg-grn mt">mr3</div>
+        
+        <div class="fl4 bg-blu mt">fl4</div><div class="ml4 bg-grn mt">ml4</div>
+        <div class="fr4 last bg-blu mt">fr4</div><div class="mr4 bg-grn mt">mr4</div>    
+        
+        <div class="fl5 bg-blu mt">fl5</div><div class="ml5 bg-grn mt">ml5</div>
+        <div class="fr5 last bg-blu mt">fr5</div><div class="mr5 bg-grn mt">mr5</div>
+        
+        <div class="fl6 bg-blu mt">fl6</div><div class="ml6 bg-grn mt">ml6</div>
+        <div class="fr6 last bg-blu mt">fr6</div><div class="mr6 bg-grn mt">mr6</div>
+        
+        <div class="fl7 bg-blu mt">fl7</div><div class="ml7 bg-grn mt">ml7</div>
+        <div class="fr7 last bg-blu mt">fr7</div><div class="mr7 bg-grn mt">mr7</div>
+        
+        <div class="fl8 bg-blu mt">fl8</div><div class="ml8 bg-grn mt">ml8</div>
+        <div class="fr8 last bg-blu mt">fr8</div><div class="mr8 bg-grn mt">mr8</div>
+        
+        <div class="fl9 bg-blu mt">fl9</div><div class="ml9 bg-grn mt">ml9</div>
+        <div class="fr9 last bg-blu mt">fr9</div><div class="mr9 bg-grn mt">mr9</div>
+        
+        <div class="fl10 bg-blu mt">fl10</div><div class="ml10 bg-grn mt">ml10</div>
+        <div class="fr10 last bg-blu mt">fr10</div><div class="mr10 bg-grn mt">mr10</div>
+        
+        <div class="fl11 bg-blu mt">fl11</div><div class="ml11 bg-grn mt">ml11</div>
+        <div class="fr11 last bg-blu mt">fr11</div><div class="mr11 bg-grn mt">mr11</div>
+        
+        <div class="fl12 bg-blu mt">fl12</div><div class="ml12 bg-grn mt">ml12</div>
+        <div class="fr12 last bg-blu mt">fr12</div><div class="mr12 bg-grn mt">mr12</div>
+        
+        <div class="fl13 bg-blu mt">fl13</div><div class="ml13 bg-grn mt">ml13</div>
+        <div class="fr13 last bg-blu mt">fr13</div><div class="mr13 bg-grn mt">mr13</div>
+        
+        <div class="fl14 bg-blu mt">fl14</div><div class="ml14 bg-grn mt">ml14</div>
+        <div class="fr14 last bg-blu mt">fr14</div><div class="mr14 bg-grn mt">mr14</div>
+        
+        <div class="fl15 bg-blu mt">fl15</div><div class="ml15 bg-grn mt">ml15</div>
+        <div class="fr15 last bg-blu mt">fr15</div><div class="mr15 bg-grn mt">mr15</div>
+        
+        <div class="fl16 bg-blu mt">fl16</div><div class="ml16 bg-grn mt">ml16</div>
+        <div class="fr16 last bg-blu mt">fr16</div><div class="mr16 bg-grn mt">mr16</div>
+        
+        <div class="fl17 bg-blu mt">fl17</div><div class="ml17 bg-grn mt">ml17</div>
+        <div class="fr17 last bg-blu mt">fr17</div><div class="mr17 bg-grn mt">mr17</div>
+        
+        <div class="fl18 bg-blu mt">fl18</div><div class="ml18 bg-grn mt">ml18</div>
+        <div class="fr18 last bg-blu mt">fr18</div><div class="mr18 bg-grn mt">mr18</div>
+        
+        <div class="fl19 bg-blu mt">fl19</div><div class="ml19 bg-grn mt">ml19</div>
+        <div class="fr19 last bg-blu mt">fr19</div><div class="mr19 bg-grn mt">mr19</div>
+        
+        <div class="fl20 bg-blu mt">fl20</div><div class="ml20 bg-grn mt">ml20</div>
+        <div class="fr20 last bg-blu mt">fr20</div><div class="mr20 bg-grn mt">mr20</div>
+        
+        <div class="fl21 bg-blu mt">fl21</div><div class="ml21 bg-grn mt">ml21</div>
+        <div class="fr21 last bg-blu mt">fr21</div><div class="mr21 bg-grn mt">mr21</div>
+        
+        <div class="fl22 bg-blu mt">fl22</div><div class="ml22 bg-grn mt">ml22</div>
+        <div class="fr22 last bg-blu mt">fr22</div><div class="mr22 bg-grn mt">mr22</div>
+        
+        <div class="fl23 bg-blu mt">fl23</div><div class="ml23 bg-grn mt">ml23</div>
+        <div class="fr23 last bg-blu mt">fr23</div><div class="mr23 bg-grn mt">mr23</div>
+        
+        <div class="fl24 bg-blu mt">fl24</div><div class="ml24 bg-grn mt">ml24</div>
+        <div class="fr24 last bg-blu mt">fr24</div><div class="mr24 bg-grn mt">mr24</div>
+        
+        <div class="fl25 bg-blu mt">fl25</div><div class="ml25 bg-grn mt">ml25</div>
+        <div class="fr25 last bg-blu mt">fr25</div><div class="mr25 bg-grn mt">mr25</div>
+        
+        <div class="fl26 bg-blu mt">fl26</div><div class="ml26 bg-grn mt">ml26</div>
+        <div class="fr26 last bg-blu mt">fr26</div><div class="mr26 bg-grn mt">mr26</div>
+        
+        <div class="fl27 bg-blu mt">fl27</div><div class="ml27 bg-grn mt">ml27</div>
+        <div class="fr27 last bg-blu mt">fr27</div><div class="mr27 bg-grn mt">mr27</div>
+        
+        <div class="fl28 bg-blu mt">fl28</div><div class="ml28 bg-grn mt">ml28</div>
+        <div class="fr28 last blue mt">fr28</div><div class="mr28 bg-grn mt">mr28</div>
+        
+        <div class="fl29 bg-blu mt">fl29</div>
+        <div class="fr29 last bg-blu mt">fr29</div>  
+        <br class="clearboth"/>
+  </div>
+  <p class="txtctr txtsmallest pb clearboth"><a href="http://www.amazon.com">Amazon.com</a></p>
+</div>
+</body>
+</html>

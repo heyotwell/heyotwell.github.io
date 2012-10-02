@@ -1,0 +1,316 @@
+<!-- cart row templates -->
+<script id="cartRowTemplate" type="text/x-jQuery-tmpl">
+    <tr>
+		<td class="asin-image">
+			 <a class="noLinkDecoration" href="${$item.formatURL()}"><img class="left" src="${$item.getPicture(100)}"/></a>
+		</td>
+		<td>
+		    <p class="noLinkDecoration">
+		        <a class="asin-title" href="${$item.formatURL()}">
+					${title} 
+					{{if variation}}
+						<span class="txtsmall">(${variation})</span>
+					{{/if}}
+				</a>
+				
+				<span>${author}</span>
+				
+				{{if binding}}
+					<span class='binding'>&middot; ${binding}</span>
+				{{/if}}
+				
+		    </p>
+		
+			{{tmpl($item.data) "#asinPrimeEligibilityTemplate"}}
+		
+			{{if condition}}
+				<p>Condition: ${condition}</p>
+			{{/if}}
+			
+			{{if scarcity}}
+				<p><span class='red'>Only ${scarcity} left in stock&mdash;order soon.</span></p>
+			{{/if}}
+			
+			{{if stock}}
+				<p>{{html stock}}</p>
+			{{/if}}
+			
+			{{if shipper}}
+				<p class="noLinkDecoration">Shipped by <a href="#">${shipper}</a></p>
+			{{/if}}
+			
+			{{if promos}}
+				<ul class="promos gry txtsmall">
+					{{each promos}}
+						<li>{{html $value}}</li>
+					{{/each}}
+				</ul>
+			{{/if}}
+			
+			{{if wishlist}}
+				<p class="wishlist txtsmall"><img src="images/wishlist.png"/> Added from <a href="#">${wishlist}'s Wish List</a></p>
+			{{/if}}
+			
+
+            <div class="buttons noLinkDecoration">
+				<a href="#"  rel="cartDelete"><span class="amznButton secondary tiny">Delete</span></a>
+            	<a href="#"  rel="saveForLater"><span class="amznButton secondary tiny">Save for later</span></a> 
+				<!-- <a href="#"  rel="moveToWishList"><span class="amznButton secondary tiny">Move to Wish List</span></a> -->
+				
+				<input type="checkbox" class="gift-cb"> This will be a gift				
+				<span class="txtsmall">(<a href="http://www.amazon.com/exec/obidos/tg/browse/-/759346/pop-up/ref=ox_sc_gift_help_ptc" class="new-window" title"Learn more about marking items as gifts">Learn more</a>)</span>
+				<span class="save-indicator"><img src="http://g-ecx.images-amazon.com/images/G/01/ui/loadIndicators/loading-small.gif" alt="Please wait, loading"/></span>
+				<span class="save-confirm green">Saved</span>
+				
+			</div>
+
+        </td>
+
+        <td class="price">
+			{{tmpl($item.data, $item) '#priceShippingTemplate'}}
+        </td>
+
+        <td class="quantity">
+            <input type="text" size="2" value="${quantity}" />
+			
+			<p class="ourprice">
+				{{if (quantity >= 2)}}
+					${$item.getExtendedPrice()}
+				{{/if}}
+			</p>
+        </td>
+    </tr>
+</script>
+
+<script id="savedRowTemplate" type="text/x-jQuery-tmpl">
+    <tr>
+		<td class="asin-image">
+			 <a class="noLinkDecoration" href="${$item.formatURL()}"><img class="left" alt="${title}" src="${$item.getPicture(100)}"/></a>
+		</td>
+		<td>
+		    <p class="noLinkDecoration">
+		        <a class="asin-title" href="${$item.formatURL()}">
+					${title} 
+					{{if variation}}
+						<span>(${variation})</span>
+					{{/if}}
+				</a>
+				
+				<span>${author}</span>
+				
+				{{if binding}}
+					<span class='binding'>&middot; ${binding}</span>
+				{{/if}}
+
+		    </p>
+		
+			
+			{{if out_of_stock }}
+			  
+		    {{else}}
+				{{tmpl($item.data) '#asinPrimeEligibilityTemplate'}}
+			{{/if}}
+		
+			{{if scarcity}}
+				<p><span class='red'>Only ${scarcity} left in stock&mdash;order soon.</span></p>
+			{{/if}}
+						
+			{{if stock}}
+				<p>{{html stock}}</p>
+			{{/if}}
+						
+			{{if shipper}}
+				<p class="noLinkDecoration">Shipped by <a href="#">${shipper}</a></p>
+			{{/if}}
+			
+			{{if promos}}
+				<ul class="promos gry txtsmall">
+					{{each promos}}
+						<li>{{html $value}}</li>
+					{{/each}}
+				</ul>
+			{{/if}}
+				
+			<div class="buttons noLinkDecoration">
+				<a href="#"  rel="savedDelete"><span class="amznButton secondary tiny">Delete</span</a> 
+            	{{if out_of_stock }}
+				{{else}}
+					<a href="#"  rel="moveToCart"><span class="amznButton secondary tiny">Move to Cart</span</a>
+				{{/if}}
+					<!-- <a href="#"  rel="moveToWishList"><span class="amznButton secondary tiny">Move to Wish List</span></a> -->
+			</div>
+			
+        </td>
+
+        <td class="price noLinkDecoration" colspan="2">
+			{{if out_of_stock }}
+				See <a href="#">${used_count} used &amp; new offers</a> <br />from <span class="red">${$item.formatPrice(used_from_price)}</span>	
+			{{else}}
+				{{tmpl($item.data, $item) '#priceShippingTemplate'}}
+			{{/if}}
+        </td>
+    </tr>
+
+</script>
+
+<script id="priceShippingTemplate" type="text/x-jQuery-tmpl">
+	{{if our_price}}
+		<p class="listprice gry">${$item.formatPrice(list_price)}</p>
+		<p class="ourprice"><b>${$item.formatPrice(our_price)}</b></p>
+	{{else}}
+		<b class="ourprice">${$item.formatPrice(list_price)}</b> 
+	{{/if}}
+	
+	{{if $item.data.shipper}}
+		<p class="txtsmall gry">+${$item.formatPrice(shipping)} shipping</p>
+	{{else}}
+		{{if (!($item.data.prime) && User.isPrime)}}
+			<p class="txtsmall gry">+${$item.formatPrice(shipping)} shipping</p>
+		{{else ($item.data.prime && !(User.isPrime))}}
+			<p class="gry txtsmall" style="margin-top:5px">Eligible for FREE Super Saver Shipping</p>
+		{{/if}}
+	{{/if}}
+</script>
+
+<script id="asinPrimeEligibilityTemplate" type="text/x-jQuery-tmpl">
+	{{if ($item.data.prime && User.isPrime)}}
+		<p class="prime"><img src="images/check-prime.gif" alt="Eligible for Amazon Prime"/></p>
+	{{else (!($item.data.prime) && User.isPrime)}}
+		<p class="gry noLinkDecoration" style="margin-top:5px">Not eligible for Prime (<a href="#" class="txtsmall">Why?</a>)</p>
+	{{/if}}
+</script>
+
+<script id="rviItemsTemplate" type="text/x-jQuery-tmpl">
+	<li>
+		<p class="fl1 noLinkDecoration"><a href="${$item.formatURL()}"><img src="${$item.getPicture(50)}" style="margin-top:5px" /></a></p>
+		<p class="ml1 noLinkDecoration">
+		 	<a href="${$item.formatURL()}">${$item.truncate(title, 50)}</a>
+			<span>${author}</span>
+			<br />
+			<span class="stars ${$item.formatReviewStarsClass(rating)}"><span>${rating} of 5 stars</span></span>
+			<span class="ourprice">${$item.formatPrice(our_price)}</span>
+			<br />
+			<a href="#" ><span class="amznButton primary tiny">Add to Cart</span></a>
+			<!-- <img class="add-to-cart-button" alt="Add this item to your cart" src="images/add-to-cart.png"/>-->
+		</p>
+	</li>
+</script>
+
+<script id="proceedToCheckoutTemplate" type="text/x-jQuery-tmpl">
+	{{if zip}}
+		<h3 class="txtctr">Order Summary</h3>
+		
+		<div id="whitebox">
+		
+			<table class="noLinkDecoration">
+				<tr>
+					<td>Items (${unitCount})</td>
+					<td class="txtright"><span id="subtotal">${$item.formatPrice(subtotal)}</span></td>
+				</tr>
+				<tr id="shipping-row">
+					<td>Estimated Shipping to <a href="#" id="zip-trigger" title="Click to edit your zip code">${zip}</a></td>
+					<td class="txtright">
+						<a href="#" id="ship-cost-trigger">${$item.formatPrice(amazonShipping + merchantShipping)}</a>
+					</td>
+				</tr>
+				<tr id="zip-row" class="hide">
+					<td colspan="2" class="txtctr">Shipping Zip <input type="text" size="5" id="shipping-zip" value="${zip}"/></td>
+				</tr>
+			
+				<tr id="tax-row">
+					<td>Estimated Tax to be Collected</td>
+					<td class="txtright">${$item.formatPrice(tax)}</td>
+				</tr>
+			
+				<tr>
+					<td><h4>Estimated Total</h4></td>
+					<td class="txtright"><h4 id="order-total">${$item.formatPrice(orderGrandTotal)}</h4></td>
+				</tr>
+			</table>
+		
+			<div id="shipping-details-popover" class="hide">
+				<p class="txtright">
+					{{if User.isPrime}}
+						<b>Amazon Prime</b> Two-day Shipping: 
+						<span class="ourprice">FREE</span>
+					{{else}}
+						Estimated <b>Amazon</b> Standard Shipping: 
+						<span class="ourprice">${$item.formatPrice(amazonShipping)}</span>
+					{{/if}}
+				
+				</p>
+			
+				{{each merchants}}
+					<p class="txtright">
+						Estimated <b>${merchantShipperName}</b> Shipping: 
+						<span class="ourprice">${$item.formatPrice(merchantShipping)}</span>
+					</p>
+				{{/each}}
+			</div>
+		
+		</div> 
+		
+	{{else}}
+		<h3 class="txtctr">Items Subtotal: <span id="subtotal">${$item.formatPrice(subtotal)}</span></h3>
+		<p class="txtctr txtsmall noLinkDecoration" style="margin:5px 20px 0 20px">To see a preview of your order total, enter a Shipping Zip: <input type="text" size="5" id="shipping-zip" value="${zip}"/> or <a href="#">Sign in</a></p>
+	{{/if}}
+	
+	<div class="proceed-container">
+	
+		{{if !(User.isPrime)}}
+		<div id="sss" class="txtsmall">
+
+			{{if (subtotal < 25) }}
+				<div id="sss-prompt" >
+					<p>Add <b><span id="sss-difference" class="red">${$item.formatPrice(25 - subtotal)}</span></b> of eligible items to your order to qualify for <b>FREE Super Saver Shipping</b>.
+					<a href="http://www.amazon.com/exec/obidos/subst/misc/super-saver-shipping-pop-up.html/ref=mk_sss_hucart/ref=ord_cart_shr" class="new-window txtsmall">See details</a></p>
+				</div>
+			{{else}}
+				<div id="sss-qualified">
+					<p class="noLinkDecoration"><b>Part of your order qualifies for free shipping!</b> (<a href="http://www.amazon.com/gp/help/customer/display.html/ref=ord_cart_shr?ie=UTF8&nodeId=527692&pop-up=1" class="new-window" title="Learn more about free shipping">Learn more</a>) Select FREE Super Saver Shipping at checkout. </p>	
+				</div>
+			{{/if}}
+
+		</div>
+		{{/if}}
+	
+		<p class="txtctr"><img id="ptc-button" alt="Proceed to Checkout" src="http://g-ecx.images-amazon.com/images/G/01/x-locale/shopping-cart/proceed-to-checkout.gif"></p>
+		
+		<p class="txtsmall txtctr">or</p>
+		
+		<div id="one-click-prompt" class="txtctr txtsmall noLinkDecoration">
+			<a href="#">Sign in</a> to turn on 1-Click shopping.
+		</div>
+		
+		<div id="one-click" class="txtctr">
+			<p><img src="http://g-ecx.images-amazon.com/images/G/01/x-locale/shopping-cart/buy-with-one-click.gif" alt="Buy all items in your cart with 1 Click"></p>
+			<p class="txtsmall">Ship to: 
+				<select class="txtsmaller">
+					<option value="jmrhnplot">AO- 3720 SW Ida</option>
+					<option value="jhrppsitpo">AO c/o AMZN</option>
+					<option value="jorlruptrk">Austria Address</option>
+					<option value="jnmmrulpqp">Don Roberts- DELMAR</option>
+					<option value="jnmmrunupp">Donald Roberts- DELMAR</option>
+					<option value="jorlrrjpqk">German Address</option>
+					<option value="nhomsrmnq">Heather E Mathews</option>
+					<option value="jppomqkqsp">John Smith- SEATTLE</option>
+					<option value="nhomnxpsq">Marianne Houghton</option>
+					<option value="lpqjoxirm">Matt Webb (S&amp;W)</option>
+					<option value="jjqkpvmot">Rosemary Thompson- St. Davids</option>
+					<option value="rpqmprnot">Sarah and Paul De- FREELAND</option>
+					<option value="jmrmpoopsp">Stefan Smagula- BROOKLYN</option>
+					<option value="kgjprqiuqp">Test Address with- SEATTLE</option>
+					<option value="pnjkkvmsq">Thomas Otwell</option>
+					<option value="nhonlqprq">Tressa and Don</option>
+					<option value="jhnhnojosl">UK Test Address</option>
+					<option value="">----OR----</option>
+					<option value="add-new">Add an address</option>
+				</select>
+			</p>
+			<p class="txtsmaller txtctr noLinkDecoration"><a href="#">Edit your 1-Click addresses and settings</a></p>
+		</div> <!-- end 1click -->
+
+	</div> <!-- end proceed-container (white box) -->
+</script>
+
+

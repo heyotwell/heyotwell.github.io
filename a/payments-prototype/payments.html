@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Payment</title>
+<link rel="stylesheet" href="css/yahoo-grids-fonts-reset.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/payment.css" />
+<link rel="stylesheet" type="text/css" href="css/rounded-boxes.css" />
+<link rel="stylesheet" type="text/css" href="css/error-styles.css" />
+
+<script src="javascript/jquery-1.2.6.min.js" type="text/javascript" ></script>
+
+<script src="javascript/jquery.validate.min.js" type="text/javascript"></script>
+<script src="javascript/jquery.dimensions.min.js" type="text/javascript"></script>
+<script src="javascript/jquery.getUrlParam.js" type="text/javascript"></script>
+
+
+<!-- prototyper consolidates setting up prototyping tools like the design note -->
+<script src="javascript/prototyper.js" type="text/javascript" ></script>
+
+<!-- payments.js contains all the custom Javascript for this page -->
+<script src="javascript/payments.js" type="text/javascript" ></script>
+
+
+<script type="text/javascript">
+	//entries for design note
+	var designNoteContent = [
+		{href: "payments.html",			text: "Multiple payment instruments"},
+		{href: "?state=one-cc",			text: "One credit card"},
+		{href: "?state=cc-ca",			text: "CC + Checking"},
+		{href: "?state=plcc", 			text: "Customer has a PLCC"},
+		{href: "?state=gc_only",		text: "GC covers order total"},
+		{href: "?state=gc-incomplete-pp",	text: "GC, but no other payment method"},
+		{href: "?state=sva",				text:	"Customer has SVA balance"},
+		{href: "?state=pcard",				text: "Customer using p-card"},
+		{href: "?state=no-cctype-api",	text: "Show cc-type dropdown"},	
+		{														text: "Exceptions"},
+		{href: "?state=blank",			text: "Blank slate"},
+		{href: "?state=amnesia", 		text: "Address challenge"},
+		{href: "?state=error", 			text: "Page-level Error Message"},
+		{href: "?state=inlineerror", 	text: "Inline Error Message"},
+		{href: "?state=expired-card",	text: "Expired Credit Card alert"},
+		{href: "?state=ib-buyer",		text: "IB: Buyer"},
+		{text: "Maestro cards start with '56'"},
+		{href:"?state=maestro-issue",	text: "Existing Maestro card, issue number"},
+		{href:"?state=maestro-sd",		text: "Existing Maestro card, start date"},
+		{								text: "Sample GC: 'ABCD'"},
+		{								text: "Sample promo: '1234'"}
+		
+	];
+  
+	
+	
+ </script>
+
+
+
+<!--[if IE 6]>
+	<style>
+		#doc {width:900px;}
+		#dashboard-wrapper_TL {left:-5px;} 
+
+		#order-summary { width:220px;}
+		#os-wrapper {padding-top:4px;}
+		
+		#existing-instruments_BR {right:-1px;}
+		#existing-instruments_TR {right:-1px;}
+		
+		.message span.mini {font-size:4px;}
+		div.payment-method {zoom:1;}
+		
+		/* added dynamically */
+		#os-border-blocker {
+			width:1px;
+			font-size:1px;
+			position: absolute;
+			top:0px; left:-1px;
+		}
+	</style>
+
+<script type="text/javascript">
+
+	function positionElements(){
+		//calculate correct position of db wrapper BL (always shown)
+		var dwBL_y = $("#existing-instruments").height() + 15 + "px";
+		$("#dashboard-wrapper_BL").css({'top':dwBL_y,'left':'-5px'});
+		
+		//calculate correct position of wrapper-BR (shown conditionally)
+		var wBR_y = $("#wrapper").height() - 4 + "px";
+		$("#wrapper-BR").css({'top':wBR_y, 'right':'0px'});
+
+		//position of os-wrapper-BL (shown conditionally)
+		var oswBL_y = $("#wrapper").height() - 6 + "px";
+		$("#os-wrapper-BL").css({'top':oswBL_y});
+
+		//calculate correct position of os-wrapper-BR (shown conditionally)
+		var oswBR_y = $("#wrapper").height() - 6 + "px";
+		$("#os-wrapper-BR").css({'top':oswBR_y});
+		
+		//calculate correct position of elbow (shown conditionally)
+		var elbow_y = $("#existing-instruments").height() + 18 + "px";
+		var elbow_x = $("#existing-instruments").width() + 12 + "px";
+		$("#elbow").css({'top':elbow_y,'left':elbow_x});
+		
+		//create a tiny div to cover the left border of os-wrapper
+		//make it the correct size and background-color to appear invisible
+		$("#order-summary").append("<div id='os-border-blocker'>&nbsp</div>");
+		$("#os-border-blocker").height($("#dashboard-wrapper").height() + 7).css("background-color", $("#wrapper").css("background-color"));		
+	}
+</script>
+  
+<![endif]-->
+
+
+</head>
+
+<body>
+
+<div id="doc" class="yui-t7">
+  
+	<div id="hd">
+    <div id="progressbar"><img src="images/progressbar-payments.gif" alt="placeholder" /></div>
+		
+			<h1>How would you like to pay?</h1>
+		
+		<!-- marketing? -->
+		<div class="marketing">
+		
+			<img src="images/assets/get-30-back-button.gif" style="margin-top:10px;" alt="Get $30 Back Instantly" />
+			<p>Your cost could be <span>$194.71 instead of $224.71</span>! Get the NEW <strong>Amazon.com Rewards Visa<sup>&reg;</sup> Card INSTANTLY</strong> and you'll <strong>automatically get $30.00</strong> back after your first purchase. <a href="#"><strong>Get $30 Back</strong></a></p>
+		</div>
+		
+		<div class="message warning" style="display:none;">
+			<span></span>
+			<h6>Your MasterCard expires this month</h6>
+			<p>You can enter a new expiration date below.</p>
+		</div>
+		
+			<div class="message error" style="display:none;">
+			<span></span>
+			<h6>Sorry, there was a problem</h6>
+			<p>Bill Me Later<sup>®</sup> was unable to authorize your transaction. Please select another payment method.</p>
+		</div>
+		
+		
+			
+		
+  </div>
+  
+	<div id="bd">
+   
+  	<div class="yui-g">
+				
+			<div id="wrapper">
+				<div id="wrapper-BR" class="corner"></div>
+			
+				<!-- blue rounded corner box -->
+				<div id="os-wrapper">
+					<div id="os-wrapper-TR" class="corner"></div>
+					<div id="os-wrapper-BR" class="corner"></div>
+					<div id="os-wrapper-BL" class="corner"></div>
+					
+					<div id="order-summary">
+						<div class="head"><h3 style="text-shadow: 0px 1px 0 rgba(14,71,125,.75);">Order Summary</h3></div>
+						<div class="body">
+							<table>
+								<tr>
+									<td>Items</td>	
+									<td class="price">$199.99</td>
+								</tr>
+								<tr id="promo_subtotal" style="display:none">
+									<td>Promotions applied</td>
+									<td class="price">-$3.00</td>
+								</tr>
+								<tr>
+									<td>Estimated Shipping</td>	
+									<td class="price">$6.17</td>
+								</tr>
+								<tr>
+									<td colspan="2"><div class="hr">&nbsp;</div></td>
+								</tr>
+								<tr>
+									<td>Total Before Tax</td>
+									<td class="price">$206.16</td>
+								</tr>
+								<tr>
+									<td>Estimated Tax</td>
+									<td class="price">$18.55</td>
+								</tr>
+								<tr id="gc_subtotal">
+									<td>Gift Cards</td>	
+									<td class="price">-$28.00</td>
+								</tr>
+								<tr>
+									<td class="total">Order Total</td> 
+									<td class="price" id="order-grand-total">$196.71</td>
+								</tr>
+							</table>
+						
+							<p class="continue">
+								<input type="image" src="images/buttons/continue.gif" alt="Continue" class="continue_button" tabindex="0"/> <span>(You'll be able to review this order before it's final.)</span></p>
+							</div> <!-- end body -->
+					</div> <!-- end order-summary-->
+				 
+				<p id="pcard-input" style="font-size:88%;padding:2px 10px; text-align:left; display:none;">Reference number (optional):<input type="text" style="width:180px" maxlength="17" /></p>
+				
+				<p id="os-summary-spinner" style="border:1px #A5CDEC solid; position:absolute; top:40%; right:30%; padding:10px; background-color:white; display:none;"><img src="images/assets/loading-medium.gif" alt="Please wait, loading" /></p>
+				</div> 
+				<!-- end os-wrapper -->
+				
+				
+				<!-- blue rounded corner box -->
+				<div id="dashboard-wrapper">
+					<div id="dashboard-wrapper_TL" class="corner"></div>
+					<div id="dashboard-wrapper_BL" class="corner"></div>
+					
+					<div id="elbow"></div>
+					
+					<!-- white rounded corner box -->
+					<div id="existing-instruments">
+						<div id="existing-instruments_TR" class="corner"></div>
+						<div id="existing-instruments_BR" class="corner"></div>
+						<div id="existing-instruments_BL" class="corner"></div>
+						<div id="existing-instruments_TL" class="corner"></div>
+						
+						<div id="blankslate" style="display:none;">
+							<p>Enter how you’d like to pay below, and we’ll save it as an option.</p>
+						</div>
+							
+						<div id="amnesia-message" style="display:none;">
+							<h3>Please re-enter your payment information</h3>
+							<ul>
+								<li>Because this is the first time you're shipping to this address, we want to make sure this is an authorized use of your account.</li>
+								<li>We won’t bother you with this extra step next time you send something to this address.</li>
+							</ul>
+						</div>
+						
+						<table class="cc">
+								<thead>
+									<tr>
+										<th colspan="3"><em>Your credit &amp; debit cards</em></th>
+										<th>Name on card</th>
+										<th class="expires">Expires on</th>
+									</tr>
+								</thead>
+								<tbody id="existing-credit-cards">
+									<tr class="current">
+										<td class="payment-method-selector">
+											<input name="pm" type="radio" id="pm_0" checked="checked" title="Discover ending in 9397"/> 
+											
+										</td>
+										<td class="payment-method-logo">
+											<img src="images/card-logos-small/discover.gif" alt="Discover" />
+										</td>
+										<td class="payment-method-name">
+											<label for="pm_0"><strong>Discover</strong> <span>ending in 9397<span></label>
+										</td>
+										<td class="name-on-account">Andrew Otwell</td>
+										<td class="expires">06/2010</td>
+									</tr>	
+									<tr>
+										<td class="payment-method-selector"><input type="radio" name="pm" id="pm_1" title="MasterCard ending in 1111" /></td>
+										<td class="payment-method-logo">
+											<img src="images/card-logos-small/mc.gif" alt="MasterCard" />
+										</td>
+										<td class="payment-method-name"> 
+										
+											<label for="pm_1">
+												<strong>MasterCard</strong> <span>ending in 1111<span>
+													
+												<!-- for Maestro cards: either this... -->
+												<b id="maestro-issue-no" style="display:none">
+													Issue Number:
+													<input type="text" size="2" maxlength="2" value="37"/>
+												</b>
+											
+												<!-- or this -->
+												<b id="maestro-start-date" style="display:none">
+													Start date:
+													<select>
+														<option>01</option>
+														<option>02</option>
+														<option>03</option>
+													</select>
+													<select>
+														<option>2009</option>
+														<option>2010</option>
+													</select>
+												</b>
+											</label>
+											
+										</td>
+										<td class="name-on-account">Andrew Otwell</td>
+										<td class="expires">06/2012</td>
+									</tr>	
+									<tr style="display:none;">
+										<td class="payment-method-selector"><input type="radio" name="pm" id="pm_2" title="Amazon Store Card ending in 9876"/> </td>
+										<td class="payment-method-logo">
+											<img src="images/card-logos-small/plcc.gif" alt="Amazon.com Store Card" /></td>
+										<td class="payment-method-name">
+										<label for="pm_2"><strong>Amazon.com Store Card</strong> <span>ending in 9876</span></label></td>
+										<td class="name-on-account">Andrew Otwell</td>
+										<td class="expires">Does not expire</td>
+									</tr>	
+								</tbody>
+						</table>
+						
+							<table>
+								<thead>
+									<tr>
+										<th colspan="3"><em>Your checking account</em></th>
+										<th>Name on account</th>
+									</tr>
+								</thead>
+								<tbody id="existing-checking-accounts">
+									<tr>
+										<td class="payment-method-selector"><input type="radio" name="pm" id="pm_3" title="Chase" /></td>
+										<td class="payment-method-logo">
+											<img src="images/card-logos-small/chase.png"></td>
+										</td>
+										<td class="payment-method-name"><label for="pm_3"><strong>Chase Checking</strong></label></td>
+										<td class="name-on-account">Andrew Otwell</td>
+									</tr>
+								</tbody>
+							</table>
+							
+							<table style="display:none;">
+								<thead>
+									<tr>
+										<th colspan="3"><em>Payment Accounts</em></th>
+										<th>Account Owner</th>
+									</tr>
+								</thead>
+								<tbody id="existing-paypal-account">
+									<tr>
+										<td class="payment-method-selector"><input type="radio" name="pm" id="pm_9" title="Paypal" /></td>
+										<td width="2%"><img src="images/card-logos-small/paypal.gif" /></td>
+										<td><label for="pm_9"><strong>Paypal Account</strong></label></td>
+										<td>otwell@amazon.com</td>
+									</tr>
+								</tbody>
+							</table>
+							
+						
+							<table class="balance">
+								<thead>
+									<tr>
+										<th colspan="2"><em>Your available balance</em></th>
+									</tr>
+								</thead>
+								<tbody id="existing-balance">
+									<tr>
+										<td class="payment-method-selector"><input name="gc" type="checkbox" id="pm_4" value="" checked="checked" /></td>
+										<td>
+											<label for="pm_4">Use your <strong>$28.00 Gift card and promotional balance</strong></label>
+											<!--<p id="gc-warning" style="font-size:85%; margin-left:24px;">Your Gift card and promotional balance will be fully applied to your order when you check out.</p> -->
+											<ul class="extended">
+												<li>$25.00 Gift card balance</li>
+												<li>$3.00 Promotional balance </li>
+											</ul>
+										</td>
+									</tr>
+									
+									<tr style="display:none">
+										<td class="payment-method-selector"><input name="ap" type="checkbox" id="pm_11" value="" checked="checked" /></td>
+										<td>
+											 <label for="pm_11">Use your <strong>$10.00 <img src="images/pay-method-logos/amazon-payments.gif" alt="Amazon Payments" /> balance</strong></label>
+										</td>
+									</tr>
+								
+								</tbody>
+							</table>
+					</div> <!-- end existing-instruments -->
+					
+				</div> <!-- end dashboard-wrapper -->
+				
+			</div> <!-- end wrapper -->
+				
+
+			<div id="new-methods-list">
+			
+				<h1 style="margin:20px 0 5px 0">Other payment options</h1>
+			
+			<!-- CREDIT CARDS -->
+			
+			<div class="payment-method" id="cc">
+				<img class="logo" style="margin-bottom:10px" src="images/pay-method-logos/credit-cards.gif"  alt="Amazon accepts, Mastercard, Visa, Discouver, Diner's Club, American Express, and JCB credit cards" />
+				<h2>Credit or Debit Cards</h2>
+				
+				<div class="offer">
+					<p class="add"><input type="image" src="images/buttons/add-new-card.gif" class="toggle-create" /></p>
+					<p>Amazon.com accepts all major credit and debit cards.</p>
+				</div>
+				
+				<div class="create" style="display:none;">
+					<h3>Enter your credit or debit card information:</h3>
+					<form id="new-cc" action="">
+					
+					<div class="message error mini" style="display:none;">
+						<span class="mini"></span>
+						<h6>Sorry, there was a problem</h6>
+						<ul>
+							<li><label for="newCreditCardNumber" style="display: inline;">Card number is required.</label></li>
+							<li><label for="ccname" style="display: inline;">Cardholder's name is required</label></li>
+							<li><label for="cctype" style="display: inline;">Card type is required</label></li>
+							<li><label for="ccmonth" style="display: inline;">Expiration date is invalid</label></li>
+						</ul>
+					</div>
+				
+					<table class="new">
+						<tr>
+							<th><label for="newCreditCardNumber">Card number</label></th>
+							<th><label for="cc-name">Name on card</label></th>
+							<th><label for="ccyear">Expiration date</label></th>
+						</tr>	
+						<tr>
+							<td>
+								<input type="text" id="newCreditCardNumber" name="ccnum" autocomplete="off" class="required" minlength="15" /> <img src="images/card-logos-small/blank.gif" id="cc-logo" alt="" />
+							</td>
+							<td>
+								<input type="text" id="ccname" name="ccname" size="20" class="required"  minlength="4" />
+							</td>
+							<td>
+								<select name="ccmonth" id="ccmonth" title="month">
+									<option>01</option>
+									<option>01</option>
+								</select>
+								
+								<select name="ccyear" id="ccyear" title="year">
+									<option>2008</option>
+									<option>2009</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								
+								<select name="cctype" id="cctype" style="display:none;">
+									<option>Select card type...</option>
+									<option>Amazon.com Visa</option>
+									<option>Visa</option>
+									<option>MasterCard</option>
+									<option>American Express</option>
+									<option>Discover</option>
+									<option>Diners Club</option>
+									<option>JCB</option>
+								</select>
+								
+								<h3 class="maestro_fields" style="margin-top:5px">MaestroCard customers enter either:</h3> 
+								<span class="maestro_fields">
+									<b>Issue Number:</b>
+									<input type="text" size="2" maxlength="2" />
+									&nbsp;or&nbsp;
+									<b>Start date:</b> 
+									<select name="issue_mo" id="issue_mo" title="issue_mo">
+										<option>01</option>
+										<option>01</option>
+									</select>
+									
+									<select name="start_year" id="start_year" title="start_year">
+										<option>2008</option>
+										<option>2009</option>
+									</select>
+								</span>
+								
+								<!-- <span class="debit_fields">
+										<input type="checkbox" checked="checked "/> Process this debit card using the ATM network. (<a href="#">What's this?</a>)
+									</span> -->
+								
+							
+							</td>
+							<td colspan="2" style="text-align:right; vertical-align:bottom">
+								<input type="image" src="images/buttons/add-your-card.gif" name="Andrew Otwell" class="add-instrument-button" card=" &lt;strong&gt;VISA&lt;/strong&gt; &lt;span&gt;ending in 7311&lt;/span&gt;" expires="06/2010" graphic="visa.gif" alt="Add a credit card to your account" />
+							</td>
+						</tr>
+					</table>
+					
+					
+					</form>
+				</div>
+					
+				<br />	
+			</div> <!-- end payment-method -->
+					
+					
+			<!-- GC & PROMOS -->
+			<div class="payment-method" id="gc_entry">
+				<img class="logo" src="images/pay-method-logos/gc.gif"  alt=""/>
+				<h2>Gift Cards &amp; Promotional Codes</h2>
+				
+				<!-- note that gc input is always shown, never hidden -->
+				<div class="offer">
+						<input type="text" size="25" maxlength="25" /> <input type="image" src="images/buttons/apply.gif" style="vertical-align:text-bottom" class="apply" />
+						<p class="caption">Enter a gift card, gift certificate or promotional code</p>
+				</div>
+				
+				<br />
+			</div> 
+			<!-- end payment-method -->
+			
+			<!-- amazon CBCC 
+			<div class="payment-method" id="cbcc">
+				<img class="logo" src="images/pay-method-logos/CBCC-Visa.gif" alt="Amazon.com Rewards Visa Card" />
+				<h2>Amazon.com Rewards Visa Card</h2>
+					<div class="offer">
+						<p class="add"><input name="" type="image" src="images/buttons/apply-now.gif" alt="Apply for an Amazon.com Rewards Visa now" /></p>
+						<p>Rewards Visa! It's awesome! $30 Back! <a href="#">Learn more &raquo;</a></p>
+						<p>Already have an Amazon.com Rewards Visa Card? <a href="#" class="toggle-create">Add it now.</a></p>
+					</div>
+					
+					<div class="create" style="display:none;">
+						<h3>Enter your Amazon.com Rewards Visa Card information:</h3>
+						<form id="new-cbcc" action="">
+
+						<table class="new">
+							<tr>
+								<th><label for="newCBCreditCardNumber">Card number</label></th>
+								<th><label for="cbcc-name">Name on card</label></th>
+								<th><label for="cbccyear">Expiration date</label></th>
+							</tr>	
+							<tr>
+								<td>
+									<input type="text" id="newCBCC" name="cbccnum" autocomplete="off" class="required" minlength="15" /> <img src="images/card-logos-small/blank.gif" id="cc-logo" alt="" />
+								</td>
+								<td>
+									<input type="text" id="cbccname" name="cbccname" size="20" class="required"  minlength="4" />
+								</td>
+								<td>
+									<select name="cbccmonth" id="cbccmonth" title="month">
+										<option>01</option>
+										<option>01</option>
+									</select>
+
+									<select name="cbccyear" id="cbccyear" title="year">
+										<option>2008</option>
+										<option>2009</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="text-align:right">
+									<input type="image" src="images/buttons/add-your-card.gif" />
+								</td>
+							</tr>
+						</table>
+						</form>
+						<p>Don't have the Amazon.com Rewards Visa Card yet? <a href="#">Apply now.</a></p>
+					</div>
+
+					<br />
+			</div> 
+			-->
+			
+			<!-- PP 
+			<div class="payment-method" id="paypal" style="display:none;">
+				<img class="logo" src="images/pay-method-logos/pp-payment-mark.gif" alt="PayPal" />
+				<h2>Paypal</h2>
+				<div class="offer">
+					<p class="add"><input name="" type="image" src="images/buttons/add-paypal.gif" alt="Add your Paypal account" /></p>
+					<p>Save time, check out securely. Pay without sharing your financial information.</p>
+					<p><a href="#">Learn More &raquo;</a></p>
+				</div>
+			</div>
+			-->
+				<!-- PLCC CARD --> 
+				<div class="payment-method" id="plcc">
+					<img class="logo" src="images/pay-method-logos/plcc.gif" alt="Amazon.com Store Card" />
+					<h2>Amazon.com Store Card</h2>
+					
+					<div class="offer">
+						<p class="add"><input name="" type="image" src="images/buttons/apply-now.gif" alt="Apply for an Amazon.com Store Card now" /></p>
+						<p>Access to exclusive financing offers, no annual fee. <a href="#">Learn more</a> <span style="color:#004B91">&raquo;</span></p>
+						<!-- <p style="color:#666; margin-top:3px">(Already have an Amazon.com Store Card? <a href="#" class="toggle-create">Add it now</a>.)</p> -->
+					</div>
+					
+					<div class="create" style="display:none;">
+						<p>Enter your Amazon.com Store Card details:</p>
+						<table class="new">
+							<tr>
+								<th><label for="plccnum">Card number</label></th>
+								<th><label for="plccname">Name on card</label></th>
+							</tr>	
+							<tr>
+								<td>
+									<input type="text" id="plccnum" name="plccnum" autocomplete="off" class="required" minlength="15" />
+								</td>
+								<td>
+									<input type="text" id="plccname" name="plccname" size="20" class="required"  minlength="4" />
+								</td>
+								<td>
+									<img src="images/buttons/add-your-card.gif" class="add-instrument-button" name="Andrew Otwell" card=" <strong>Amazon.com Store Card</strong>" expires="Does not expire" graphic="plcc.gif" alt="Amazon.com Store Card" />
+								</td>
+							</tr>
+						</table>
+						<p>Don't have the Amazon.com Store Card yet? <a href="#">Apply now.</a></p>
+					</div>
+					<br />
+				</div> 
+				<!-- end payment-method -->
+			
+								
+			<!-- ECHECKS -->
+				<div class="payment-method last">
+					<img class="logo" src="images/pay-method-logos/echecks.gif" alt="Pay by Checking Account" />
+					<h2>Checking Account</h2>
+										
+					<div class="offer">
+						<p class="add"><input type="image" src="images/buttons/add-checking-account.gif" class="toggle-create" /></p>
+						<p>Use your US-based checking account to make your purchase. It’s easy and faster than sending a paper check. <a href="#">Learn more</a> <span style="color:#004B91">&raquo;</span></p>
+					</div>
+					
+					<div class="create" style="display:none;">
+						<h3>Enter your checking account information.</h3>
+						<img src="images/pay-method-logos/check-example.gif" alt="Routing number and Account number" />
+						<table class="new">
+							<tr>
+								<th><label for="check-routing">Bank Routing Number</label></th>
+								<th><label for="check-account-number">Checking Account Number</label></th>
+								<th>&nbsp;</th>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" id="check-routing-number" size="9" maxlength="9"/>
+									<p class="caption">9 digits</p>									</td>
+								<td>
+									<input type="text" id="check-account-number" size="17" maxlength="17" />
+									<p class="caption">up to 17 digits</p>								</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th>&nbsp;</th>
+								<th colspan="2"><label for="check-account-number-confirm">Re-enter Checking Account Number</label></th>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td><input type="text" id="check-account-number-confirm" size="17" maxlenth="17" /></td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<th><label for="check-name">Name on Account</label></th>
+								<th><label for="check-dl">Driver's License Number</label></th>
+								<th><label for="check-dl-state">State</label></th>
+							</tr>	
+							<tr>
+								<td>
+									<input type="text" id="check-name" size="25" />								</td>
+								<td><input type="text" id="check-dl" size="22" /></td>
+								<td>
+									<select id="check-dl-state">
+										<option>AB</option>
+										<option>AK</option>
+										<option>AL</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+							  <td colspan="3">
+								<div class="terms"><p>BY CLICKING ON THE CONTINUE BUTTON, I AGREE TO THE TERMS AND CONDITIONS OF USING MY CHECKING ACCOUNT AS A PAYMENT METHOD, WHICH ARE LISTED BELOW, AND AUTHORIZE AMAZON.COM TO DEBIT MY CHECKING ACCOUNT FOR PURCHASES MADE ON AMAZON.COM, ANY AMAZON.COM AFFILIATE WEB SITE, OR THIRD PARTY WEB SITE USING AMAZON PAYMENTS.</p>
+								
+								<p>Welcome to the terms and conditions (the "Terms and Conditions") for use of a bank account registered with Amazon.com as a payment method on the Amazon.com website, any Amazon affiliate website, or third party website. Please note that your use of the Amazon.com website is also governed by our Conditions of Use and Privacy Notice, as well as all other applicable terms, conditions, limitations and requirements contained on the Amazon.com website, all of which (as changed over time) are incorporated into these Terms and Conditions. If you choose to use a bank account as your payment method, you accept and agree to these Terms and Conditions. 1. Bank Account Payments. By choosing to use a bank account as your payment method,</p>
+								
+								</div>
+								<p><a href="#">Printable version</a></p>
+								</td>
+						  </tr>
+							<tr>
+								<td colspan="3" align="right"><input type="image" src="images/buttons/add-checking-account-primary.gif" /></td>
+							</tr>
+						</table>
+						
+					</div>
+					
+				<br />	
+				</div> <!-- end payment-method -->
+						
+			
+				
+			</div> <!-- end new-methods -->
+			
+		<!-- how's my driving  
+		<div class="feedback">
+		 	<p><b>How are we doing?</b></p>
+			<p>If you have any feedback about this page, <a href="#">please let us know.</a></p>
+		</div> -->
+								
+		</div> <!-- end yui-g -->
+			
+	</div> <!-- end #bd -->
+  
+	<div id="ft">
+	
+		<p id="continue-bar"><input type="image" src="images/buttons/continue-footer.gif" alt="Continue" class="continue_button" /> <span>(You'll review this order before it's final.)</span></p>
+	
+		<p>Need a hand? Check our <a href="#">help pages</a> or <a href="#">contact us</a>.</p>
+
+		<p><a href="#">Conditions of Use</a> | <a href="#">Privacy Notice</a> &copy; 1996-2008, Amazon.com, Inc.</p>
+	</div>
+
+</div>
+
+<!-- popover will get positioned near Continue buttons when no payment method's entered yet -->
+<div class="continue-blocker" style="display:none">
+	<p>Because this is the first time you're shipping to this address, please re-enter your payment information</p>
+	<img src="images/assets/blocker-arrow.gif" alt=""/>
+</div>
+
+</body>
+</html>
+

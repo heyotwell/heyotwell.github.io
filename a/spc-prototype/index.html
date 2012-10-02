@@ -1,0 +1,507 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>Amazon.com Review Your Purchase</title>
+   	<link rel="stylesheet" href="css/reset-fonts-grids.css" type="text/css">
+	<link href='https://images-na.ssl-images-amazon.com/images/G/01/nav2/gamma/navbarCSSUSTFS/navbarCSSUSTFS-navbarUSTFS-45153._V232036463_.css' type="text/css" rel='stylesheet' charset="utf-8" />
+	<link rel="stylesheet" href="css/header.css" type="text/css" rel='stylesheet' charset="utf-8">
+	<link rel="stylesheet" href="css/error-styles.css" type="text/css" rel='stylesheet' charset="utf-8">
+	<link rel="stylesheet" href="css/spc.css" type="text/css" rel='stylesheet' charset="utf-8">  
+	
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src="javascript/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<!-- jQote is used for templating -->
+	<script src="javascript/jquery.jqote.js" type="text/javascript" charset="utf-8"></script>	
+	
+	<!-- currency formatter -->
+	<script src="javascript/jquery.formatCurrency-1.3.0.min.js" type="text/javascript" charset="utf-8"></script>     
+	<script src="javascript/jquery.formatCurrency.de-DE.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- protoyping framework -->
+	<script src="javascript/design-note/jquery.getUrlParam.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascript/design-note/jquery.prototypeTools.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascript/jquery.protoSpinner.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- javascript local to this page -->
+	<script src="javascript/spc.js" type="text/javascript" charset="utf-8"></script>
+	
+	   
+</head>
+<body>
+<div id="custom-doc" class="yui-t4">
+   <div id="hd">
+	
+		<div class="navigation">
+			<ul>
+				<li><a href="http://www.amazon.com/ref=gno_logo" class="nonGateway" id="navLogo">
+			  		<span class="navSprite" id="navLogoPrimary"><span>amazon.com</span></span>
+			  		<span class="navSprite nonPrime" id="navLogoSecondary"></span>
+					</a>
+				</li>
+				<li class="visited"><a href="http://www.amazon.com/gp/cart/view.html/ref=gno_cart" id="cart">Cart</a></li>
+				<li class="inactive"><a href="#" id="signin">Sign in</a></li>
+				<li class="visited"><a href="#" id="shipping-address">Shipping Address</a></li>
+				<li class="visited"><a href="#" id="shipping-options">Shipping Options</a></li>
+				<li class="visited"><a href="#" id="payment">Payment</a></li>
+				<li class="current"><a href="#" id="place-order">Place Order</a></li>
+			</ul>
+		</div>
+		
+		<div class="message" style="display:none;">
+			<span></span>
+			<h6>Save your defaults</h6>
+			<p><input type="checkbox" /> Save them?</p>
+		</div>
+	
+		<h1>Review Your Purchase</h1>
+	
+   </div>
+
+	<div id="global-error" class="message warning" style="display:none;">
+		<span></span>
+		<h6>Sorry, there was an error.</h6>
+		<p>Please try again</p>
+	</div>
+
+   <div id="bd">
+	<div id="yui-main">
+		
+		<div class="yui-b">
+			<div class="yui-g" id="dashboard">
+				<div class="dashboard-element">
+			    	<h3>Shipping Address</h3>
+					<p>
+						Andrew Otwell <br />
+						123 Main Street<br />
+						Seattle, WA 98104<br />
+						206-123-4567 <a href="#">Change</a><br />
+						<!-- <a href="#" id="ship-to-multiple">Want to ship to multiple addresses?</a> -->
+					</p>
+			    </div>
+				
+				<div class="dashboard-element">
+			    	<h3>Billing Information</h3>
+					<p><img src="images/mc.gif"/> ending in 5454 <a href="#">Change</a></p>
+					
+					<div id="3Ppoints" class="message mini" style="display:none; font-size:93%;">
+						<span class="mini">&nbsp;</span>
+						<p>Don't see rewards points applied to your order total? <a href="#">Check now</a>.</p>
+					</div>
+					
+					<p>
+						Andrew Otwell <br />
+						123 Main Street<br />
+					 	Seattle, WA 98104 &nbsp; <a href="#">Change</a>
+					</p>
+					
+			    </div>
+			
+				<div class="dashboard-element">
+					<h3>Gift Cards &amp; Promotional Codes</h3>
+					
+					<div class="message error mini" style="display:none">
+						<span class="mini"></span>
+						<h6>Gift code already used</h6>
+						<p>The gift code you entered has already been used.</p>
+					</div>
+					
+					<p><input type="text"> <img src="images/apply.png"/></p>
+					<p class="caption">Enter a gift card or promotional code.</p>
+				</div>
+				
+				<!-- <div id="defaults">
+								 <p><input type="checkbox" /> Save time next time. Check this box to save your Shipping Address and Billing Information as defaults.</p>
+								</div> -->
+				
+			</div>
+		
+			<div id="purchase-context">
+				<!-- context for appending shipping group templates -->
+			</div> 
+			
+		</div>
+
+	</div>
+	
+	<div class="yui-b">
+		<div id="order-summary">
+			<p class="place-order-button">
+				<a href="#"><img src="images/place-order-primary.png" /></a>
+			</p>
+			
+			<div class="os-content">
+				
+			</div>
+		
+		</div>
+	
+		
+		
+	</div>
+	
+		<p id="bottom-place-order"><a href="#"><img src="images/place-order-primary.png" /></a></p>
+	
+	</div>
+   
+	<div id="ft">
+		<p class="gateway-link"><!-- <a href="#"><img src="images/amazon_logo_small.gif" /></a> -->Go to the <a href="#" class="underline">Amazon.com homepage</a> without completing your order.</p>
+		<p>Need a hand? Check our <a class="underline" href="#">help pages</a> or <a href="#" class="underline">contact us</a>.</p>
+		
+		<p>For an item sold by Amazon.com: When you click the "Place your order" button, we'll send you an e-mail message acknowledging receipt of your order. Your contract to purchase an item will not be complete until we send you an e-mail notifying you that the item has been shipped.</p>
+		
+		<p>Colorado and Oklahoma Purchasers: <a class="underline" href="#">Important information regarding sales tax you may owe in your State</a></p>
+
+		<p>Within 30 days of delivery, you may return new, unopened merchandise in its original condition. Exceptions and restrictions apply. See Amazon.com's <a class="help-link underline" href="http://www.amazon.com/gp/help/customer/display.html?ie=UTF8&nodeId=901888&pop-up=1">complete Returns Policy</a>.</p>
+		
+		<p class="copyright"><a href="#" class="underline">Conditions of Use</a> | <a class="underline" href="#">Privacy Notice</a> &copy; 1996-2011, Amazon.com, Inc.</p>
+	</div>
+	
+</div>
+
+
+<!-- 
+	quantity edit is the popover displayed when the user clicks to edit an ASIN's quantity, duh.
+-->
+<div id="quantity-edit">
+	<img class="quantity-edit" src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/cs/orders/images/acorn._V243549026_.gif" />
+	<h4>Enter a new quantity:</h4>
+	<p><input type="text" size="3" id="new-quantity"/> <img src="images/update-button.gif" /></p>
+	<p>or <a href="#" id="delete-quantity">delete this item</a>.</p>
+	<p class="caption">Once removed, this item will be placed in your Saved for Later list.</p>
+</div>
+
+	
+<!-- 
+	experimental idea for a scrolling alert that "more items are below the fold"
+-->
+<div id='alert-tab' style='display:none'>
+	 <p>1 of 3 more items below</p>
+</div>
+
+
+<!-- 
+	Lightbox displayed when user enters the ILE "power user" mode
+-->
+<div id="lightbox">
+	<div id="modal">
+		<h3><b>Set Shipping Options</b> <span><a href="#">Close</a> <img src="images/close-icon.png"/><span></h3>
+        <!-- context for appending lightbox conntet -->
+	</div>
+</div>
+
+<!--
+	TEMPLATES.
+	Using jqote for javascript templating, the blocks below are templates filled with data when the page is rendered.
+
+-->
+
+<!--
+	TEMPLATE for content displayed in the Lightbox
+-->
+<script type="text/html" id="tpl-ile-lightbox">
+
+
+<% for (n in this.shipping_groups) { %>
+
+<% var shippingGroup = this.shipping_groups[n]; %>
+
+	<div class="yui-gc asin-ship-options-pair">
+
+		<div class="yui-u first asins">
+			<% for (m in shippingGroup.line_items) { %>
+				<% var asin = shippingGroup.line_items[m]; %>
+
+				<div class="asin">
+					<img src="<%= asin.img %>" class="asin" />
+	
+					<h4><%= asin.title %></h4>
+	
+					<% if (asin.quantity) { %>
+						<p class="quantity"><b>Quantity:</b> <span><%= asin.quantity %></span></p>
+					<% } %>
+		
+				</div>
+
+			<% }; %>
+		</div>
+
+		<div class="yui-u ship-options">
+			<h4><%= shippingGroup.shipping_options_call %></h4>
+			<ul>
+				<% for (m in shippingGroup.shipping_options) { %>
+					<% var option = shippingGroup.shipping_options[m]; %>
+
+					<li>
+						<% if (option.isDefault == true) { %>
+							<input type="radio" checked="checked" name="<%= n %><%= j %>_lboxgroup" />
+						<% } else { %>
+							<input type="radio" name="<%= n %><%= j %>_lboxgroup" />
+						<% }; %>
+						
+						<p class="price"><%= option.price %></p>
+						<p class="promise"><%= option.promise %></p>
+						<p class="name"><%= option.name %></p>
+					</li>
+
+				<% }; %>
+			</ul>
+		</div>
+
+	</div>
+<% }; %>
+
+<p id="lightbox-save-button"><img src="images/save-changes.png" /></p>
+
+	
+</script>
+
+
+
+<!-- 
+	TEMPLATE: Shipping group 
+	Holds a set of ASINS and their ship options in the glance view	
+-->
+<script type="text/html" id="tpl-vendor-group">
+
+<div class="yui-gc vendor-group">
+	
+	<% if (this.callout_links) { %>
+		<div class="info-callout">
+			<img src="images/callout-arrow.png" />
+			<ul>
+			<% for (link in this.callout_links) {%>
+				<li><a href="<%= this.callout_links[link].href %>" target="_new" class="help-link"><%= this.callout_links[link].text %></a></li>
+			<% }; %>
+			</ul>
+		</div>
+	<% }; %>
+	
+	<% if ( this.prime_banner_content ) { %>
+		<div id="prime-banner"><%= this.prime_banner_content %></div>
+	<% }; %>
+	
+	<% if (this.seller) { %>
+		<h3><%= this.seller %></h3>
+	<% }; %>
+	
+	<% for (n in this.shipping_groups) { %>
+		
+		<% var shippingGroup = this.shipping_groups[n]; %> 
+		
+		<div class="shipping-group">
+		
+			<% if (shippingGroup.recipient) { %>
+				<h4 class="shipping-group-recipient"><%= shippingGroup.recipient %></h4>
+			<% }; %>
+		
+			<div class="yui-u first asins">
+				<% for (m in shippingGroup.line_items) { %>
+					<% var asin = shippingGroup.line_items[m]; %>
+				
+					<div class="asin">
+						<img src="<%= asin.img %>" class="asin" />
+					
+						<h4>
+							<%= asin.title %>
+							<% if (asin.author) { %>
+								 <span class="byline">by <%= asin.author %></span>
+							<% }; %>
+						</h4>
+						
+					
+						
+						<p>
+							<% if (asin.listprice) { %>
+								<span class="listprice"><%= asin.listprice %></span>
+							<% }; %>
+
+							 <span class="price"><%= asin.price %></span>
+					 	</p>
+					
+						<% if (asin.isPrime == true) { %>
+						 	<p class="prime"><img src="images/check-prime.gif" style="vertical-align:text-bottom"/></p>
+						 <% } else if (asin.isPrime == false) { %>
+							<p>Not eligible for Amazon Prime (<a href="#">Why?</a>)</p>
+						<% }; %>
+						
+					
+						<% if (asin.refdata) { %>
+							<ul class='refdata'>
+								<% for (r in asin.refdata) {%>
+									<li><%= asin.refdata[r] %>
+								<% }; %>
+							</ul>
+						<% }; %>
+				
+						<% if (asin.quantity) { %>
+							<p class="quantity"><b>Quantity:</b> <span><%= asin.quantity %></span> <a href="#" class="quantity-edit">Change</a> <a href="#"><img class="quantity-edit" src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/cs/orders/images/acorn._V243549026_.gif" /></a></p>
+						<% } %>
+						
+						<% if (asin.stock) { %>
+							<p class="stock"><%= asin.stock %></p>
+						<% }; %>
+						
+						<% if (asin.preorder) { %>
+							<p class="preorder"><%= asin.preorder %></p>
+						<% }; %>
+					 
+						<% if (asin.promo) { %>
+							<p class="promo">Promotion applied: <%= asin.promo %> </p>
+						<% }; %>
+					
+						<% if (asin.condition) { %>
+							<p class="condition">Condition: <%= asin.condition %></p>
+						<% }; %>
+					
+						<% if (asin.gift) { %>
+							<p class="gry noLinkDecoration">
+								<input type="checkbox" class="gift-cb"> This will be a gift 
+								<span class="save-indicator" style="display:none; vertical-align:middle"><img src="http://g-ecx.images-amazon.com/images/G/01/ui/loadIndicators/loading-small.gif" /></span>
+								<span class="save-confirm green" style="display:none; padding-left:4px">Saved</span>
+							</p>
+						<% }; %>
+						
+					</div>
+			
+				<% }; %>
+			</div>
+		
+			<div class="yui-u ship-options">
+				<h4><%= shippingGroup.shipping_options_call %></h4>
+				<ul>
+					<% for (m in shippingGroup.shipping_options) { %>
+						<% var option = shippingGroup.shipping_options[m]; %>
+					
+						<li>
+							<% if (option.isDefault == true) { %>
+								<input type="radio" checked="checked" name="<%= n %><%= j %>_group" />
+							<% } else { %>
+								<input type="radio" name="<%= n %><%= j %>_group" />
+							<% }; %>
+							<p>
+								<span class="price"><%= option.price %></span> &ndash;  
+								<span class="promise"><%= option.promise %></span>
+							</p>
+							
+							<p class="name"><%= option.name %></p>
+						</li>
+					
+					<% }; %>
+				</ul>
+			</div>
+		
+	  </div>
+		
+	<% }; %>
+
+</div>
+
+	
+</script>
+
+<!-- 
+	TEMPLATE: Order Summary table
+	shows full order calculation including promos and Place Order button
+	also displays Currency Converter if necessary
+-->
+<script type="text/html" id="tpl-order-summary">
+
+	<% if (this.tfx) { %>
+		<div class="tfx-message">
+			<h5>Amazon Currency Converter is <b>Enabled</b> (<a href="#">Learn more</a>)</h5>
+		</div>
+	<% }; %>
+	
+	<table>
+		<tr>
+			<td>Items (<span id="units-total">1</span>)</td>	
+			<td class="price"><%= this.items_total %></td>
+		</tr>
+		
+		<% if (this.gift_wrap) { %>
+		<tr>
+			<td>Gift Wrap</td>	
+			<td class="price"><%= this.gift_wrap %></td>
+		</tr>
+		<% }; %>
+		
+		<tr>
+			<td>Shipping</td>	
+			<td class="price"><%= this.shipping_total %></td>
+		</tr>
+		<% if (this.promos) { %>
+			<% for (p in this.promos) %>
+				<tr>
+					<td><%= this.promos[p].name %></td>
+					<td class="price"><%= this.promos[p].value %></td>
+				</tr>
+			<% ; %>
+		<% }; %>
+		<tr>
+			<td colspan="2" ><div class="hr"></div></td>
+		</tr>
+		<tr>
+			<td>Total Before Tax</td>
+			<td class="price"><%= this.order_subtotal %></td>
+		</tr>
+		<tr id="tax-row">
+			<td>Estimated Tax*</td>
+			<td class="price"><%= this.tax_total %></td>
+		</tr>
+		<tr>
+			<td class="total">Order Total</td>
+			<td class="total price">
+				<% if (this.tfx) { %>
+					<em class="price"><%= this.order_total %></em> <span class="alt-currency">(Payment Total: USD $47.50**)</span>
+					<p class="vat">Includes VAT. <a href="#">See details</a></p>
+				<% } else { %>
+					<em class="price"><%= this.order_total %></em> 
+				<% }; %>
+			</td>
+		
+		</tr>
+	</table>
+
+
+	<% if (this.promos_noncash) { %>
+		<h4 style="text-align:left;">Eligible offers:</h4>
+		<ul class="promos-noncash">
+			<% for (p in this.promos_noncash) %>
+				<li><%= this.promos_noncash[p].name %></li>
+			<% ; %>
+		</ul>
+	<% }; %>
+	
+	
+	<% if (this.tfx) { %>
+		<div class="tfx-message">
+			
+			<p><img src="images/switch-currency.png" id="tfx-currency-switcher-trigger"/></p>
+			
+			<div id="tfx-currency-switcher" class="tfx-info">
+				<p><b>Switch currency:</b></p>
+				<ul>
+					<li><input type="radio" name="tfx-currency" value='eur' checked="checked"/> EUR</li>
+					<li><input type="radio" name="tfx-currency" value='usd' /> USD</li>
+				</ul>
+			</div>
+			
+			<p class="caption"><a href="#" id="tfx-conversion-trigger">See Exchange Rate</a></p>
+			
+			<div id="tfx-conversion" class="tfx-info">
+				<p><b>Applicable Exchange Rate:</b></p>
+				<p>1 USD = 0.815394651 EUR</p>
+				<p class="caption">(includes all fees and charges)</p>
+			</div>
+		
+		</div>	
+	<% }; %>
+
+</script>
+
+
+
+</body>
+</html>
