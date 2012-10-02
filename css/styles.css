@@ -26,6 +26,8 @@ aside h2 {
   margin-top: 0;
   border-top: 1px #d4d4d4 solid;
   padding-top: 12px; }
+  aside h2 span {
+    font-weight: normal; }
 aside p, aside ul {
   font: 300 14px/14px "PT Sans"; }
 aside ul {

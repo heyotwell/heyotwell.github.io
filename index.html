@@ -14,6 +14,19 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+	<script src="javascript/jquery.expander.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.expandable').expander({
+				slicePoint: 		120,
+				expandEffect: 		'fadeIn',
+  				expandSpeed: 		500,
+				expandText: 		'More &raquo;',
+				userCollapseText: 	''
+			});
+		});
+	</script>
 	
 </head>
 
@@ -27,6 +40,50 @@
 		</div>
 	</div>
 </header>
+
+<section>
+	<div class="row-fluid">
+		<aside class="span3">
+			<h2>Amazon.com &middot; Design Manager, Core Shopping Customer Experience</h2>
+  			 <ul>
+  			 	<li>Make list management easier</li>
+  			 	<li>Bring this page out of the dark ages</li>
+  			 </ul>
+		</aside>
+  		<div class="span9">
+  			<div id="cart-carousel" class="carousel slide">
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="active item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/800x410">
+					</div>
+				</div>
+				<!-- Carousel nav -->
+				<a class="carousel-control left" href="#cart-carousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#cart-carousel" data-slide="next">&rsaquo;</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<aside class="span3">
+			
+		</aside>
+		<div class="span6">
+			<article class="expandable">
+				<p>Provide leadership, mentorship, and design direction for a group of designers responsible for the core retail shopping experience of Amazon.com including the site's homepage, product detail pages, and checkout experience.</p>
+				<p>Provide high-level program guidance, review designs, and participate in strategic and tactical efforts. Recruit, assess, hire, develop, and retain outstanding UX designers.Foster the growth and health of the design community across Amazon by establishing regular forums for designers to share and discuss work; hosting a guest speaker series; and organizing the company's first UX conference</p>
+			</article>
+		</div>
+	</div>
+	
+</section>
 
 <section>
 	<div class="row-fluid">
@@ -134,50 +191,6 @@
 	
 </section>
 
-
-<section>
-	<div class="row-fluid">
-		<aside class="span3">
-			<h2>Amazon.com &middot; Design Manager, Core Shopping Customer Experience</h2>
-  			 <ul>
-  			 	<li>Make list management easier</li>
-  			 	<li>Bring this page out of the dark ages</li>
-  			 </ul>
-		</aside>
-  		<div class="span9">
-  			<div id="cart-carousel" class="carousel slide">
-				<!-- Carousel items -->
-				<div class="carousel-inner">
-					<div class="active item">
-						<img src="http://placehold.it/800x410">
-					</div>
-					<div class="item">
-						<img src="http://placehold.it/800x410">
-					</div>
-					<div class="item">
-						<img src="http://placehold.it/800x410">
-					</div>
-				</div>
-				<!-- Carousel nav -->
-				<a class="carousel-control left" href="#cart-carousel" data-slide="prev">&lsaquo;</a>
-				<a class="carousel-control right" href="#cart-carousel" data-slide="next">&rsaquo;</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="row-fluid">
-		<aside class="span3">
-			
-		</aside>
-		<div class="span6">
-			<p>Provide leadership, mentorship, and design direction for a group of designers responsible for the core retail shopping experience of Amazon.com including the site's homepage, product detail pages, and checkout experience.</p>
-			<p>Provide high-level program guidance, review designs, and participate in strategic and tactical efforts. Recruit, assess, hire, develop, and retain outstanding UX designers.
-Foster the growth and health of the design community across Amazon by establishing regular forums for designers to share and discuss work; hosting a guest speaker series; and organizing the company's first UX conference.
-</p>
-		</div>
-	</div>
-	
-</section>
 
 <footer>
 	<h2>Andrew Otwell</h2>
