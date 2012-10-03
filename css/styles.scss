@@ -7,6 +7,8 @@ body {
 	color: $black;
 	font: 300 15px/22px 'PT Sans';
 	padding:0 2em;
+
+	&.resume aside > h2 {font-weight: 600; } // sidebar headers on resume page only always bold
 }
 
 

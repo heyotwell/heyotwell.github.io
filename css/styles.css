@@ -3,6 +3,8 @@ body {
   color: #555555;
   font: 300 15px/22px "PT Sans";
   padding: 0 2em; }
+  body.resume aside > h2 {
+    font-weight: 600; }
 
 header, section {
   border-left: 1px #e7e7e7 solid;
