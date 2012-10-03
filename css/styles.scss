@@ -44,11 +44,17 @@ aside {
 
 		span {
 			font-weight:normal;
+			text-transform:none;
 		}
 	}
 
 	p,ul{
 		font: 300 14px/14px 'PT Sans';
+
+		&.date, &.title {
+			font: 300 14px/18px 'PT Sans';
+			margin-bottom:0;
+		}
 	}
 	ul { list-style-type: circle;}
 }

@@ -27,9 +27,13 @@ aside h2 {
   border-top: 1px #d4d4d4 solid;
   padding-top: 12px; }
   aside h2 span {
-    font-weight: normal; }
+    font-weight: normal;
+    text-transform: none; }
 aside p, aside ul {
   font: 300 14px/14px "PT Sans"; }
+  aside p.date, aside p.title, aside ul.date, aside ul.title {
+    font: 300 14px/18px "PT Sans";
+    margin-bottom: 0; }
 aside ul {
   list-style-type: circle; }
 
