@@ -1,3 +1,7 @@
+a:hover {
+  background-color: #e7e7e7;
+  text-decoration: none; }
+
 body {
   background: white;
   color: #555555;
@@ -5,6 +9,10 @@ body {
   padding: 0 2em; }
   body.resume aside > h2 {
     font-weight: 600; }
+  body.resume section div.row-fluid {
+    padding: 0 0 40px 0; }
+  body.resume section p {
+    text-align: justify; }
 
 header, section {
   border-left: 1px #e7e7e7 solid;
@@ -17,7 +25,7 @@ header {
     font: 600 40px/54px "PT Sans Narrow";
     color: #6e6e6e; }
   header p {
-    font: 300 18px/24px "PT Sans"; }
+    font: 300 16px/18px "PT Sans"; }
     header p em {
       color: #d4d4d4;
       padding: 0 8px; }
@@ -28,14 +36,15 @@ aside h2 {
   margin-top: 0;
   border-top: 1px #d4d4d4 solid;
   padding-top: 12px; }
-  aside h2 span {
-    font-weight: normal;
-    text-transform: none; }
 aside p, aside ul {
   font: 300 14px/14px "PT Sans"; }
   aside p.date, aside p.title, aside ul.date, aside ul.title {
     font: 300 14px/18px "PT Sans";
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    text-align: left; }
+    aside p.date span, aside p.title span, aside ul.date span, aside ul.title span {
+      font-weight: normal;
+      text-transform: none; }
 aside ul {
   list-style-type: circle; }
 
@@ -54,3 +63,12 @@ footer {
     font: 200 12px/16px "PT Sans";
     text-transform: uppercase;
     margin: .5em; }
+
+#carousel {
+  border: 1px #e7e7e7 solid; }
+  #carousel .carousel-control {
+    font-size: 35px;
+    line-height: 39px;
+    border: 2px #222222 solid;
+    background: #555555;
+    margin: 0; }
