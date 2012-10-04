@@ -9,6 +9,10 @@ a {
 	}
 }
 
+div.project-image a:hover {
+	background-color:transparent;
+}
+
 body {
 	background: $white;
 	color: $black;
@@ -103,11 +107,17 @@ footer {
 	border:1px $gray solid;
 
 	.carousel-control {
-		font-size:35px;
-		line-height:39px;
-		border:2px darken($black, 20%) solid;
+		font-size:26px;
+		line-height:43px;
+		border:2px $white solid;
 		background: $black;
+		color:$white;
 		margin:0;
+		opacity:0.7;
+
+		&:hover {
+			opacity:0.9;
+		}
 	}
 }
 
