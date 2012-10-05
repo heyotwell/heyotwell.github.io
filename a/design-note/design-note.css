@@ -26,9 +26,10 @@ div#design-note div {
 
 div#design-note img {position:absolute; top:5px; right:5px; float:right;}
 div#design-note {font-size:10px;}
+div#design-note a {text-decoration: none;}
 div#design-note ul {list-style:none; padding:0; margin:0;}
 div#design-note ul li {margin:.5em 0;}
-div#design-note ul li p {font-weight:bold; color: #717171; border-bottom:1px #717171 solid;}
+div#design-note ul li p {font-weight:bold; color: #222; margin-top:10px;}
 
 /* stripe added dynamically when someone's looking at a mockup NOT in firefox */
 #browser-warning {
