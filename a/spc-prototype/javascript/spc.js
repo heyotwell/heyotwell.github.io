@@ -389,51 +389,51 @@ Lightbox = {
 						Lightbox.show();
 					}
 				},
-				{
-					state: "task2",
-					text: "Usability test - Task 2",
-					response: function(){
-						mainContentURL = "javascript/json/usability/json-usability-task2.js";
-						orderSummaryURL = "javascript/json/usability/json-usability-task2-os.js";
-					}
-				},
-				{
-					state: "task3",
-					text: "Usability test - Task 3",
-					response: function(){
-						//ok, this is seriously hacky: set a function in the SPC object that 
-						//gets called after the main rendering job is done
-						SPC.renderingDone = function(){
-							$("div.ship-options:first").append("<li id='ile-trigger' style='font-size: 93%; margin-left: -16px; color: #666;'>You can also <a href='#'>set shipping speeds for each item seperately</a></li>");
-							$("#ile-trigger").click(function() {
-								Lightbox.show();
-							});
-						};
+				// {
+				// 	state: "task2",
+				// 	text: "Usability test - Task 2",
+				// 	response: function(){
+				// 		mainContentURL = "javascript/json/usability/json-usability-task2.js";
+				// 		orderSummaryURL = "javascript/json/usability/json-usability-task2-os.js";
+				// 	}
+				// },
+				// {
+				// 	state: "task3",
+				// 	text: "Usability test - Task 3",
+				// 	response: function(){
+				// 		//ok, this is seriously hacky: set a function in the SPC object that 
+				// 		//gets called after the main rendering job is done
+				// 		SPC.renderingDone = function(){
+				// 			$("div.ship-options:first").append("<li id='ile-trigger' style='font-size: 93%; margin-left: -16px; color: #666;'>You can also <a href='#'>set shipping speeds for each item seperately</a></li>");
+				// 			$("#ile-trigger").click(function() {
+				// 				Lightbox.show();
+				// 			});
+				// 		};
 						
-						mainContentURL = "javascript/json/usability/json-usability-task3.js";
-						orderSummaryURL = "javascript/json/usability/json-usability-task3-os.js";
-						//content to show in lightbox
-						ILELightboxURL = "javascript/json/usability/json-usability-task3-ile.js";
-						//content to show after lightbox "Save" button clicked
-						ILELightboxClosedURL = "javascript/json/usability/json-usability-task3-split.js";
-					}
-				},
-				{
-					state: "task5",
-					text: "Usability test - Task 5",
-					response: function(){
-						//see above..this is a total hack to sorta kinda do a post-rendering task.
-						SPC.renderingDone = function(){
-							$("div.asin").append("<p><a href='#' class='split-trigger' style='font-size: 93%;'>Set shipping speed for this item</a></p>");
-							$("div.asin a.split-trigger").click(function() {
-								SPC.updateMainContent("javascript/json/usability/json-usability-task5-split.js");
-							});
-						};
+				// 		mainContentURL = "javascript/json/usability/json-usability-task3.js";
+				// 		orderSummaryURL = "javascript/json/usability/json-usability-task3-os.js";
+				// 		//content to show in lightbox
+				// 		ILELightboxURL = "javascript/json/usability/json-usability-task3-ile.js";
+				// 		//content to show after lightbox "Save" button clicked
+				// 		ILELightboxClosedURL = "javascript/json/usability/json-usability-task3-split.js";
+				// 	}
+				// },
+				// {
+				// 	state: "task5",
+				// 	text: "Usability test - Task 5",
+				// 	response: function(){
+				// 		//see above..this is a total hack to sorta kinda do a post-rendering task.
+				// 		SPC.renderingDone = function(){
+				// 			$("div.asin").append("<p><a href='#' class='split-trigger' style='font-size: 93%;'>Set shipping speed for this item</a></p>");
+				// 			$("div.asin a.split-trigger").click(function() {
+				// 				SPC.updateMainContent("javascript/json/usability/json-usability-task5-split.js");
+				// 			});
+				// 		};
 						
-						mainContentURL = "javascript/json/usability/json-usability-task5.js";
-						orderSummaryURL = "javascript/json/usability/json-usability-task5-os.js";
-					}
-				}
+				// 		mainContentURL = "javascript/json/usability/json-usability-task5.js";
+				// 		orderSummaryURL = "javascript/json/usability/json-usability-task5-os.js";
+				// 	}
+				// }
 			]
 		);
 		
