@@ -1,10 +1,24 @@
 $white: #FFF;
 $gray: #E7E7E7;
 $black: #555;
+$link: #4183C4;
+$hovertransition: 0.5s ease;
+
+$tabletWidth: 600px;
 
 a {
+	color: $link; 
+	text-decoration: none;
+
+	-webkit-transition: $hovertransition;
+	   -moz-transition: $hovertransition;
+	    -ms-transition: $hovertransition;
+	     -o-transition: $hovertransition;
+	        transition: $hovertransition;
+	
 	&:hover {
-		background-color:$gray;
+		color: lighten($link, 90%);
+		background-color: lighten(saturate($link, 10%), 10%);
 		text-decoration:none;
 	}
 }
@@ -24,29 +38,53 @@ body {
 		padding:0 0 40px 0;
 	}
 	&.resume section p {text-align:justify;}
+
+	@media (max-width: $tabletWidth) {
+    	padding:8px;
+  	}
 }
 
 
 header, section {
 	border-left:1px $gray solid;
 	border-right:1px $gray solid;
+
+	@media (max-width: $tabletWidth) {
+    	border:0;
+
+	  	& .row-fluid .offset3:first-child {
+	  		margin-left:0;
+	  	}
+	}
 }
 
 header {
 	padding: 2em 0 2em 0;
 	border-top: 6px darken($black, 10%) solid;
 
+	@media (max-width: $tabletWidth) {
+    	padding:4px;
+    	border:0;
+  	}
+
+
 	h1 {
 		font: 600 40px/54px "PT Sans Narrow";
 		color: lighten($black, 10%)
 	}
-	p {
+	ul {
+		margin:0;
+	}
+	
+	li{
 		font: 300 16px/18px "PT Sans";
+		display:inline;
+		margin:0;
+		padding:0 12px 0 0;
 
-		em {
-			color: lighten($black, 50%);
-			padding: 0 8px;
-		}
+		@media (max-width: 730px) {
+    		display:block;
+  		}
 	}
 }
 
@@ -59,6 +97,11 @@ aside {
 		margin-top:0;
 		border-top:1px lighten($black, 50%) solid;
 		padding-top:12px;
+
+		@media (max-width: $tabletWidth) {
+			font-size:18px;
+			line-height:22px;
+  		}
 	}
 
 	p,ul{
@@ -81,6 +124,10 @@ aside {
 
 section {
 	padding:0 12px 70px 12px;
+
+	@media (max-width: $tabletWidth) {
+    	padding:0 5px 20px 5px;
+  	}
 	
 	&> div.row-fluid {
 		padding:12px 0;

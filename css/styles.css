@@ -1,6 +1,15 @@
-a:hover {
-  background-color: #e7e7e7;
-  text-decoration: none; }
+a {
+  color: #4183c4;
+  text-decoration: none;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease; }
+  a:hover {
+    color: white;
+    background-color: #5e9cda;
+    text-decoration: none; }
 
 div.project-image a:hover {
   background-color: transparent; }
@@ -16,22 +25,39 @@ body {
     padding: 0 0 40px 0; }
   body.resume section p {
     text-align: justify; }
+  @media (max-width: 600px) {
+    body {
+      padding: 8px; } }
 
 header, section {
   border-left: 1px #e7e7e7 solid;
   border-right: 1px #e7e7e7 solid; }
+  @media (max-width: 600px) {
+    header, section {
+      border: 0; }
+      header .row-fluid .offset3:first-child, section .row-fluid .offset3:first-child {
+        margin-left: 0; } }
 
 header {
   padding: 2em 0 2em 0;
   border-top: 6px #3b3b3b solid; }
+  @media (max-width: 600px) {
+    header {
+      padding: 4px;
+      border: 0; } }
   header h1 {
     font: 600 40px/54px "PT Sans Narrow";
     color: #6e6e6e; }
-  header p {
-    font: 300 16px/18px "PT Sans"; }
-    header p em {
-      color: #d4d4d4;
-      padding: 0 8px; }
+  header ul {
+    margin: 0; }
+  header li {
+    font: 300 16px/18px "PT Sans";
+    display: inline;
+    margin: 0;
+    padding: 0 12px 0 0; }
+    @media (max-width: 730px) {
+      header li {
+        display: block; } }
 
 aside h2 {
   font: 300 14px/16px "PT Sans";
@@ -39,6 +65,10 @@ aside h2 {
   margin-top: 0;
   border-top: 1px #d4d4d4 solid;
   padding-top: 12px; }
+  @media (max-width: 600px) {
+    aside h2 {
+      font-size: 18px;
+      line-height: 22px; } }
 aside p, aside ul {
   font: 300 14px/14px "PT Sans"; }
   aside p.date, aside p.title, aside ul.date, aside ul.title {
@@ -53,6 +83,9 @@ aside ul {
 
 section {
   padding: 0 12px 70px 12px; }
+  @media (max-width: 600px) {
+    section {
+      padding: 0 5px 20px 5px; } }
   section > div.row-fluid {
     padding: 12px 0; }
   section > .row-fluid:first-of-type > aside > h2 {
