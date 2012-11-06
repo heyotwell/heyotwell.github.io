@@ -468,7 +468,7 @@ $(document).ready(function(){
 	    return false;
 	});
 	
-	checkResolution(); //snappa
+	//checkResolution(); //snappa
 	
 	 
 });  //end document.ready()
