@@ -273,7 +273,7 @@ $(document).ready(function(){
 	
 	//load jQuery-tmpl templates, load data, and perform 
 	//templating stuff as needed
-	$.get('templates/_cart.tmpl.htm',function(templates) {
+	$.get('templates/cart.tmpl.htm',function(templates) {
 	    // Inject all loaded templates at the end of the document
 	    $('body').append(templates);
 		
