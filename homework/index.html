@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Andrew Otwell - UX Design Homework</title>
+	<link rel="icon" type="image/png" href="images/favicon.ico">
+
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Sans+Narrow:700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="../css/styles.css">
+
+	
+	
+</head>
+
+<body>
+
+<header>
+	<div class="row-fluid">
+		<div class="span9 offset3">
+			<h1>Andrew Otwell</h1>
+			<ul>
+				<li>UX Design Homework</li>
+				<li>206.941.4902</li>
+				<li>heyotwell@gmail.com</li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+<section>
+	
+	<div class="row-fluid">
+		<div class="span6 offset3">
+			<article>
+				<h4>City Bikes - bike rental service</h4>
+				<p><a href="sketches.pdf">Sketches (PDF)</a>.</p>
+				<ul>
+
+				<li>Made some assumptions: for tourists or infrequent use first (section A)</li>
+				<li>I'm also assuming things like allocation of bikes to stations isn&#8217;t a common problem, and that other parts of the infrastructure work reliably.</li>
+				<li>This meant emphasizing learnability and predictability and ahedering to common patterns like a map/list UI for place finding (section B). It also meant an easily-accessed mobile web site rather than downloadable app.</li>
+				<li>I've ommitted features for recurring "power users" like: reloadable balances, the ability to report problems with bikes, to reserve bikes ahead of time during busy periods, and so on.</li>
+				<li>A kiosk UI would have worked too&#8211;a minimal PIN pad is still required to unlock bikes at stations but this means all the complex logic is in a website not embedded hardware.</li>
+				<li>Decided the key choice was between hourly/daily rental (Section C)</li>
+				</ul>
+
+				<p><a href="wireframes.pdf">Wireframes (PDF)</a> I've annotated this doc, but some of the decisions I made in this stage were:</p>
+
+				<ul>
+					<li>I decided on to include a global &#8220;active rental&#8221; state in a banner that appears sitewide when a bike rental is active. It navigates to a view accessible only during an active rental.</li>
+					<li>This lets me limit navigation for the infrequent customer, who's either in the "renting" or "not renting" states. (This wouldn't work well for recurring users who might run a balance, or schedule reservations in advance.)</li>
+					<li>The kiosk part of the system isn't shown &mdash; interaction would be limited to a pin pad and basic alphanumeric display. Entering an unlock code successfully would unlock a bike. As much interaction as possilbe has been pushed to the web app here, and real-time synchronization between the kiosk and app isn't necessary.</li>
+				</ul>
+
+				<p><a href="phones.png">Color mocks</a></p>
+				<ul>
+					<li>Very basic color versions with a single visual design idea sketched out, showing the central transaction of choosing Hourly/Daily rental, confirming payment, and getting an unlock PIN.</li>
+					<li>The big, chunky slab serif face (American Typewriter) is meant to feel approachable and simple.</li>
+				</ul>
+			</article>
+		</div>
+	</div>
+	
+</section>
+
+
+<footer>
+	<h2>Andrew Otwell</h2>
+</footer>
+
+
+
+</body>
+</html>
