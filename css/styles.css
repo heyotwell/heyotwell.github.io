@@ -93,6 +93,8 @@ section {
   section > .row-fluid:first-of-type > aside > h2 {
     font-weight: 600; }
 
+    section li {margin-bottom:.3em; line-height:1.4;}
+
 footer {
   background-color: #3b3b3b;
   color: #b3b3b3;
