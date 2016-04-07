@@ -30,7 +30,7 @@ div.project-image a:hover {
 body {
 	background: $white;
 	color: $black;
-	font: 300 15px/22px 'PT Sans';
+	font: 300 15px/22px Helvetica;
 	padding:0 2em;
 
 	&.resume aside > h2 {font-weight: 600; } // sidebar headers on resume page only always
@@ -69,7 +69,7 @@ header {
 
 
 	h1 {
-		font: 600 40px/54px "PT Sans Narrow";
+		font: 600 40px/54px Helvetica;
 		color: lighten($black, 10%)
 	}
 	ul {
@@ -77,7 +77,7 @@ header {
 	}
 	
 	li{
-		font: 300 16px/18px "PT Sans";
+		font: 300 16px/18px Helvetica;
 		display:inline;
 		margin:0;
 		padding:0 12px 0 0;
@@ -92,7 +92,7 @@ header {
 aside {
 
 	h2 {
-		font: 300 14px/16px 'PT Sans';
+		font: 300 14px/16px Helvetica;
 		text-transform:uppercase;
 		margin-top:0;
 		border-top:1px lighten($black, 50%) solid;
@@ -105,10 +105,10 @@ aside {
 	}
 
 	p,ul{
-		font: 300 14px/14px 'PT Sans';
+		font: 300 14px/14px Helvetica;
 
 		&.date, &.title {
-			font: 300 14px/18px 'PT Sans';
+			font: 300 14px/18px Helvetica;
 			margin-bottom:0;
 			text-align:left;
 
@@ -135,6 +135,9 @@ section {
 	&>.row-fluid:first-of-type > aside > h2 {
 		font-weight:600;
 	}
+	li {
+		line-height: 1.5
+	}
 	
 }
 
@@ -145,7 +148,7 @@ footer {
 	padding: 10px;
 
 	h2 {
-		font: 200 12px/16px 'PT Sans';
+		font: 200 12px/16px Helvetica;
 		text-transform:uppercase;
 		margin:.5em;
 	}
