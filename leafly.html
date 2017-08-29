@@ -42,16 +42,32 @@
 		<div class="span9 offset1">
 			<article>
 				<h3>Work at Leafly.com</h3>
-				<p>Leafly.com is the "World's Cannabis Information Resource", and is the most popular site in the rapidly-expanding cannabis industry. We get more than 10 million pageviews monthly to our cannabis dispensary listings, strain database, and News content. My role has been primarily Product Manager, though I've also done all the UX design work below (except where I've noted).</p>
+				<p>Leafly.com is the "World's Cannabis Information Resource", and is the most popular site in the rapidly-expanding cannabis industry. It gets more than 10 million pageviews monthly to cannabis dispensary listings, strain database, and News content. My role was primarily Product Manager, though I also did the UX design work below (except where I've noted).</p>
 
 				<h4>Leafly Biz</h4>
 				<p>Leafly Biz is used by thousands of cannabis businesses to maintain their Leafly listings, which includes managing menus (typically with several hundred items), running deals, posting updates to Leafly consumers, and updating their business information.</p>
-				<p>I led the redesign of the 3-year-old version of this tool using Google's Material Design language with the goal of modernizing and professionalizing this tool, and making improvements to navigation and key tasks such as daily menu management. I was the UX designer on the product, but also wrote bug testing scripts and planned the product launch. Since launch in Fall 2016, I've managed the product as a Product Manager, and work with Sales, Marketing, and other teams to build the product roadmap and develop new features. I also do bug triaging and prioritization with our development team, and work with analysts and marketing to track KPIs.</p>
+
+				<p>I led the redesign of the 3-year-old version of this tool using Google's Material Design language with the goal of modernizing and professionalizing this tool, and making improvements to navigation and key tasks such as daily menu management. I was the UX designer on the product, but also wrote bug testing scripts and planned the product launch. Since launch in Fall 2016, I managed the product as a Product Manager, and work with Sales, Marketing, and other teams to build the product roadmap and develop new features. I did bug triaging and prioritization with our development team, and worked with analysts and marketing to track KPIs.</p>
+
+				<p>We were updating an existing application, and felt that maintaing the existing overall (relatively simple) information architecture would help smooth the transition for our clients. Here's what we replaced:</p>
+				<p><img src="/images/l/old-biz.png" alt=""></p>
+
+				<p>We also knew we wanted to use Material Design patterns and components. These early wireframes show we were able to start from a standard Material desktop application structure:</p>
+				<p><img src="/images/l/biz-wireframes.png" alt=""></p>
+
 
 				<h5>Dispensary Menu Management</h5>
 				<p>Cannabis dispensaries manage huge retail product menus (like <a href="https://www.leafly.com/dispensary-info/dockside-cannabis-sodo/menu">this one</a>), often changing them daily. We built menu management in Leafly Biz to allow quick access to updating single or multiple products, and to customize sort order and featured items.</p>
+
+				<p>We debated about how to support <b>setting the order of menu items</b> and whether to support <b>bulk menu changes</b>. The old version of the managment tool did allow bulk item deletion, but it was rarely used and since it lacked a way to undo or restore edits, it was too easy to accidently lose data. In fact, we found in research that clients didn't need to <em>delete</em> items often, since the entry would need to be recreated from scratch if that product came back in stock. We made show and hide single-click actions instead. You can see these decisions in these wireframes, where I removed the checkbox selection per row item and added the inline icons for other actions.</p>
+				<p><img src="/images/l/menu-wireframes.png" alt=""></p>
+
+				<p><b>Why no drag and drop?</b> We found many clients wanted to make a few specific changes when ordering menu items: put something to the top of the list, group a few items together (perhaps by brand), or to sort everything A-Z. Drag and drop could be a better interaction for moving a few items around, but it was not critical for that task. It also wasn't supported natively in the Material framework we used, and so would have meant an unknown enginneering cost. As Product Manager, I made the call to not try to add drag and drop for these reasons.</p>
+
+				<p>Here's what we shipped. This is the default view of a client's menu.</p>
+
 				<p><img src="/images/l/menu.png"></p>
-				<p>Editing a menu item:</p>
+				<p>Editing a menu item is done in a sidebar pane. Users can filter to a set of results (such as "all Concentrates by Artizen", then step through that result set to edit each. This saves the user a lot of navigation between list and detail views.</p>
 				<p><img src="/images/l/menu-edit.png"></p>
 
 				<h5>Dispensary Review Management</h5>
