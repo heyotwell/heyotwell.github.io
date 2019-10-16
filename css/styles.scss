@@ -7,7 +7,7 @@ $hovertransition: 0.5s ease;
 $tabletWidth: 600px;
 
 a {
-	color: $link; 
+	color: $link;
 	text-decoration: none;
 
 	-webkit-transition: $hovertransition;
@@ -15,7 +15,7 @@ a {
 	    -ms-transition: $hovertransition;
 	     -o-transition: $hovertransition;
 	        transition: $hovertransition;
-	
+
 	&:hover {
 		color: lighten($link, 90%);
 		background-color: lighten(saturate($link, 10%), 10%);
@@ -75,7 +75,7 @@ header {
 	ul {
 		margin:0;
 	}
-	
+
 	li{
 		font: 300 16px/18px Helvetica;
 		display:inline;
@@ -128,7 +128,7 @@ section {
 	@media (max-width: $tabletWidth) {
     	padding:0 5px 20px 5px;
   	}
-	
+
 	&> div.row-fluid {
 		padding:12px 0;
 	}
@@ -138,8 +138,8 @@ section {
 	li {
 		line-height: 1.5
 	}
-	
-	
+
+
 }
 
 
@@ -155,7 +155,7 @@ footer {
 	}
 }
 
-#carousel {
+#carousel, #carousel2 {
 	border:1px $gray solid;
 
 	.carousel-control {
@@ -172,4 +172,3 @@ footer {
 		}
 	}
 }
-

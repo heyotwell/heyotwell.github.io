@@ -102,9 +102,9 @@ footer {
     text-transform: uppercase;
     margin: .5em; }
 
-#carousel {
+#carousel, #carousel2 {
   border: 1px #e7e7e7 solid; }
-  #carousel .carousel-control {
+  #carousel .carousel-control, #carousel2 .carousel-control {
     font-size: 26px;
     line-height: 43px;
     border: 2px white solid;
@@ -112,5 +112,5 @@ footer {
     color: white;
     margin: 0;
     opacity: 0.7; }
-    #carousel .carousel-control:hover {
+    #carousel .carousel-control:hover, #carousel2 .carousel-control:hover {
       opacity: 0.9; }
