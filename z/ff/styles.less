@@ -1,0 +1,99 @@
+* {margin:0; padding:0; box-sizing: border-box;}
+
+html {
+  font-family: "Open sans", sans-serif;
+}
+
+/* this nav thing is just to configure the prototype itself */
+nav {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #444;
+  padding: 12px;
+
+  @media only screen and (max-width : 499px) { display:none }
+
+  label {
+    color: white;
+    margin-right: 4px;
+    font-size: 12px
+  }
+  select {
+    margin-right: 20px
+  }
+}
+
+/* actual F&F styles start here... */
+h1 {
+  margin: 16px 24px 26px;
+  border-bottom: 1px #ccc solid;
+  padding-bottom: 20px;
+  font-size: 26px;
+  font-family: "Ivar Headline";
+  color: #2A2A33;
+  font-weight: 600;
+
+  @media only screen and (max-width : 499px) {
+    margin: 8px 8px 12px;
+    padding-bottom: 12px;
+  }
+}
+
+h2 {
+  background-color: #E0F2FF;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 4px 24px;
+  width: 100%;
+
+  @media only screen and (max-width : 499px) { padding: 4px 12px }
+}
+
+article {
+  padding: 12px 24px;
+  @media only screen and (max-width : 499px) { padding: 8px 12px }
+
+  &.columns {
+    columns: 192px 4;
+  }
+
+  &.grid {
+    columns: unset;
+    display: grid ;
+    grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+    grid-gap: 8px;
+
+    section {
+      margin-bottom: 0;
+    }
+}
+
+  section {
+    break-inside: avoid;
+    margin-bottom: 1em;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+
+    &.highlight {
+      background-color: bisque;
+    }
+
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  ul {
+    font-size: 14px;
+    line-height: 1.43;
+    margin-left: 16px;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+}

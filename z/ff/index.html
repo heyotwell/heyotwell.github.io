@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Facts & Features test</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+    let homeSelect, styleSelect, target, template, showgrid;
+
+    function init(){
+      styleSelect = document.getElementById('style');
+      styleSelect.addEventListener("change",toggleLayoutStyle);
+
+      showgrid = document.getElementById('showgrid');
+      showgrid.addEventListener("change",toggleGrid);
+
+      homeSelect = document.getElementById('homes');
+      homeSelect.addEventListener("change", loadTemplate);
+
+      target = document.getElementById("target");
+      template = document.getElementById('template').innerHTML;
+
+      loadTemplate();
+    }
+
+    function toggleLayoutStyle(){
+      $("article").removeClass();
+      $("article").addClass(styleSelect.value);
+    }
+
+    function toggleGrid(){
+
+      if ($(showgrid).is(":checked")) {
+        $('section').addClass('highlight');
+      } else {
+        $('section').removeClass('highlight');
+      }
+    }
+
+    function loadTemplate() {
+
+      let dataURL = homeSelect.value || 'data.json';
+      dataURL = "/data/" + dataURL;
+
+      target.innerHTML = "";
+
+      fetch(dataURL)
+        .then((resp) => resp.json())
+        .then(function(data){
+          data.forEach(function(elem){
+            var output = Mustache.render(template, elem);
+            target.insertAdjacentHTML('beforeend', output);
+          })
+        });
+    };
+
+    window.addEventListener("load", init);
+
+    </script>
+
+  </head>
+
+  <body>
+    <nav>
+      <label for="homes">Home:</label>
+      <select id="homes">
+        <option selected="selected" value="data.json">2310 Wilderness Trail</option>
+        <option value="370nhighlandst.json">370 N. Highland St</option>
+        <option value="1160hydeparkplace.json">1160 Hyde Park Pl</option>
+      </select>
+
+      <label for="style">Grid type:</label>
+      <select id="style">
+        <option selected="selected" value="columns">CSS columns</option>
+        <option value="grid">CSS grid</option>
+      </select>
+
+      <label for="showgrid">Show grid:</label>
+      <input type="checkbox" name="showgrid" id="showgrid">
+    </nav>
+
+    <h1>Facts & features</h1>
+    <main id="target"><main>
+  </body>
+
+  <script id="template" type="text/html">
+    <h2>{{category}}</h2>
+    <article class="columns">
+      {{#features}}
+        <section>
+          <h3>{{name}}</h3>
+          <ul>
+          {{#items}}
+            <li>{{{.}}}</li>
+          {{/items}}
+          </ul>
+        </section>
+      {{/features}}
+    </article>
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascript/mustache.min.js" ></script>
+</html>

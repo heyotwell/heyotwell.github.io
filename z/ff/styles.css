@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Open sans", sans-serif;
+}
+/* this nav thing is just to configure the prototype itself */
+nav {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #444;
+  padding: 12px;
+}
+@media only screen and (max-width: 499px) {
+  nav {
+    display: none;
+  }
+}
+nav label {
+  color: white;
+  margin-right: 4px;
+  font-size: 12px;
+}
+nav select {
+  margin-right: 20px;
+}
+/* actual F&F styles start here... */
+h1 {
+  margin: 16px 24px 26px;
+  border-bottom: 1px #ccc solid;
+  padding-bottom: 20px;
+  font-size: 26px;
+  font-family: "Ivar Headline";
+  color: #2A2A33;
+  font-weight: 600;
+}
+@media only screen and (max-width: 499px) {
+  h1 {
+    margin: 8px 8px 12px;
+    padding-bottom: 12px;
+  }
+}
+h2 {
+  background-color: #E0F2FF;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 4px 24px;
+  width: 100%;
+}
+@media only screen and (max-width: 499px) {
+  h2 {
+    padding: 4px 12px;
+  }
+}
+article {
+  padding: 12px 24px;
+}
+@media only screen and (max-width: 499px) {
+  article {
+    padding: 8px 12px;
+  }
+}
+article.columns {
+  columns: 192px 4;
+}
+article.grid {
+  columns: unset;
+  display: grid ;
+  grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+  grid-gap: 8px;
+}
+article.grid section {
+  margin-bottom: 0;
+}
+article section {
+  break-inside: avoid;
+  margin-bottom: 1em;
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+article section.highlight {
+  background-color: bisque;
+}
+article h3 {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+article ul {
+  font-size: 14px;
+  line-height: 1.43;
+  margin-left: 16px;
+}
+article ul li {
+  margin-bottom: 8px;
+}

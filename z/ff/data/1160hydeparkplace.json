@@ -1,0 +1,251 @@
+[
+{
+  "category": "Interior details",
+  "features": [
+    {
+      "name": "Bedrooms and bathrooms",
+      "items": [
+        "Bedrooms: 3",
+        "Bathrooms: 2",
+        "Full bathrooms: 2"
+      ]
+    },
+    {
+      "name": "Bedroom 1",
+      "items": [
+        "Level: Main"
+      ]
+    },
+    {
+      "name": "MasterBedroom",
+      "items": [
+        "Level: Main"
+      ]
+    },
+    {
+      "name": "Kitchen",
+      "items": [
+        "Level: Main"
+      ]
+    },
+    {
+      "name": "FamilyRoom",
+      "items": [
+        "Level: Main"
+      ]
+    },
+    {
+      "name": "DiningRoom",
+      "items": [
+        "Level: Main"
+      ]
+    },
+    {
+      "name": "Basement",
+      "items": [
+        "Basement: Crawl Space"
+      ]
+    },
+    {
+      "name": "Flooring",
+      "items": [
+        "Flooring: Hardwood"
+      ]
+    },
+    {
+      "name": "Heating",
+      "items": [
+        "Heating features: Forced air"
+      ]
+    },
+    {
+      "name": "Cooling",
+      "items": [
+        "Cooling features: Central"
+      ]
+    },
+    {
+      "name": "Appliances",
+      "items": [
+        "Appliances included in sale: Dishwasher"
+      ]
+    },
+    {
+      "name": "Other interior features",
+      "items": [
+        "Total interior livable area: 1,992 sqft"
+      ]
+    }
+  ]
+},
+{
+"category": "Property details",
+"features": [
+  {
+    "name": "Parking",
+    "items": [
+      "Parking features: Attached Garage",
+      "Has uncovered spaces: No",
+      "Attached garage: Yes",
+      "Carport: No",
+      "Other parking information: Driveway"
+    ]
+  },
+  {
+    "name": "Accessibility",
+    "items": [
+      "Accessibility features: One Level, Ground Level, Garage on Main, Roll in Shower, Natural Lighting"
+    ]
+  },
+  {
+    "name": "Property",
+    "items": [
+      "Stories: 1",
+      "Private pool: Yes",
+      "Exterior features: Cement concrete",
+      "Patio and porch details: Patio",
+      "View description: Mountain"
+    ]
+  },
+  {
+    "name": "Lot",
+    "items": [
+      "Lot size:0.16 acres"
+    ]
+  },
+  {
+    "name": "Other property information",
+    "items": [
+      "Parcel number: 1703194308500000"
+    ]
+  }
+  ]
+},
+{
+  "category": "Construction details",
+  "features": [
+    {
+      "name": "Type and style",
+      "items": [
+        "Home type: Single Family",
+        "Architectural style: Contemporary, 1 STORY"
+      ]
+    },
+    {
+      "name": "Material information",
+      "items": [
+        "Construction materials: Cement Siding, Lap Siding",
+        "Roof: Composition"
+      ]
+    },
+    {
+      "name": "Condition",
+      "items": [
+        "New construction: Yes",
+        "Year built: 2019"
+      ]
+    },
+    {
+      "name": "Notable dates",
+      "items": [
+        "Major remodel year: 2019"
+      ]
+    }
+  ]
+},
+{
+  "category": "Utilities / Green energy details",
+  "features": [
+    {
+      "name": "Utility",
+      "items": [
+        "Sewer information: Public Sewer",
+        "Internet and tv: No Data"
+      ]
+    }
+  ]
+},
+{
+  "category": "Building details",
+  "features": [
+    {
+      "name": "Size",
+      "items": [
+        "Stories in building: 1"
+      ]
+    },
+    {
+      "name": "Management",
+      "items": [
+        "Pets allowed: Yes",
+        "Rent control: No"
+      ]
+    },
+    {
+      "name": "Other buidling information",
+      "items": [
+        "Structure type:Contemporary"
+      ]
+    }
+  ]
+},
+{
+  "category": "Comminity and neighborhood details",
+  "features": [
+    {
+      "name": "Security",
+      "items": [
+        "Security features: Sprinkler"
+      ]
+    },
+    {
+      "name": "Location",
+      "items": [
+        "Region: Eugene"
+      ]
+    }
+  ]
+},
+{
+  "category": "HOA & financial details",
+  "features": [
+    {
+      "name": "HOA",
+      "items": [
+        "Has HOA fee: No"
+      ]
+    },
+    {
+      "name": "Other financial Information",
+      "items": [
+        "Tax assessed value: $113,109",
+        "Annual tax amount: $1,581"
+      ]
+    }
+  ]
+},
+{
+  "category": "Other",
+  "features": [
+    {
+      "name": "Source details",
+      "items": [
+        "MLS ID: 19486259"
+      ]
+    },
+    {
+      "name": "Other facts",
+      "items": [
+        "InteriorFeatures: Garage Door Opener, Vaulted Ceiling(s), Hardwood Floors",
+        "LotSizeSource: Builder",
+        "CurrentFinancing: Conventional, FHA, Cash, VA Loan",
+        "Roof: Composition",
+        "LotFeatures: Level",
+        "LivingAreaSource: Builder",
+        "YearBuiltDetails: Under Construction",
+        "PoolFeatures: In Ground"
+      ]
+    }
+  ]
+}
+]

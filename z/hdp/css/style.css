@@ -1,0 +1,141 @@
+html, body, .grid-container {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	max-width: 1440px;
+	background-image: url('/images/page-bg.png');
+}
+
+div img {
+	max-width:100%;
+	width:100%;
+	height: auto;
+}
+
+.grid-container {
+	position: relative;
+	margin: 0 auto;
+	display: grid;
+	width: 1250px;
+	grid-template-columns: 750px 500px;
+	grid-template-rows: 1fr;
+	grid-template-areas: "media-stream data-view";
+}
+
+#media-stream {
+	grid-area: media-stream;
+	overflow-y: auto;
+	height: 100vh;
+}
+
+#data-view {
+	grid-area: data-view;
+	background-color: #ffffff;
+}
+
+#data-view img { display: block; }
+
+#scrolling-data {
+	overflow-y: auto;
+	height: 100vh;
+	position: relative;
+}
+
+#view-control {
+	position: absolute;
+  left: 630px;
+  top: 10px;
+	width: 109px;
+  height: 42px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	transition: left 500ms ease-out;
+}
+
+#view-control a {
+	width: 54px;
+  height: 38px;
+  position: absolute;
+	cursor: pointer;
+}
+
+#view-control.narrow {
+	background-image: url('/images/view/view-control-right.png');
+	left:630px;
+}
+#view-control.narrow a { left: 0 }
+
+#view-control.wide {
+	background-image: url('/images/view/view-control-left.png');
+	left: 110px;
+}
+#view-control.wide a {left: 52px;}
+
+#close-button {
+		position: absolute;
+		top: 14px;
+    left: 1356px;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* make bootstrap's tabs scroll */
+.nav-tabs {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+	background-color: white;
+}
+.nav-tabs::-webkit-scrollbar {
+    display: none;
+}
+.nav-tabs>li {
+  float: none;
+}
+/* end of scroll */
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #2a2a33;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 500;
+		padding: 16px 8px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+		font-weight: 600;
+		color: #007bff;
+    border:none;
+    border-bottom: 3px #007bff solid;
+}
+
+#chip-container {
+	position: relative;
+  height: 217px;
+	transition: height 0.5s;
+}
+
+#chip-container img {
+	position: absolute;
+  top: 0;
+	transition: opacity 0.2s;
+}
+
+#chip-container.min {height: 146px }
+#chip-container.wide {height: 133px;}
+
+#chip-container.wide #chip {opacity:1}
+#chip-container.wide #chip-min {opacity: 0; z-index: -10;}
+#chip-container.min #chip {opacity: 0; z-index: -20}
+#chip-container.min #chip-min {opacity:1}

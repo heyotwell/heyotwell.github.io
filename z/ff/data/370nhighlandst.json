@@ -1,0 +1,181 @@
+[
+  {
+    "category": "Interior details",
+    "features": [
+      {
+      "name": "Bedrooms and bathrooms",
+      "items": [
+        "Bedrooms: 4",
+        "Bathrooms: 3",
+        "Full bathrooms:3"
+        ]
+      },
+      {
+      "name": "MasterBedroom",
+      "items": [
+        "Features: Full Bath",
+        "Level: First"
+        ]
+      },
+      {
+      "name": "Kitchen",
+      "items": [
+        "Features: Breakfast Bar, Eat-in Kitchen, Separate Breakfast Room"
+        ]
+      },
+      {
+      "name": "MasterBathroom",
+      "items": [
+        "Features: Full Bath, Separate Shower"
+        ]
+      },
+      {
+      "name": "Flooring",
+      "items": [
+        "Flooring: Hardwood, Tile"
+        ]
+      },
+      {
+      "name": "Heating",
+      "items": [
+        "Heating features: Forced air"
+        ]
+      },
+      {
+      "name": "Cooling",
+      "items": [
+        "Cooling features: Central"
+        ]
+      },
+      {
+      "name": "Appliances",
+      "items": [
+        "Appliances included in sale: Dishwasher, Garbage disposal, Microwave, Range / Oven"
+        ]
+      },
+      {
+      "name": "Other interior features",
+      "items": [
+        "Total interior livable area: 2,683 sqft",
+        "Fireplace: Yes"
+      ]
+      }
+    ]
+  },
+  {
+    "category": "Construction details",
+    "features": [
+      {
+      "name": "Type and style",
+      "items": [
+        "Home type: Family",
+        "Architectural style: Traditional, General Residential"
+        ]
+      },
+      {
+      "name": "Material information",
+      "items": [
+        "Foundation: Crawl/Raised",
+        "Roof: Composition"
+        ]
+      },
+      {
+      "name": "Condition",
+      "items": [
+        "New construction: no",
+        "Year built: 1948"
+        ]
+      },
+      {
+      "name": "Notable dates",
+      "items": [
+        "Major remodel year: 2019"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Utilities/Green Energy Details",
+    "features": [
+      {
+      "name": "Utility",
+      "items": [
+        "Internet and tv"
+        ]
+      },
+      {
+      "name": "Green Energy",
+      "items": [
+        "Sunscore: Great Solar potential Sun Number 81.46"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Building details",
+    "features": [
+      {
+      "name": "Management",
+      "items": [
+        "Pets allowed: yes",
+        "Rent control: no"
+        ]
+      },
+      {
+      "name": "Other building information",
+      "items": [
+        "Structure type: Crafsman"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Community and Neighborhood Details",
+    "features": [
+      {
+      "name": "Location",
+      "items": [
+        "Region: Memphis"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "HOA and financial details",
+    "features": [
+      {
+      "name": "HOA",
+      "items": [
+        "HOA fee: $1/mo"
+        ]
+      },
+      {
+      "name": "Other financial information",
+      "items": [
+        "Tax assessed value: $141,500",
+        "Annual tax amount: $1,433"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Other facts",
+    "features": [
+      {
+      "name": "Source details",
+      "items": [
+        "MLS ID: 100420392"
+        ]
+      },
+      {
+      "name": "Other facts",
+      "items": [
+        "Interior Features: Breakfast Bar, Pantry, Eat-in Kitchen, Master Down, Separate Tub & Shower, Full Bath Down",
+        "Lot Features:Level, Corner Lot",
+        "CurrentUse: Residential, Single Family",
+        "Possible use: Residential, Single Family"
+        ]
+      }
+    ]
+  }
+]

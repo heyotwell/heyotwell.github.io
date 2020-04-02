@@ -1,0 +1,199 @@
+[
+	{
+	"category": "Interior",
+	"features": [
+    {
+			"name": "Heating & Cooling",
+			"items": [
+				"Heating: Forced air",
+				"Cooling: Central"
+			]
+		},
+		{
+			"name": "Bedrooms",
+			"items": [
+				"# of beds: 3"
+			]
+		},
+    {
+			"name": "Bathrooms",
+			"items": [
+				"# of bathrooms: 3"
+			]
+		},
+    {
+			"name": "Flooring",
+			"items": [
+				"Flooring material: Carpet, laminate, tile"
+			]
+		},
+    {
+			"name": "Appliances",
+			"items": [
+				"Dishwasher, garbage disposal, refrigerator",
+        "Laundry features: Main level"
+			]
+		},
+    {
+			"name": "Other Interior Features",
+			"items": [
+				"Fireplace",
+        "Total interior liveable area: 1,540 sqft",
+        "Virtual Tour: <a href='#'>View virtual tour</a>"
+			]
+		}]
+	},
+	{
+		"category": "Property Details",
+		"features": [
+			{
+				"name": "Parking",
+				"items": [
+					"Parking features, attatched garage",
+					"Garage spaces: 2",
+					"Covered spaces: 2",
+					"Carport: No"
+				]
+			},
+			{
+				"name": "Property",
+				"items": [
+					"Stories: 2",
+					"Exterior features: brick, wood"
+				]
+			},
+			{
+				"name": "Lot",
+				"items": [
+					"Lot size: 0.11 acres"
+				]
+			}
+		]
+	},
+	{
+		"category": "Construction Details",
+		"features": [
+			{
+				"name": "Type & Style",
+				"items": [
+					"Home type: single family"
+				]
+			},
+			{
+				"name": "Material Information",
+				"items": [
+					"Construction materials: 4-side masonry",
+					"Roof: Composition",
+					"Foundation: Slab"
+				]
+			},
+			{
+				"name": "Condition",
+				"items": [
+					"Property condition: new construction",
+					"Year built: 1981",
+					"Development Status: complete"
+				]
+			},
+			{
+				"name": "Notable dates",
+				"items": [
+					"Major remodel year: 1990"
+				]
+			}
+		]
+	},
+	{
+		"category": "Utilities",
+		"features": [
+			{
+				"name": "Utility",
+				"items": [
+					"Utilities for property: water connected",
+					"Internet and TV:  No data"
+				]
+			},
+			{
+				"name": "Green Energy",
+				"items": [
+					"Sunscore: Great solar potential Sun Number&#8482;: 93.08"
+				]
+			}
+		]
+	},
+	{
+		"category": "Building Details",
+		"features": [
+			{
+				"name": "Management",
+				"items": [
+					"Pets allowed: Yes"
+				]
+			},
+			{
+				"name": "Other building information",
+				"items": [
+					"Structure type: Contemporary",
+					"Building name: unknown"
+				]
+			}
+		]
+	},
+	{
+		"category": "Community & Neighborhood",
+		"features": [
+			{
+				"name": "Community",
+				"items": [
+					"Community features: Playground, pool"
+				]
+			},
+			{
+				"name": "Location",
+				"items": [
+					"Region: San Antonio"
+				]
+			}
+		]
+	},
+	{
+		"category": "HOA & Financial Details",
+		"features": [
+			{
+				"name": "HOA",
+				"items": [
+					"HOA Fee: $16",
+					"Association name: Castle Hills Forest"
+				]
+			},
+			{
+				"name": "Other financial information",
+				"items": [
+					"Tax assessed value: $197,750",
+					"Annual tax amount: $4,799"
+				]
+			}
+		]
+	},
+	{
+		"category": "Other",
+		"features": [
+			{
+				"name": "Source details",
+				"items": [
+					"MLS ID: 4092303",
+					"Measurement source: Appr Dist."
+				]
+			},
+			{
+				"name": "Other facts",
+				"items": [
+					"Road surface type: Paved, curbs, sidewalk",
+					"Year built source: Appraiser",
+					"Interior features: High ceilings",
+					"Attic: Access only"
+				]
+			}
+		]
+	}
+]
