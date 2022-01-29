@@ -17,7 +17,7 @@ div.project-image a:hover {
 body {
   background: white;
   color: #555555;
-  font: 300 15px/22px Helvetica;
+  font: 300 18px/1.2 Helvetica Neue, Helvetica;
   padding: 0 2em; }
   body.resume aside > h2 {
     font-weight: 600; }
@@ -82,7 +82,7 @@ aside ul {
   list-style-type: circle; }
 
 section {
-  padding: 0 12px 70px 12px; }
+  padding: 0 12px 50px 12px; }
   @media (max-width: 600px) {
     section {
       padding: 0 5px 20px 5px; } }
@@ -91,7 +91,7 @@ section {
   section > .row-fluid:first-of-type > aside > h2 {
     font-weight: 600; }
   section li {
-    line-height: 1.5; }
+    line-height: 1.2; margin-bottom:.9em; }
 
 footer {
   background-color: #3b3b3b;
